@@ -1003,6 +1003,137 @@ footer::before{
 #rgc-dropdown-nav .rgc-dd-divider { height:1px; margin:6px 5px; background:rgba(212,175,55,.22); }
 @media(max-width:600px){ #rgc-dropdown-nav{top:10px;left:10px;margin:0;} #rgc-dropdown-nav .rgc-dd-trigger{min-height:58px;gap:10px;padding:7px 10px 7px 7px;} #rgc-dropdown-nav .rgc-dd-logo{width:42px;height:42px;flex-basis:42px;} #rgc-dropdown-nav .rgc-dd-brand strong{font-size:16px;} #rgc-dropdown-nav .rgc-dd-brand small{font-size:9px;letter-spacing:1.6px;} #rgc-dropdown-nav .rgc-dd-menu{width:260px;} }
 </style>
+
+<style id="global-rank-inspired-special-offers-theme">
+/* Special Offers: responsive layout and visual language matched to Global Rank */
+:root{
+  --rgc-bg-main:#05080d;
+  --rgc-bg-secondary:#07111d;
+  --rgc-card:rgba(8,14,23,.92);
+  --rgc-card-hover:rgba(10,19,31,.98);
+  --rgc-gold:#d4af37;
+  --rgc-gold-light:#f4d97b;
+  --rgc-blue:#0094ff;
+  --rgc-blue-light:#43b7ff;
+  --rgc-red:#e63946;
+  --rgc-text:#eef4fa;
+  --rgc-muted:#aebdcd;
+}
+html{scroll-behavior:smooth; background:var(--rgc-bg-main);}
+body{
+  min-height:100vh;
+  padding:42px 20px 70px;
+  color:var(--rgc-text);
+  font-family:"Segoe UI",Arial,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 18% 4%,rgba(0,148,255,.10),transparent 30%),
+    radial-gradient(circle at 82% 12%,rgba(0,92,170,.075),transparent 30%),
+    radial-gradient(circle at 50% 100%,rgba(230,57,70,.025),transparent 32%),
+    linear-gradient(180deg,#05080d 0%,#07111d 48%,#05080d 100%);
+}
+.page{
+  width:min(100%,1400px);
+  margin:0 auto;
+  padding:0 clamp(0px,1vw,12px) 36px;
+}
+.banner-wrap{
+  width:min(100%,1000px);
+  margin:0 auto 30px;
+  border:1px solid rgba(0,148,255,.24);
+  border-radius:12px;
+  background:linear-gradient(135deg,rgba(8,14,23,.96),rgba(7,17,29,.9));
+  box-shadow:0 12px 34px rgba(0,0,0,.42),0 0 22px rgba(0,148,255,.06),inset 0 1px 0 rgba(255,255,255,.08);
+}
+.banner-wrap:hover{
+  transform:translateY(-2px);
+  border-color:rgba(0,148,255,.42);
+  box-shadow:0 14px 36px rgba(0,0,0,.46),0 0 24px rgba(0,148,255,.10),inset 0 1px 0 rgba(255,255,255,.10);
+}
+/* Keep the animated offer banner, but make its frame match the blue-black theme. */
+.special-offer-banner{border-color:rgba(0,148,255,.26);}
+.offer{
+  grid-template-columns:minmax(260px,350px) minmax(0,1fr);
+  gap:clamp(18px,2vw,28px);
+  padding:12px;
+  margin:0 auto 20px;
+  border:1px solid rgba(0,148,255,.20);
+  border-radius:16px;
+  border-bottom:1px solid rgba(0,148,255,.20);
+  background:linear-gradient(135deg,rgba(8,14,23,.94),rgba(7,17,29,.88));
+  box-shadow:0 10px 28px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.045);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease,background .25s ease;
+}
+.offer::before{
+  left:0;right:0;top:0;bottom:0;border-radius:15px;
+  background:linear-gradient(110deg,rgba(0,148,255,.07),transparent 46%,rgba(212,175,55,.035));
+}
+.offer:hover{
+  border-color:rgba(0,148,255,.45);
+  background:linear-gradient(135deg,rgba(10,19,31,.98),rgba(7,17,29,.96));
+  box-shadow:0 14px 32px rgba(0,0,0,.40),0 0 22px rgba(0,148,255,.07),inset 0 1px 0 rgba(255,255,255,.07);
+  transform:translateY(-2px);
+}
+.offer-image{
+  border:1px solid rgba(0,148,255,.22);
+  border-radius:12px;
+  background:rgba(5,8,13,.88);
+  box-shadow:0 8px 22px rgba(0,0,0,.36);
+}
+.offer-image:hover{
+  border-color:rgba(212,175,55,.52);
+  box-shadow:0 10px 26px rgba(0,0,0,.42),0 0 18px rgba(0,148,255,.09);
+}
+.offer-info{padding:10px 12px 8px;}
+.offer-title{
+  color:var(--rgc-gold-light);
+  font-family:"Segoe UI",Arial,sans-serif;
+  font-size:clamp(18px,1.5vw,22px);
+  font-style:normal;
+  text-decoration:none;
+  letter-spacing:.2px;
+  text-shadow:0 0 10px rgba(212,175,55,.18);
+}
+.offer-desc,.offer-line,.vip-list{color:var(--rgc-text);}
+.offer-line strong{color:var(--rgc-gold-light);}
+.offer-note{color:var(--rgc-muted);}
+.vip-heading{
+  color:var(--rgc-gold-light);
+  font-family:"Segoe UI",Arial,sans-serif;
+  font-style:normal;
+  font-size:clamp(19px,1.6vw,24px);
+  text-shadow:0 0 12px rgba(212,175,55,.22);
+}
+.vip-list{font-size:clamp(13px,.95vw,15px);}
+.vip-golden-word,.gold-highlight{color:var(--rgc-gold-light);}
+.energy-line{background:linear-gradient(90deg,transparent,rgba(0,148,255,.4),rgba(212,175,55,.75),rgba(0,148,255,.4),transparent);}
+footer{width:min(100%,1400px);color:var(--rgc-muted);}
+@media(max-width:900px){
+  body{padding:30px 16px 50px;}
+  .page{padding-left:0;padding-right:0;}
+  .offer,.vip-single{grid-template-columns:minmax(220px,34%) minmax(0,1fr);gap:18px;padding:10px;}
+}
+@media(max-width:620px){
+  body{padding:86px 12px 36px;}
+  .page{width:100%;padding:0 0 24px;}
+  .banner-wrap{width:100%;margin-bottom:20px;border-radius:9px;}
+  .offer,.vip-single{grid-template-columns:minmax(0,1fr);gap:12px;padding:9px;margin-bottom:15px;border-radius:12px;}
+  .offer-image{width:100%;max-width:100%;}
+  .offer-info,.vip-single .vip-offer-info{padding:10px 9px 8px;}
+  .offer-title{font-size:18px;}
+  .offer-desc,.offer-line{font-size:14px;}
+  .vip-heading{font-size:19px;}
+  .vip-list{font-size:14px;margin-left:20px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .banner-wrap::after,.storm-flash,.storm-lightning,.offer-image::before{animation:none!important;}
+  .offer,.offer-image,.banner-wrap{transition:none!important;}
+}
+</style>
+
 </head>
 <body>
 <div id="rgc-dropdown-nav">
