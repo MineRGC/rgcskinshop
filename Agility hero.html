@@ -1323,7 +1323,11 @@ input{
 <style>
 
 /* Shared RGC navigation */
-.rgc-navbar{position:sticky;top:0;z-index:99999;width:100%;background:rgba(5,8,18,.97);border-bottom:1px solid rgba(212,175,55,.45);box-shadow:0 8px 28px rgba(0,0,0,.35);backdrop-filter:blur(16px);font-family:Arial,Helvetica,sans-serif}
+.rgc-navbar,.rgc-navbar *{box-sizing:border-box!important;}
+.rgc-navbar ul{list-style:none!important;}
+.rgc-navbar a{text-decoration:none;}
+
+.rgc-navbar{position:relative!important;top:auto!important;left:auto!important;right:auto!important;display:block!important;float:none!important;clear:both!important;margin:0!important;padding:0!important;z-index:99999;width:100%!important;max-width:none!important;transform:none!important;background:rgba(5,8,18,.97);border-bottom:1px solid rgba(212,175,55,.45);box-shadow:0 8px 28px rgba(0,0,0,.35);backdrop-filter:blur(16px);font-family:Arial,Helvetica,sans-serif}
 .rgc-nav-inner{width:min(1440px,100%);min-height:78px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .rgc-nav-brand{display:inline-flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0;color:#fff;text-decoration:none}
 .rgc-nav-brand img{display:block;width:48px!important;height:48px!important;max-width:48px!important;max-height:48px!important;object-fit:contain;flex:0 0 48px;border-radius:50%}
@@ -1366,7 +1370,7 @@ input{
 <nav class="rgc-navbar" aria-label="Main navigation">
   <div class="rgc-nav-inner">
     <a class="rgc-nav-brand" href="index.html" aria-label="RGC Skin Shop Home">
-      <img src="https://i.imgur.com/hVF95aZ.png" alt="RGC logo">
+      <img src="https://i.imgur.com/ZQcoV5B.png" alt="RGC logo">
       <span class="rgc-nav-brand-text"><strong>RGC SKIN SHOP</strong><small>DOTA 1 COLLECTION</small></span>
     </a>
     <button class="rgc-nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="rgcNavLinks">☰</button>
