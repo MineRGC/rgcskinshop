@@ -1891,9 +1891,61 @@
 }
 
 </style>
+<style>
 
-    <link rel="icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/ZQcoV5B.png">
+/* Shared RGC navigation */
+.rgc-navbar{position:sticky;top:0;z-index:99999;width:100%;background:rgba(5,8,18,.97);border-bottom:1px solid rgba(212,175,55,.45);box-shadow:0 8px 28px rgba(0,0,0,.35);backdrop-filter:blur(16px);font-family:Arial,Helvetica,sans-serif}
+.rgc-nav-inner{width:min(1440px,100%);min-height:78px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.rgc-nav-brand{display:inline-flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0;color:#fff;text-decoration:none}
+.rgc-nav-brand img{display:block;width:48px!important;height:48px!important;max-width:48px!important;max-height:48px!important;object-fit:contain;flex:0 0 48px;border-radius:50%}
+.rgc-nav-brand-text{display:flex;flex-direction:column;line-height:1.2;white-space:nowrap}
+.rgc-nav-brand-text strong{font-size:15px;letter-spacing:1.3px;color:#f6d56c}
+.rgc-nav-brand-text small{margin-top:4px;font-size:9px;letter-spacing:2px;color:#aeb8ca}
+.rgc-nav-links{display:flex;align-items:center;justify-content:flex-end;gap:5px;list-style:none;margin:0;padding:0}
+.rgc-nav-links>li{position:relative;list-style:none;margin:0;padding:0}
+.rgc-nav-links a,.rgc-nav-drop-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 10px;border:1px solid transparent;border-radius:8px;background:transparent;color:#e8edf7;font:600 12px/1.2 Arial,Helvetica,sans-serif;white-space:nowrap;cursor:pointer;text-decoration:none;transition:background .2s ease,color .2s ease}
+.rgc-nav-links a:hover,.rgc-nav-drop-button:hover,.rgc-nav-links .rgc-nav-active{color:#ffd75e;background:rgba(255,193,7,.08);border-color:rgba(255,193,7,.22)}
+.rgc-nav-submenu{display:none;position:absolute;top:100%;left:0;min-width:220px;margin:0;padding:8px;list-style:none;border:1px solid rgba(212,175,55,.35);border-radius:12px;background:rgba(8,11,23,.99);box-shadow:0 16px 35px rgba(0,0,0,.5)}
+.rgc-nav-dropdown:hover .rgc-nav-submenu,.rgc-nav-dropdown:focus-within .rgc-nav-submenu,.rgc-nav-dropdown.is-open .rgc-nav-submenu{display:block}
+.rgc-nav-submenu li{display:block}
+.rgc-nav-submenu a{display:flex;justify-content:flex-start;width:100%;padding:11px 12px;font-size:12px}
+.rgc-nav-submenu a span{color:#f5cb51}
+.rgc-nav-toggle{display:none;border:1px solid rgba(212,175,55,.45);border-radius:8px;padding:8px 12px;background:rgba(255,255,255,.04);color:#f7d66b;font-size:22px;cursor:pointer}
+.rgc-nav-dropdown{padding-bottom:8px!important;margin-bottom:-8px!important}
+.rgc-nav-dropdown>.rgc-nav-drop-button{position:relative}
+.rgc-nav-dropdown>.rgc-nav-drop-button:after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}
+@media(max-width:900px){
+ .rgc-nav-inner{gap:12px;padding:10px 16px;flex-wrap:wrap;min-height:68px}
+ .rgc-nav-brand img{width:42px!important;height:42px!important;max-width:42px!important;max-height:42px!important;flex-basis:42px}
+ .rgc-nav-brand-text strong{font-size:13px}
+ .rgc-nav-toggle{display:inline-flex;align-items:center;justify-content:center;margin-left:auto}
+ .rgc-nav-links{display:none;flex:0 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:4px;padding:8px 0 4px}
+ .rgc-nav-links.is-open{display:flex}
+ .rgc-nav-links>li{width:100%}
+ .rgc-nav-links a,.rgc-nav-drop-button{display:flex;justify-content:flex-start;width:100%;padding:12px;font-size:13px}
+ .rgc-nav-submenu{position:static;min-width:0;margin:4px 0 4px 12px;box-shadow:none}
+ .rgc-nav-dropdown:hover .rgc-nav-submenu{display:none}
+ .rgc-nav-dropdown.is-open .rgc-nav-submenu,.rgc-nav-dropdown:focus-within .rgc-nav-submenu{display:block}
+ .rgc-nav-dropdown{padding-bottom:0!important;margin-bottom:0!important}
+}
+
+</style>
+
+<style id="rgc-mobile-nav-fix">
+/* Mobile navigation fix: keep the Skin Shop submenu touch-friendly. */
+#rgc-v2-home .rgc-nav-dropdown > .rgc-nav-drop-button { cursor:pointer; touch-action:manipulation; }
+#rgc-v2-home .rgc-nav-submenu { display:none; }
+#rgc-v2-home .rgc-nav-dropdown.is-open > .rgc-nav-submenu { display:block !important; visibility:visible !important; opacity:1 !important; height:auto !important; overflow:visible !important; }
+@media (max-width: 900px) {
+  #rgc-v2-home .rgc-nav-dropdown { padding-bottom:0 !important; margin-bottom:0 !important; }
+  #rgc-v2-home .rgc-nav-dropdown:hover > .rgc-nav-submenu { display:none; }
+  #rgc-v2-home .rgc-nav-dropdown.is-open:hover > .rgc-nav-submenu,
+  #rgc-v2-home .rgc-nav-dropdown.is-open > .rgc-nav-submenu { display:block !important; position:static !important; }
+  #rgc-v2-home .rgc-nav-drop-button { min-height:44px; }
+}
+</style>
+
+<link rel="icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
 </head>
 <body>
 
@@ -1921,11 +1973,14 @@
       </li>
       <li><a href="Global%20Rank.html">♛ Global Rank</a></li>
       <li><a href="Special%20offers.html">★ Special Offers</a></li>
-      <li><a href="#featured-video">▶ Dota Moments</a></li>
+      <li><a href="index.html#featured-video">▶ Dota Moments</a></li>
       <li><a href="About%20Pay.html">✉ Contact</a></li>
     </ul>
   </div>
 </nav>
+
+
+
 <!-- Hero Banner -->
 <section class="hero" id="home">
   <div class="glass-panel">
@@ -2172,32 +2227,64 @@ function openHeroSkins(event) {
 }
 </script>
 
-<script>
+
+
+
+<script id="rgc-mobile-nav-fix-script">
 (function () {
-  const toggle = document.querySelector('.rgc-nav-toggle');
-  const menu = document.getElementById('rgcNavLinks');
-  const dropdown = document.querySelector('.rgc-nav-dropdown');
-  const dropButton = document.querySelector('.rgc-nav-drop-button');
-  if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      const opened = menu.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(opened));
-      toggle.setAttribute('aria-label', opened ? 'Close navigation menu' : 'Open navigation menu');
-      toggle.textContent = opened ? '×' : '☰';
-    });
-    menu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open navigation menu');
-        toggle.textContent = '☰';
-      });
+  var nav = document.querySelector('.rgc-navbar');
+  if (!nav || nav.dataset.mobileFixBound === '1') return;
+  nav.dataset.mobileFixBound = '1';
+  var menu = nav.querySelector('.rgc-nav-links');
+  var menuToggle = nav.querySelector('.rgc-nav-toggle');
+  var dropdown = nav.querySelector('.rgc-nav-dropdown');
+  var dropButton = nav.querySelector('.rgc-nav-drop-button');
+
+  if (menuToggle && menu) {
+    menuToggle.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var open = !menu.classList.contains('is-open');
+      menu.classList.toggle('is-open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = open ? '×' : '☰';
     });
   }
+
   if (dropdown && dropButton) {
-    dropButton.addEventListener('click', function () {
-      const opened = dropdown.classList.toggle('open');
-      dropButton.setAttribute('aria-expanded', String(opened));
+    dropButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var open = !dropdown.classList.contains('is-open');
+      dropdown.classList.toggle('is-open', open);
+      dropButton.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function (event) {
+      if (!nav.contains(event.target)) {
+        dropdown.classList.remove('is-open');
+        dropButton.setAttribute('aria-expanded', 'false');
+        if (menu && menu.classList.contains('is-open')) {
+          menu.classList.remove('is-open');
+          if (menuToggle) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation menu');
+            menuToggle.textContent = '☰';
+          }
+        }
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        dropdown.classList.remove('is-open');
+        dropButton.setAttribute('aria-expanded', 'false');
+        if (menu) menu.classList.remove('is-open');
+        if (menuToggle) {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Open navigation menu');
+          menuToggle.textContent = '☰';
+        }
+      }
     });
   }
 })();
