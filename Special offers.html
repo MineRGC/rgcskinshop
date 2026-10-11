@@ -983,6 +983,15 @@ footer::before{
   text-shadow:0 0 5px rgba(255,193,7,.35);
   font-weight:700;
 }
+
+/* Inner-page compact logo + hamburger navigation */
+#rgc-dropdown-nav .rgc-dd-trigger{min-width:0!important;width:auto!important;min-height:62px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:13px!important;padding:9px 15px 9px 10px!important;border-radius:14px!important;}
+#rgc-dropdown-nav .rgc-dd-brand,#rgc-dropdown-nav .rgc-dd-chevron{display:none!important;}
+#rgc-dropdown-nav .rgc-dd-logo{width:46px!important;height:46px!important;flex:0 0 46px!important;object-fit:contain!important;}
+#rgc-dropdown-nav .rgc-dd-hamburger{display:flex!important;flex-direction:column!important;justify-content:center!important;gap:5px!important;width:28px!important;height:28px!important;}
+#rgc-dropdown-nav .rgc-dd-hamburger span{display:block!important;width:25px!important;height:3px!important;border-radius:3px!important;background:linear-gradient(90deg,#f8df87,#d4af37)!important;box-shadow:0 0 5px rgba(212,175,55,.22)!important;}
+#rgc-dropdown-nav .rgc-dd-menu{top:calc(100% + 8px)!important;left:0!important;}
+@media(max-width:600px){#rgc-dropdown-nav{position:relative!important;margin:10px 0 18px 10px!important;}#rgc-dropdown-nav .rgc-dd-trigger{min-height:54px!important;gap:10px!important;padding:6px 12px 6px 7px!important;}#rgc-dropdown-nav .rgc-dd-logo{width:40px!important;height:40px!important;flex-basis:40px!important;}#rgc-dropdown-nav .rgc-dd-hamburger{width:25px!important;height:25px!important;gap:4px!important;}#rgc-dropdown-nav .rgc-dd-hamburger span{width:23px!important;height:3px!important;}#rgc-dropdown-nav .rgc-dd-menu{width:min(280px,calc(100vw - 24px))!important;}}
 </style>
 <style id="rgc-dropdown-nav-style">
 #rgc-dropdown-nav, #rgc-dropdown-nav * { box-sizing:border-box; }
@@ -1135,13 +1144,73 @@ footer{width:min(100%,1400px);color:var(--rgc-muted);}
 </style>
 
 
-    <link rel="icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/ZQcoV5B.png">
+<style id="rgc-global-rank-offers-redesign">
+:root{--bg:#05080d;--panel:#080e17;--text:#eef4ff;--dim:#a9b8cb;--rgc-blue:#0094ff;--rgc-gold:#d4af37;--rgc-red:#e63946}
+html{background:#05080d;min-height:100%;}
+body{min-height:100vh;color:#eef4ff;background:radial-gradient(ellipse at 50% -10%,rgba(0,148,255,.16),transparent 48%),radial-gradient(ellipse at 90% 25%,rgba(212,175,55,.055),transparent 32%),#05080d!important;font-family:Inter,Segoe UI,Arial,sans-serif}
+.page{width:min(1240px,calc(100% - 36px));margin:28px auto 70px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.offers-title-panel{grid-column:1/-1;text-align:center;position:relative;overflow:hidden;padding:34px 20px 28px;margin:0 0 4px;border:1px solid rgba(0,148,255,.45);border-radius:18px;background:linear-gradient(135deg,rgba(8,17,29,.96),rgba(5,10,18,.96));box-shadow:0 0 28px rgba(0,148,255,.10),inset 0 0 26px rgba(0,148,255,.035)}
+.offers-title-panel:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 15%,rgba(67,183,255,.07) 50%,transparent 80%)}
+.offers-eyebrow{font-size:11px;letter-spacing:.28em;font-weight:800;color:#43b7ff;text-transform:uppercase;margin-bottom:10px}
+.offers-title-panel h1{position:relative;color:#f4d97b;font-size:clamp(30px,4vw,48px);line-height:1.1;font-weight:900;letter-spacing:.035em;text-shadow:0 0 18px rgba(212,175,55,.2);margin:0 0 12px}
+.offers-title-panel p{position:relative;color:#a9b8cb;font-size:15px;line-height:1.6;margin:0}
+.offers-title-rule{height:2px;width:110px;margin:20px auto 0;background:linear-gradient(90deg,transparent,#0094ff, #d4af37,transparent)}
+.offers-title-rule span{display:block;width:28px;height:2px;margin:auto;background:#f4d97b;box-shadow:0 0 12px #d4af37}
+.offer{min-width:0;display:flex!important;flex-direction:column!important;align-self:stretch;overflow:hidden;border:1px solid rgba(0,148,255,.48)!important;border-radius:16px!important;background:linear-gradient(180deg,rgba(9,17,28,.98),rgba(5,9,16,.98))!important;box-shadow:0 8px 26px rgba(0,0,0,.34),inset 0 0 20px rgba(0,148,255,.025);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.offer:hover{transform:translateY(-5px);border-color:rgba(67,183,255,.9)!important;box-shadow:0 12px 32px rgba(0,148,255,.12),0 8px 24px rgba(0,0,0,.4)}
+.offer-image,.offer-image.vip-offer-image{position:relative!important;width:100%!important;height:auto!important;aspect-ratio:4/3;min-height:0!important;flex:0 0 auto!important;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px;background:radial-gradient(ellipse at center,rgba(0,148,255,.13),transparent 68%),#070d16!important;border:0!important;border-bottom:1px solid rgba(0,148,255,.28)!important;border-radius:0!important}
+.offer-image img{display:block!important;width:100%!important;height:100%!important;max-width:100%;object-fit:contain!important;object-position:center;filter:drop-shadow(0 6px 14px rgba(0,0,0,.32));border-radius:8px}
+.offer-info,.offer-info.vip-offer-info{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;padding:22px 21px 24px!important;min-width:0;background:transparent!important}
+.offer-title,.vip-heading{font-size:22px!important;line-height:1.25!important;color:#f4d97b!important;font-weight:850!important;margin:0 0 15px!important;text-shadow:0 0 12px rgba(212,175,55,.12)}
+.offer-desc,.offer-line,.offer-note,.vip-list{font-size:14px!important;line-height:1.7!important;color:#c4d0df!important}
+.offer-desc{margin:0 0 14px!important}.offer-line{margin:0 0 8px!important}.offer-note{margin-top:auto!important;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);color:#8798ad!important;font-size:12px!important}
+.gold-price,.gold-highlight,.vip-golden-word{color:#f4d97b!important;font-weight:800!important}.red{color:#ff6975!important}
+.vip-section{display:flex;flex-direction:column;flex:1}.vip-list{list-style:none!important;padding:0!important;margin:0!important}.vip-list li{position:relative;padding:9px 0 9px 18px;border-bottom:1px solid rgba(255,255,255,.065)}.vip-list li:before{content:"✦";position:absolute;left:0;top:10px;color:#43b7ff;font-size:11px}.vip-list .vip-cost{margin-top:5px;padding:13px 0 0;border-bottom:0;color:#f4d97b}.vip-color-logos img{width:34px!important;height:24px!important;object-fit:contain!important;vertical-align:middle;margin-left:5px}
+.hero-skins-tooltip{position:absolute!important;z-index:2;right:12px;top:12px;padding:7px 10px!important;border:1px solid rgba(212,175,55,.6)!important;border-radius:8px!important;background:rgba(4,9,16,.88)!important;color:#f4d97b!important;font-size:11px!important;cursor:pointer}
+.energy-line{grid-column:1/-1;height:1px;background:linear-gradient(90deg,transparent,rgba(0,148,255,.6),rgba(212,175,55,.45),transparent);margin-top:4px}
+footer{color:#74869b!important;text-align:center;padding:20px!important;font-size:12px}
+@media(max-width:900px){.page{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;width:calc(100% - 28px);margin-top:24px!important}.offers-title-panel{padding:28px 16px 24px}}
+@media(max-width:580px){.page{grid-template-columns:minmax(0,1fr);width:calc(100% - 24px);gap:18px;margin:20px auto 48px!important}.offers-title-panel{padding:25px 14px 22px;border-radius:14px}.offers-title-panel h1{font-size:32px}.offers-title-panel p{font-size:13px}.offer{border-radius:14px!important}.offer-image,.offer-image.vip-offer-image{aspect-ratio:5/3;padding:14px}.offer-info,.offer-info.vip-offer-info{padding:19px 18px 21px!important}.offer-title,.vip-heading{font-size:21px!important}}
+@media(prefers-reduced-motion:reduce){.offer{transition:none}.offer:hover{transform:none}}
+</style>
+
+<link rel="icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
+
+<style id="hero-skins-buttons-always-visible-below-cards">
+/* Always-visible Hero Skins buttons placed below each card image. */
+.offer-image.promo-random-link{cursor:default!important}
+.hero-skins-tooltip{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;display:block!important;align-self:center!important;width:max-content!important;max-width:calc(100% - 28px)!important;margin:14px auto 0!important;padding:9px 22px!important;transform:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;z-index:2!important;font-size:13px!important;letter-spacing:.04em!important;border:1px solid rgba(212,175,55,.72)!important;border-radius:8px!important;background:linear-gradient(135deg,rgba(22,29,39,.98),rgba(7,12,20,.98))!important;color:#f4d97b!important;box-shadow:0 4px 16px rgba(0,0,0,.28),0 0 12px rgba(212,175,55,.09)!important;transition:background .2s ease,box-shadow .2s ease,border-color .2s ease!important}
+.hero-skins-tooltip::before,.hero-skins-tooltip::after{display:none!important;content:none!important}
+.hero-skins-tooltip:hover,.hero-skins-tooltip:focus-visible{transform:translateY(-1px)!important;border-color:#fff1a8!important;background:rgba(212,175,55,.18)!important;box-shadow:0 5px 18px rgba(0,0,0,.35),0 0 18px rgba(255,193,7,.3)!important;color:#fff!important}
+.offer-image.promo-random-link:hover .hero-skins-tooltip,.offer-image.promo-random-link:focus-visible .hero-skins-tooltip{opacity:1!important;visibility:visible!important;transform:none!important}
+</style>
+
+<style>
+
+/* Global Rank-style title logo and header glow for Special Offers */
+.rgc-title-logo{display:flex;justify-content:center;align-items:center;margin:0 auto 12px;position:relative;z-index:1}
+.rgc-title-logo img{width:min(112px,24vw);height:auto;max-height:88px;object-fit:contain;display:block;filter:drop-shadow(0 0 6px rgba(255,215,90,.55)) drop-shadow(0 0 18px rgba(255,215,90,.28));animation:rgcLogoPulse 2.6s ease-in-out infinite;transition:transform .3s ease,filter .3s ease}
+.rgc-title-logo img:hover{transform:scale(1.05);filter:drop-shadow(0 0 8px rgba(255,215,90,.85)) drop-shadow(0 0 24px rgba(255,215,90,.55))}
+@keyframes rgcLogoPulse{0%,100%{filter:drop-shadow(0 0 5px rgba(255,215,90,.45)) drop-shadow(0 0 14px rgba(255,215,90,.22))}50%{filter:drop-shadow(0 0 9px rgba(255,215,90,.78)) drop-shadow(0 0 22px rgba(255,215,90,.42))}}
+.offers-title-panel:after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(420px,80%);height:1px;background:linear-gradient(90deg,transparent,rgba(0,148,255,.65),transparent);box-shadow:0 0 12px rgba(0,148,255,.35);pointer-events:none}
+.offers-title-panel:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(0,148,255,.12),transparent 68%),linear-gradient(110deg,transparent 15%,rgba(67,183,255,.07) 50%,transparent 80%)}
+.offers-title-panel h1,.offers-title-panel p,.offers-title-panel .offers-eyebrow,.offers-title-panel .offers-title-rule{position:relative;z-index:1}
+@media(max-width:580px){.rgc-title-logo img{width:min(100px,27vw);max-height:78px}}
+
+</style>
+
+<style id="remove-special-offers-title-border">
+/* Keep the logo and title effects, but remove the enclosing title frame */
+.offers-title-panel{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important;padding:30px 20px 28px!important;}
+.offers-title-panel:before{display:none!important;}
+</style>
+
 </head>
 <body>
 <div id="rgc-dropdown-nav">
   <button class="rgc-dd-trigger" type="button" aria-expanded="false" aria-controls="rgc-dd-menu">
     <img class="rgc-dd-logo" src="https://i.imgur.com/ZQcoV5B.png" alt="RGC Logo">
+    <span class="rgc-dd-hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
     <span class="rgc-dd-brand"><strong>RGC SKIN SHOP</strong><small>DOTA 1 COLLECTION</small></span>
     <span class="rgc-dd-chevron" aria-hidden="true">▾</span>
   </button>
@@ -1175,41 +1244,16 @@ footer{width:min(100%,1400px);color:var(--rgc-muted);}
 </script>
 
 <main class="page">
-  <div class="banner-wrap special-offer-banner">
-    <img src="https://i.imgur.com/HIzhCMY.jpg" alt="Special Offer">
-
-    <div class="storm-afterglow" aria-hidden="true"></div>
-    <div class="storm-flash" aria-hidden="true"></div>
-
-    <svg class="storm-lightning" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-      <!-- Main branching strike -->
-      <path class="bolt-glow bolt-blue strike-a" d="M165 0 L192 48 L168 86 L224 122 L194 165 L250 205 L218 248 L274 286 L238 330 L292 420"/>
-      <path class="bolt-core strike-a" d="M165 0 L192 48 L168 86 L224 122 L194 165 L250 205 L218 248 L274 286 L238 330 L292 420"/>
-
-      <!-- Main central strike with branches -->
-      <path class="bolt-glow bolt-gold strike-b" d="M535 0 L508 56 L548 94 L515 132 L570 170 L532 214 L586 252 L555 300 L603 342 L575 420"/>
-      <path class="bolt-core strike-b" d="M535 0 L508 56 L548 94 L515 132 L570 170 L532 214 L586 252 L555 300 L603 342 L575 420"/>
-
-      <!-- Right strike -->
-      <path class="bolt-glow bolt-red strike-c" d="M815 0 L784 52 L822 90 L772 130 L812 166 L766 210 L808 250 L770 296 L796 344 L760 420"/>
-      <path class="bolt-core strike-c" d="M815 0 L784 52 L822 90 L772 130 L812 166 L766 210 L808 250 L770 296 L796 344 L760 420"/>
-
-      <!-- Branches -->
-      <path class="bolt-glow bolt-blue branch" d="M194 165 L126 150 L88 112"/>
-      <path class="bolt-core branch" d="M194 165 L126 150 L88 112"/>
-      <path class="bolt-glow bolt-gold branch" d="M532 214 L465 190 L430 146"/>
-      <path class="bolt-core branch" d="M532 214 L465 190 L430 146"/>
-      <path class="bolt-glow bolt-gold branch" d="M570 170 L630 142 L676 105"/>
-      <path class="bolt-core branch" d="M570 170 L630 142 L676 105"/>
-      <path class="bolt-glow bolt-red branch" d="M766 210 L700 188 L662 150"/>
-      <path class="bolt-core branch" d="M766 210 L700 188 L662 150"/>
-    </svg>
-  </div>
-
-  <!-- VIP -->
+  <header class="offers-title-panel">
+  <div class="rgc-title-logo"><img src="https://i.imgur.com/ZQcoV5B.png" alt="Ranked Gaming Client Logo"></div>
+  <div class="offers-eyebrow">RGC SKIN SHOP · EXCLUSIVE DEALS</div>
+  <h1>Special Offers</h1>
+  <p>Unlock exclusive perks, bonus skins, and limited-time savings.</p>
+  <div class="offers-title-rule"><span></span></div>
+</header>
+<!-- VIP -->
   <article class="offer vip-offer vip-single">
     <div class="offer-image vip-offer-image promo-random-link" aria-label="Hero Skins">
-      <button type="button" class="hero-skins-tooltip" aria-label="Open Hero Skins" onclick="openRandomPromo(event)">Hero Skins</button>
       <img src="https://i.imgur.com/yXaxr8T.png" alt="VIP Offer">
     </div>
     <div class="offer-info vip-offer-info">
@@ -1222,13 +1266,13 @@ footer{width:min(100%,1400px);color:var(--rgc-muted);}
           <li class="vip-cost"><strong>Cost: $100</strong> &nbsp;All donation count total</li>
         </ul>
       </div>
+      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
     </div>
   </article>
 
   <!-- Super VIP -->
   <article class="offer vip-offer vip-single">
     <div class="offer-image vip-offer-image promo-random-link" aria-label="Hero Skins">
-      <button type="button" class="hero-skins-tooltip" aria-label="Open Hero Skins" onclick="openRandomPromo(event)">Hero Skins</button>
       <img src="https://i.imgur.com/yXaxr8T.png" alt="Super VIP Offer">
     </div>
     <div class="offer-info vip-offer-info">
@@ -1242,12 +1286,12 @@ footer{width:min(100%,1400px);color:var(--rgc-muted);}
           <li class="vip-cost"><strong>Cost:</strong> Own half of the total of skins, consult for specific details.</li>
         </ul>
       </div>
+      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
     </div>
   </article>
 
   <article class="offer">
     <div class="offer-image promo-random-link" aria-label="Hero Skins">
-      <button type="button" class="hero-skins-tooltip" aria-label="Open Hero Skins" onclick="openRandomPromo(event)">Hero Skins</button>
       <img src="https://i.imgur.com/VWet7tx.png" alt="Offer">
     </div>
     <div class="offer-info">
@@ -1255,12 +1299,12 @@ footer{width:min(100%,1400px);color:var(--rgc-muted);}
       <p class="offer-desc">Purchase 5 skins with a total value of <span class="gold-price">$40</span> to receive <span class="gold-highlight">1</span> free skin.</p>
       <p class="offer-line"><strong>Duration :</strong> All - Time</p>
       <p class="offer-note">This offer cannot be combined with other promotions.</p>
+      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
     </div>
   </article>
 
   <article class="offer">
     <div class="offer-image promo-random-link" aria-label="Hero Skins">
-      <button type="button" class="hero-skins-tooltip" aria-label="Open Hero Skins" onclick="openRandomPromo(event)">Hero Skins</button>
       <img src="https://i.imgur.com/fNvIe4m.jpg" alt="Offer">
     </div>
     <div class="offer-info">
@@ -1269,12 +1313,12 @@ footer{width:min(100%,1400px);color:var(--rgc-muted);}
       <p class="offer-line"><strong>Purchase exclusively through :</strong> <span class="red">Mine</span></p>
       <p class="offer-line"><strong>Duration :</strong> All - Time</p>
       <p class="offer-note">This offer cannot be combined with other promotions.</p>
+      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
     </div>
   </article>
 
   <article class="offer">
     <div class="offer-image promo-random-link" aria-label="Hero Skins">
-      <button type="button" class="hero-skins-tooltip" aria-label="Open Hero Skins" onclick="openRandomPromo(event)">Hero Skins</button>
       <img src="https://i.imgur.com/Ch8Ivhd.jpg" alt="Offer">
     </div>
     <div class="offer-info">
@@ -1283,6 +1327,7 @@ footer{width:min(100%,1400px);color:var(--rgc-muted);}
       <p class="offer-line"><strong>Purchase exclusively through :</strong> <span class="red">Mine</span></p>
       <p class="offer-line"><strong>Duration :</strong> All - Time</p>
       <p class="offer-note">This offer cannot be combined with other promotions.</p>
+      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
     </div>
   </article>
 
@@ -1299,9 +1344,9 @@ function openRandomPromo(event) {
   if (event) event.preventDefault();
 
   const promoLinks = [
-    "https://minergc.github.io/rgcskinshop/Strength%20hero.html",
-    "https://minergc.github.io/rgcskinshop/Agility%20hero.html",
-    "https://minergc.github.io/rgcskinshop/Intelligence%20hero.html"
+    "https://sites.google.com/view/rgcskinshop/strength-hero",
+    "https://sites.google.com/view/rgcskinshop/agility-hero",
+    "https://sites.google.com/view/rgcskinshop/intelligence-hero"
   ];
 
   const randomIndex = Math.floor(Math.random() * promoLinks.length);
@@ -1316,3 +1361,12 @@ function openRandomPromo(event) {
 </script>
 </body>
 </html>
+<style id="vip-cost-alignment-and-views-skins-bottom">
+/* Align VIP cost notes with the text column of the four-point-star list. */
+.vip-list .vip-cost{padding:13px 0 0 18px!important;position:relative!important;}
+.vip-list .vip-cost::before{left:0!important;top:14px!important;}
+/* Keep the Views Skins action at the bottom of each card's content column. */
+.offer-info,.offer-info.vip-offer-info{display:flex!important;flex-direction:column!important;}
+.offer-info .hero-skins-tooltip{position:relative!important;inset:auto!important;align-self:center!important;margin:20px auto 0!important;transform:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;}
+.offer-info .hero-skins-tooltip:hover,.offer-info .hero-skins-tooltip:focus-visible{transform:translateY(-1px)!important;}
+</style>
