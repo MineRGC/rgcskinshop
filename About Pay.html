@@ -65,6 +65,15 @@ footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid r
 @media(max-width:760px){body{padding:28px 15px 40px}.payment-grid,.contact-grid,.language-columns{grid-template-columns:1fr}.step-title-grid{grid-template-columns:1fr;gap:4px}.step-title-en,.step-title-es{text-align:left}h1{font-size:26px}}
 @media(max-width:480px){body{padding:20px 12px 34px}.site-logo{max-height:70px}h1{font-size:23px}.subtitle{font-size:13px}.disclaimer-box{padding:16px 14px}.step{padding:19px 16px}h2{font-size:16px}.step-num{width:32px;height:32px}.wu-btn,.email-btn{width:100%;min-width:0}.contact-section{padding:23px 15px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+/* Inner-page compact logo + hamburger navigation */
+#rgc-dropdown-nav .rgc-dd-trigger{min-width:0!important;width:auto!important;min-height:62px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:13px!important;padding:9px 15px 9px 10px!important;border-radius:14px!important;}
+#rgc-dropdown-nav .rgc-dd-brand,#rgc-dropdown-nav .rgc-dd-chevron{display:none!important;}
+#rgc-dropdown-nav .rgc-dd-logo{width:46px!important;height:46px!important;flex:0 0 46px!important;object-fit:contain!important;}
+#rgc-dropdown-nav .rgc-dd-hamburger{display:flex!important;flex-direction:column!important;justify-content:center!important;gap:5px!important;width:28px!important;height:28px!important;}
+#rgc-dropdown-nav .rgc-dd-hamburger span{display:block!important;width:25px!important;height:3px!important;border-radius:3px!important;background:linear-gradient(90deg,#f8df87,#d4af37)!important;box-shadow:0 0 5px rgba(212,175,55,.22)!important;}
+#rgc-dropdown-nav .rgc-dd-menu{top:calc(100% + 8px)!important;left:0!important;}
+@media(max-width:600px){#rgc-dropdown-nav{position:relative!important;margin:10px 0 18px 10px!important;}#rgc-dropdown-nav .rgc-dd-trigger{min-height:54px!important;gap:10px!important;padding:6px 12px 6px 7px!important;}#rgc-dropdown-nav .rgc-dd-logo{width:40px!important;height:40px!important;flex-basis:40px!important;}#rgc-dropdown-nav .rgc-dd-hamburger{width:25px!important;height:25px!important;gap:4px!important;}#rgc-dropdown-nav .rgc-dd-hamburger span{width:23px!important;height:3px!important;}#rgc-dropdown-nav .rgc-dd-menu{width:min(280px,calc(100vw - 24px))!important;}}
 </style>
 <style id="rgc-dropdown-nav-style">
 #rgc-dropdown-nav, #rgc-dropdown-nav * { box-sizing:border-box; }
@@ -85,14 +94,12 @@ footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid r
 #rgc-dropdown-nav .rgc-dd-divider { height:1px; margin:6px 5px; background:rgba(212,175,55,.22); }
 @media(max-width:600px){ #rgc-dropdown-nav{margin:10px 0 18px 10px;} #rgc-dropdown-nav .rgc-dd-trigger{min-height:58px;gap:10px;padding:7px 10px 7px 7px;} #rgc-dropdown-nav .rgc-dd-logo{width:42px;height:42px;flex-basis:42px;} #rgc-dropdown-nav .rgc-dd-brand strong{font-size:16px;} #rgc-dropdown-nav .rgc-dd-brand small{font-size:9px;letter-spacing:1.6px;} #rgc-dropdown-nav .rgc-dd-menu{width:260px;} }
 </style>
-
-    <link rel="icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/ZQcoV5B.png">
 </head>
 <body>
 <div id="rgc-dropdown-nav">
   <button class="rgc-dd-trigger" type="button" aria-expanded="false" aria-controls="rgc-dd-menu">
     <img class="rgc-dd-logo" src="https://i.imgur.com/ZQcoV5B.png" alt="RGC Logo">
+    <span class="rgc-dd-hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
     <span class="rgc-dd-brand"><strong>RGC SKIN SHOP</strong><small>DOTA 1 COLLECTION</small></span>
     <span class="rgc-dd-chevron" aria-hidden="true">▾</span>
   </button>
