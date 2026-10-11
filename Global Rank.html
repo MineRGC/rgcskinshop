@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark">
+<title>Global Rank — RGC Shop</title>
+
+<style>
+
+:root{
+  --bg-main:#05080d;
+  --bg-secondary:#07111d;
+
+  --bg-card:rgba(8,14,23,.90);
+  --bg-hover:rgba(10,19,31,.97);
+
+  --gold:#d4af37;
+  --gold-light:#f4d97b;
+
+  --blue:#0094ff;
+  --blue-light:#43b7ff;
+
+  --red:#e63946;
+  --red-light:#ff6672;
+
+  --text-main:#eef4fa;
+  --text-secondary:#aebdcd;
+  --muted:#718296;
+
+  --border:rgba(0,148,255,.16);
+  --border-hover:rgba(0,148,255,.48);
+
+  --shadow:rgba(0,0,0,.58);
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+
+  padding:42px 20px 70px;
+
+  color:var(--text-main);
+
+  font-family: "Segoe UI";
+
+  line-height:1.6;
+
+  background:
+
+    radial-gradient(
+      circle at 18% 4%,
+      rgba(0,148,255,.10),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(0,92,170,.075),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(230,57,70,.025),
+      transparent 32%
+    ),
+
+    linear-gradient(
+      180deg,
+      #05080d 0%,
+      #07111d 48%,
+      #05080d 100%
+    );
+}
+
+button,
+input{
+  font:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header{
+  max-width:1400px;
+
+  margin:0 auto 30px;
+
+  text-align:center;
+
+  position:relative;
+
+  padding-bottom:28px;
+}
+
+
+/* Deep blue atmospheric glow */
+
+.page-header::before{
+  content:"";
+
+  position:absolute;
+
+  top:-42px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:480px;
+  height:190px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0,148,255,.11),
+      transparent 70%
+    );
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title{
+  position:relative;
+
+  font-size:
+    clamp(
+      1.8rem,
+      4vw,
+      2.6rem
+    );
+
+  font-weight:800;
+
+  color:var(--gold);
+
+  letter-spacing:.5px;
+
+  text-shadow:
+    0 0 8px rgba(212,175,55,.35),
+    0 0 25px rgba(212,175,55,.12);
+
+  margin-bottom:7px;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.page-subtitle{
+  position:relative;
+
+  color:var(--blue-light);
+
+  font-size:.95rem;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+
+  text-shadow:
+    0 0 12px rgba(0,148,255,.18);
+}
+
+
+/* =========================
+   HEADER LINE
+========================= */
+
+.page-header::after{
+  content:"";
+
+  position:absolute;
+
+  bottom:0;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:min(420px,80%);
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0,148,255,.65),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(0,148,255,.35);
+}
+
+
+/* =========================
+   RGC TITLE LOGO
+========================= */
+
+.rgc-title-logo{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  margin:0 auto 12px;
+}
+
+.rgc-title-logo img{
+  width:min(112px,24vw);
+
+  height:auto;
+
+  max-height:88px;
+
+  object-fit:contain;
+
+  display:block;
+
+  filter:
+    drop-shadow(
+      0 0 6px rgba(255,215,90,.55)
+    )
+    drop-shadow(
+      0 0 18px rgba(255,215,90,.28)
+    );
+
+  animation:
+    rgcLogoPulse 2.6s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.rgc-title-logo img:hover{
+  transform:scale(1.05);
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(255,215,90,.85)
+    )
+    drop-shadow(
+      0 0 24px rgba(255,215,90,.55)
+    );
+}
+
+
+@keyframes rgcLogoPulse{
+
+  0%,100%{
+    filter:
+      drop-shadow(
+        0 0 5px rgba(255,215,90,.45)
+      )
+      drop-shadow(
+        0 0 14px rgba(255,215,90,.22)
+      );
+  }
+
+  50%{
+    filter:
+      drop-shadow(
+        0 0 9px rgba(255,215,90,.78)
+      )
+      drop-shadow(
+        0 0 22px rgba(255,215,90,.42)
+      );
+  }
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.shop-toolbar{
+  max-width:1400px;
+
+  margin:0 auto 18px;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+}
+
+.search-box{
+  position:relative;
+
+  width:min(430px,100%);
+}
+
+.search-box input{
+  width:100%;
+
+  height:42px;
+
+  padding:
+    0
+    42px
+    0
+    16px;
+
+  border-radius:22px;
+
+  border:
+    1px solid
+    rgba(0,148,255,.18);
+
+  background:
+    rgba(5,12,20,.84);
+
+  color:var(--text-main);
+
+  outline:none;
+
+  font-size:.9rem;
+
+  transition:.25s;
+
+  backdrop-filter:blur(10px);
+}
+
+.search-box input::placeholder{
+  color:#718296;
+}
+
+.search-box input:focus{
+  border-color:
+    rgba(0,148,255,.65);
+
+  box-shadow:
+
+    0 0 0 2px
+    rgba(0,148,255,.08),
+
+    0 0 18px
+    rgba(0,148,255,.18);
+}
+
+.search-icon{
+  position:absolute;
+
+  right:16px;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  color:var(--blue-light);
+
+  font-size:15px;
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   RESULT BAR
+========================= */
+
+.result-bar{
+  max-width:1400px;
+
+  margin:0 auto 15px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  color:#718296;
+
+  font-size:.78rem;
+}
+
+.result-count{
+  font-weight:600;
+}
+
+
+/* =========================
+   CARD GRID
+========================= */
+
+.cards-grid{
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(270px,1fr)
+    );
+
+  gap:22px;
+}
+
+
+/* =========================
+   SKIN CARD
+========================= */
+
+.skin-card{
+
+  --mx:50%;
+  --my:50%;
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  flex-direction:column;
+
+  min-width:0;
+
+  background:
+    var(--bg-card);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:14px;
+
+  box-shadow:
+    0 5px 18px
+    var(--shadow);
+
+  backdrop-filter:blur(10px);
+
+  transition:
+    transform .3s,
+    border-color .3s,
+    box-shadow .3s,
+    background .3s;
+}
+
+
+/* =========================
+   CURSOR FOLLOWING LIGHT
+========================= */
+
+.skin-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:inherit;
+
+  background:
+
+    radial-gradient(
+      circle 150px
+      at var(--mx) var(--my),
+
+      rgba(0,148,255,.17),
+
+      rgba(0,148,255,.07)
+      34%,
+
+      transparent 72%
+    );
+
+  opacity:0;
+
+  pointer-events:none;
+
+  z-index:5;
+
+  transition:
+    opacity .18s ease;
+}
+
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.skin-card:hover{
+
+  transform:
+    translateY(-6px);
+
+  background:
+    var(--bg-hover);
+
+  border-color:
+    rgba(0,148,255,.48);
+
+  box-shadow:
+
+    0 12px 32px
+    rgba(0,0,0,.65),
+
+    0 0 25px
+    rgba(0,148,255,.13),
+
+    0 0 42px
+    rgba(0,80,150,.10);
+}
+
+.skin-card:hover::before{
+  opacity:1;
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card-image{
+
+  width:100%;
+
+  height:185px;
+
+  padding:9px;
+
+  box-sizing:border-box;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(
+      circle at center,
+      rgba(0,148,255,.12),
+      transparent 65%
+    ),
+
+    linear-gradient(
+      135deg,
+      #162333,
+      #0b121c
+    );
+
+  position:relative;
+}
+
+.card-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(0,0,0,.28)
+    );
+
+  pointer-events:none;
+}
+
+.card-image img{
+
+  width:100%;
+
+  height:100%;
+
+  max-width:100%;
+  max-height:100%;
+
+  object-fit:contain;
+
+  object-position:center;
+
+  transition:
+    filter .3s;
+
+  display:block;
+}
+
+.skin-card:hover
+.card-image img{
+
+  filter:
+    brightness(1.06);
+}
+
+
+/* =========================
+   ID BADGE
+========================= */
+
+.id-badge{
+
+  position:absolute;
+
+  top:10px;
+  left:10px;
+
+  z-index:3;
+
+  padding:3px 8px;
+
+  border-radius:6px;
+
+  background:
+    rgba(4,8,13,.82);
+
+  border:
+    1px solid
+    rgba(212,175,55,.45);
+
+  color:var(--gold-light);
+
+  font-size:.7rem;
+
+  font-weight:800;
+
+  backdrop-filter:blur(6px);
+}
+
+
+/* =========================
+   IMAGE FALLBACK
+========================= */
+
+.image-fallback{
+
+  display:none;
+
+  position:absolute;
+
+  inset:0;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-direction:column;
+
+  color:#66778a;
+
+  font-size:12px;
+
+  gap:4px;
+}
+
+.image-fallback small{
+  color:#455465;
+}
+
+.card-image.image-error
+.image-fallback{
+  display:flex;
+}
+
+
+/* =========================
+   CARD BODY
+========================= */
+
+.card-body{
+
+  display:flex;
+
+  flex-direction:column;
+
+  flex:1;
+
+  padding:
+    16px
+    17px
+    17px;
+}
+
+
+/* =========================
+   SKIN NAME
+========================= */
+
+.skin-name{
+
+  min-height:45px;
+
+  font-size:1rem;
+
+  line-height:1.35;
+
+  font-weight:700;
+
+  color:var(--gold);
+
+  margin-bottom:8px;
+
+  text-shadow:
+    0 0 7px
+    rgba(212,175,55,.1);
+}
+
+
+/* =========================
+   META
+========================= */
+
+.skin-meta{
+
+  color:var(--text-secondary);
+
+  font-size:.78rem;
+
+  margin-bottom:13px;
+
+  min-height:74px;
+}
+
+.skin-meta p{
+  margin:3px 0;
+}
+
+.skin-meta strong{
+  color:#d0d8e1;
+
+  font-weight:600;
+}
+
+.product-description{
+  line-height:1.5;
+}
+
+.description-placeholder{
+  color:#718296;
+  font-style:italic;
+}
+
+
+/* =========================
+   VERSION LINE
+========================= */
+
+.skin-meta
+.version-line{
+
+  display:block;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+.version-separator{
+
+  opacity:.55;
+
+  padding:0 4px;
+}
+
+
+/* =========================
+   CARD BOTTOM
+========================= */
+
+.card-bottom{
+
+  margin-top:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price-tag{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-width:52px;
+
+  padding:5px 13px;
+
+  border-radius:20px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #a97908,
+      var(--gold),
+      #e0bd4e
+    );
+
+  color:#111;
+
+  font-size:.88rem;
+
+  font-weight:800;
+
+  box-shadow:
+    0 2px 8px
+    rgba(212,175,55,.16);
+}
+
+
+/* =========================
+   TAGS
+========================= */
+
+.tag-row{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:flex-end;
+
+  gap:5px;
+
+  flex-wrap:wrap;
+}
+
+.tag,
+.youtube-link{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  padding:3px 8px;
+
+  border-radius:5px;
+
+  font-size:.67rem;
+
+  line-height:1.3;
+}
+
+
+/* Blue tags */
+
+.tag{
+
+  background:
+    rgba(0,148,255,.10);
+
+  border:
+    1px solid
+    rgba(0,148,255,.13);
+
+  color:#66baff;
+}
+
+
+/* Muted tag */
+
+.tag-muted{
+
+  background:
+    rgba(130,140,150,.08);
+
+  color:#7e8997;
+
+  border-color:
+    rgba(130,140,150,.11);
+}
+
+
+/* RGC channel-list style live preview */
+.rgc-list-preview{width:min(560px,100%);background:#19191f;border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:10px 12px 14px;color:#e8e8ef;box-shadow:0 14px 36px rgba(0,0,0,.3);font-family:"Segoe UI";}
+.rgc-list-row{display:flex;align-items:flex-start;gap:12px;padding:10px 9px;border-radius:15px;min-height:68px;position:relative;}
+.rgc-list-row.is-selected{background:linear-gradient(100deg,rgba(242,62,92,.13),rgba(35,26,34,.58));border-left:3px solid #f23e5c;padding-left:6px;}
+.rgc-list-avatar{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 25%,#c7d8e9,#46556d 48%,#18202e);color:white;font-size:22px;font-weight:800;border:1px solid #6c7181;position:relative;overflow:visible;}
+.rgc-list-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;}
+.rgc-list-flag{position:absolute;right:-2px;bottom:-2px;width:19px;height:14px;border-radius:4px;border:1px solid #16161c;background:linear-gradient(90deg,#123d8a 0 33%,#fff 33% 66%,#e63848 66%);}
+.rgc-list-main{min-width:0;flex:1;padding-top:1px;}
+.rgc-list-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:20px;font-size:16px;font-weight:700;line-height:1.25;}
+.rgc-online-dot{width:10px;height:10px;border-radius:50%;background:#42b995;flex:0 0 10px;}
+.rgc-list-channel{color:#00aaff;font-weight:800;}
+.rgc-list-you{font-size:10px;line-height:1;padding:4px 6px;border-radius:6px;background:#f23e5c;color:#fff;letter-spacing:.3px;}
+.rgc-list-rank{font-size:14px;line-height:1.35;margin-top:3px;overflow-wrap:anywhere;}
+.rgc-list-count{flex:0 0 auto;min-width:38px;text-align:center;padding:4px 9px;border-radius:12px;background:#111116;color:#777583;font-size:14px;line-height:1.2;margin-left:3px;}
+.rgc-list-preview-label{margin:20px 0 10px;color:#aebdcd;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+@media(max-width:520px){.rgc-list-preview{padding:7px}.rgc-list-row{gap:9px;padding:9px 6px}.rgc-list-avatar{width:42px;height:42px;flex-basis:42px}.rgc-list-top{font-size:14px}.rgc-list-rank{font-size:12px}.rgc-list-count{min-width:30px;padding:4px 7px}}
+
+/* =========================
+   GLOBAL RANK CUSTOMIZER
+========================= */
+
+.custom-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:4px 10px;
+  border-radius:6px;
+  border:1px solid rgba(212,175,55,.32);
+  background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(0,148,255,.10));
+  color:var(--gold-light);
+  font-size:.67rem;
+  line-height:1.3;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.custom-button:hover{
+  color:#fff;
+  border-color:rgba(212,175,55,.75);
+  background:linear-gradient(135deg,rgba(212,175,55,.25),rgba(0,148,255,.18));
+  box-shadow:0 0 14px rgba(212,175,55,.16);
+  transform:translateY(-1px);
+}
+
+.rank-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(9px);
+}
+
+.rank-modal.show{
+  display:flex;
+}
+
+.rank-modal-panel{
+  width:min(1080px,100%);
+  max-height:92vh;
+  overflow:auto;
+  border:1px solid rgba(0,148,255,.35);
+  border-radius:18px;
+  background:
+    linear-gradient(145deg,rgba(8,15,25,.98),rgba(4,9,16,.98));
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.75),
+    0 0 40px rgba(0,148,255,.10);
+}
+
+.rank-modal-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:20px 22px;
+  border-bottom:1px solid rgba(0,148,255,.16);
+}
+
+.rank-modal-header h2{
+  margin:0;
+  color:var(--gold-light);
+  font-size:1.25rem;
+}
+
+.rank-modal-close{
+  width:36px;
+  height:36px;
+  border-radius:9px;
+  border:1px solid rgba(230,57,70,.28);
+  background:rgba(230,57,70,.08);
+  color:#ff7881;
+  cursor:pointer;
+  font-size:18px;
+  transition:.2s;
+}
+
+.rank-modal-close:hover{
+  background:rgba(230,57,70,.20);
+  border-color:rgba(230,57,70,.55);
+}
+
+.rank-customizer{
+  display:grid;
+  grid-template-columns:minmax(240px,0.72fr) minmax(0,1.28fr);
+  gap:0;
+}
+/* Keep Custom Settings visible so nickname, rank title and color remain editable. */
+.rank-settings{display:block !important;}
+
+.rank-settings{
+  padding:24px;
+  border-right:1px solid rgba(0,148,255,.13);
+}
+
+.rank-settings-title{
+  margin-bottom:18px;
+  color:#cbd8e6;
+  font-size:.92rem;
+  font-weight:700;
+}
+
+.rank-field{
+  margin-bottom:17px;
+}
+
+.rank-field label{
+  display:block;
+  margin-bottom:7px;
+  color:#aebdcd;
+  font-size:.78rem;
+  font-weight:600;
+}
+
+.rank-field input[type="text"],
+.rank-field input[type="number"],
+.rank-field select{
+  width:100%;
+  height:42px;
+  padding:0 12px;
+  border-radius:8px;
+  border:1px solid rgba(0,148,255,.22);
+  outline:none;
+  background:rgba(3,9,16,.82);
+  color:#eef4fa;
+  transition:.2s;
+}
+
+.rank-field select{
+  width:100%;
+  height:42px;
+  padding:0 12px;
+  border-radius:8px;
+  border:1px solid rgba(0,148,255,.22);
+  outline:none;
+  background:rgba(3,9,16,.96);
+  color:#eef4fa;
+  cursor:pointer;
+}
+
+.rank-field input:focus,
+.rank-field select:focus{
+  border-color:rgba(0,148,255,.65);
+  box-shadow:0 0 0 2px rgba(0,148,255,.07);
+}
+
+.rank-color-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.rank-field input[type="color"]{
+  width:55px;
+  height:42px;
+  padding:3px;
+  border-radius:8px;
+  border:1px solid rgba(0,148,255,.25);
+  background:#05080d;
+  cursor:pointer;
+}
+
+.rank-color-value{
+  color:#718296;
+  font-size:.76rem;
+  font-family:monospace;
+}
+
+.rank-preview-area{
+  padding:24px;
+  min-width:0;
+}
+
+.rank-preview-title{
+  margin-bottom:15px;
+  color:#aebdcd;
+  font-size:.78rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.rank-preview-stage{
+  min-height:390px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  border-radius:14px;
+  border:1px solid rgba(0,148,255,.13);
+  background:
+    radial-gradient(circle at 50% 30%,rgba(0,148,255,.13),transparent 42%),
+    linear-gradient(145deg,#101b29,#060b12);
+  overflow:hidden;
+}
+
+.rank-preview-card{position:relative;width:min(720px,100%);min-height:210px;display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;gap:24px;padding:28px;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.06);background:linear-gradient(155deg,#281b22 0%,#191820 48%,#17171e 100%);box-shadow:0 18px 45px rgba(0,0,0,.48);}
+.rank-preview-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 0%,rgba(255,110,130,.09),transparent 42%);pointer-events:none;}
+.rank-preview-avatar{position:relative;z-index:2;flex:0 0 90px;width:90px;height:90px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(145deg,#c9c9cc,#8c8d92);color:#f5f5f6;font-family:Arial,sans-serif;font-size:54px;font-weight:900;line-height:1;}
+.rank-preview-content{position:relative;z-index:2;flex:1;min-width:0;padding-top:4px;text-align:left;}
+.rank-preview-nickname{margin-bottom:3px;color:#a7a2ad;font-family:"Segoe UI";font-size:16px;line-height:1.2;font-weight:700;overflow-wrap:anywhere;}
+.rank-preview-name{margin-bottom:10px;font-size:12px;line-height:1.2;overflow-wrap:anywhere;}
+.rank-preview-meta{color:#a7a2ad;font-size:.78rem;line-height:1.4;margin-bottom:13px;}
+.rank-preview-accent{height:6px;width:100%;border-radius:99px;background:#f23e5c;box-shadow:0 0 12px rgba(242,62,92,.18);}
+.rank-preview-level-badge{display:inline-block;margin-top:9px;padding:3px 10px;border-radius:99px;background:#f23e5c;color:white;font-size:.68rem;line-height:1.2;font-weight:800;}
+.rank-preview-level{display:none !important;}
+.rank-preview-footer{display:none;}
+@media(max-width:520px){.rank-preview-card{gap:14px;padding:20px;min-height:170px;}.rank-preview-avatar{flex-basis:66px;width:66px;height:66px;font-size:40px;}}
+
+.rank-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.rank-action{
+  min-height:40px;
+  padding:0 15px;
+  border-radius:8px;
+  border:1px solid rgba(0,148,255,.28);
+  background:rgba(0,148,255,.08);
+  color:#a9dcff;
+  cursor:pointer;
+  font-weight:700;
+  transition:.2s;
+}
+
+.rank-action:hover{
+  background:rgba(0,148,255,.17);
+  border-color:rgba(0,148,255,.55);
+  box-shadow:0 0 14px rgba(0,148,255,.12);
+}
+
+.rank-action.primary{
+  border-color:rgba(212,175,55,.45);
+  background:rgba(212,175,55,.12);
+  color:var(--gold-light);
+}
+
+.rank-action.primary:hover{
+  background:rgba(212,175,55,.22);
+  border-color:rgba(212,175,55,.75);
+}
+
+.rank-help{
+  margin-top:13px;
+  color:#66778a;
+  font-size:.7rem;
+  line-height:1.5;
+}
+
+@media(max-width:760px){
+  .rank-customizer{
+    grid-template-columns:1fr;
+  }
+  .rank-settings{
+    border-right:0;
+    border-bottom:1px solid rgba(0,148,255,.13);
+  }
+
+  .rank-settings{
+    border-right:0;
+    border-bottom:1px solid rgba(0,148,255,.13);
+  }
+
+  .rank-preview-stage{
+    min-height:290px;
+    padding:15px;
+  }
+
+  .rank-preview-card{
+    aspect-ratio:4/3;
+  }
+}
+
+@media(max-width:600px){
+  .custom-button{
+    font-size:.61rem;
+    padding:3px 7px;
+  }
+
+  .rank-modal{
+    padding:8px;
+  }
+
+  .rank-modal-panel{
+    max-height:96vh;
+    border-radius:13px;
+  }
+}
+
+
+/* =========================
+   YOUTUBE BUTTON
+========================= */
+
+.youtube-link{
+
+  gap:4px;
+
+  border:
+    1px solid
+    rgba(230,57,70,.18);
+
+  background:
+    rgba(230,57,70,.09);
+
+  color:
+    var(--red-light);
+
+  text-decoration:none;
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.youtube-link:hover{
+
+  color:#fff;
+
+  background:
+    rgba(230,57,70,.22);
+
+  border-color:
+    rgba(230,57,70,.38);
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 0 10px
+    rgba(230,57,70,.15);
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results{
+
+  display:none;
+
+  max-width:1400px;
+
+  margin:55px auto;
+
+  text-align:center;
+
+  color:#737f8e;
+
+  font-size:.95rem;
+}
+
+.skin-card.hidden{
+  display:none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .cards-grid{
+
+    grid-template-columns:
+      repeat(
+        auto-fill,
+        minmax(235px,1fr)
+      );
+
+    gap:15px;
+  }
+
+  .card-image{
+
+    height:165px;
+
+    padding:8px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  body{
+    padding:
+      28px
+      11px
+      45px;
+  }
+
+  .page-header{
+    margin-bottom:22px;
+  }
+
+  .cards-grid{
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+
+    gap:10px;
+  }
+
+  .card-image{
+
+    height:135px;
+
+    padding:7px;
+  }
+
+  .card-body{
+    padding:12px;
+  }
+
+  .skin-name{
+
+    font-size:.84rem;
+
+    min-height:43px;
+  }
+
+  .skin-meta{
+
+    font-size:.69rem;
+
+    min-height:88px;
+  }
+
+  .skin-meta
+  .version-line{
+
+    font-size:.66rem;
+  }
+
+  .price-tag{
+
+    font-size:.76rem;
+
+    padding:
+      4px
+      10px;
+  }
+
+  .tag,
+  .youtube-link{
+
+    font-size:.62rem;
+
+    padding:
+      3px
+      6px;
+  }
+
+  .card-bottom{
+    align-items:flex-start;
+  }
+
+  .rgc-title-logo{
+    margin-bottom:8px;
+  }
+
+  .rgc-title-logo img{
+
+    width:
+      min(88px,22vw);
+
+    max-height:70px;
+  }
+}
+
+
+@media(max-width:390px){
+
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card-image{
+
+    height:175px;
+
+    padding:8px;
+  }
+}
+
+
+
+/* =========================
+   DUAL IMAGE CARD
+========================= */
+
+.card-image.dual-images{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.dual-image-wrap{
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  align-items:center;
+  justify-items:center;
+  position:relative;
+  z-index:1;
+}
+
+.dual-image-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+
+
+/* #79 Chatwheel - 3 second image replacement flash */
+.card-image.chatwheel-flash{
+  position:relative;
+}
+
+.card-image.chatwheel-flash .chatwheel-img{
+  position:absolute;
+  inset:9px;
+  width:calc(100% - 18px);
+  height:calc(100% - 18px);
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+  object-position:center;
+}
+
+.card-image.chatwheel-flash .chatwheel-one{
+  z-index:1;
+}
+
+.card-image.chatwheel-flash .chatwheel-two{
+  z-index:2;
+}
+
+
+/* CUSTOM ORDER INSTRUCTIONS */
+.custom-order-notice{
+  width:calc(100% - 32px);
+  max-width:900px;
+  box-sizing:border-box;
+  margin:0 auto 26px;
+  padding:18px 22px;
+  border:2px solid #d4af37;
+  border-radius:14px;
+  background:linear-gradient(115deg,rgba(212,175,55,.18),rgba(0,148,255,.12),rgba(212,175,55,.08));
+  box-shadow:0 0 24px rgba(212,175,55,.16),inset 0 0 18px rgba(0,148,255,.05);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.custom-order-notice h2{
+  max-width:780px;
+  margin:0 auto 10px;
+  position:relative;
+  color:#ffe58a;
+  font-size:clamp(1.02rem,2.2vw,1.3rem);
+  line-height:1.35;
+  text-shadow:0 0 12px rgba(212,175,55,.3);
+}
+.custom-order-notice p{
+  max-width:790px;
+  margin:8px auto 0;
+  position:relative;
+  color:#edf5ff;
+  font-size:.9rem;
+  line-height:1.6;
+}
+.custom-order-notice .notice-steps{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.custom-order-notice .notice-step{
+  position:relative;
+  padding:7px 11px;
+  border:1px solid rgba(0,148,255,.32);
+  border-radius:8px;
+  background:rgba(0,10,20,.55);
+  color:#c8eaff;
+  font-size:.8rem;
+  font-weight:700;
+}
+@media(max-width:600px){
+  .custom-order-notice{
+    width:calc(100% - 16px);
+    padding:15px 13px;
+    margin-bottom:20px;
+  }
+  .custom-order-notice p{font-size:.84rem;}
+  .custom-order-notice .notice-steps{gap:7px;}
+  .custom-order-notice .notice-step{font-size:.76rem;padding:7px 9px;}
+}
+.custom-order-notice::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.06),transparent);transform:translateX(-100%);animation:noticeShine 4s ease-in-out infinite}
+@keyframes noticeShine{0%,65%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.custom-order-notice h2{position:relative;color:#ffe58a;font-size:clamp(1.05rem,2.5vw,1.4rem);margin-bottom:8px;text-shadow:0 0 12px rgba(212,175,55,.3)}
+.custom-order-notice p{position:relative;color:#edf5ff;font-size:.94rem;line-height:1.65}
+.custom-order-notice .notice-steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:13px}
+.custom-order-notice .notice-step{position:relative;padding:7px 12px;border:1px solid rgba(0,148,255,.32);border-radius:8px;background:rgba(0,10,20,.55);color:#c8eaff;font-size:.82rem;font-weight:700}
+.custom-order-notice .notice-step strong{color:#ffe58a}
+.product-description{min-height:0}
+
+
+/* =========================
+   PRODUCT DESCRIPTION ACCENTS
+========================= */
+.product-description{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  margin-top:12px;
+  padding:12px 13px;
+  border:1px solid rgba(67,183,255,.18);
+  border-radius:12px;
+  background:linear-gradient(135deg,rgba(0,148,255,.075),rgba(212,175,55,.035));
+  color:var(--text-secondary);
+  font-size:12.5px;
+  line-height:1.5;
+}
+.product-description .desc-heading{
+  display:block;
+  margin-bottom:2px;
+  color:var(--text-main);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.05px;
+  text-transform:uppercase;
+}
+.product-description .desc-line{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+}
+.product-description .desc-dot{
+  flex:0 0 6px;
+  width:6px;
+  height:6px;
+  margin-top:6px;
+  border-radius:50%;
+  background:#43b7ff;
+  box-shadow:0 0 8px rgba(67,183,255,.45);
+}
+.product-description .desc-line:nth-of-type(3n) .desc-dot{
+  background:#d4af37;
+  box-shadow:0 0 8px rgba(212,175,55,.35);
+}
+.product-description .desc-label{
+  color:#f4d97b;
+  font-weight:700;
+}
+
+
+/* Fixed rank level: determined by the selected product */
+#rankLevelInput[readonly]{
+  cursor:not-allowed;
+  opacity:.82;
+  border-color:rgba(212,175,55,.42);
+  background:rgba(212,175,55,.07);
+  color:#f4d97b;
+}
+
+
+/* =========================
+   SITE FOOTER
+========================= */
+.rgc-site-footer{
+  width:100%;
+  box-sizing:border-box;
+  margin:42px 0 0;
+  padding:22px 16px 20px;
+  border-top:1px solid rgba(148,163,184,.22);
+  background:linear-gradient(180deg,rgba(15,23,42,.18),rgba(2,6,23,.58));
+  color:#94a3b8;
+  text-align:center;
+  font-family:"Segoe UI",sans-serif;
+  font-size:12px;
+  line-height:1.8;
+}
+.rgc-site-footer .footer-brand{
+  display:block;
+  color:#e2e8f0;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+.rgc-site-footer .footer-copyright{
+  display:block;
+  margin-top:2px;
+  color:#94a3b8;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="page-header">
+
+  <div class="rgc-title-logo">
+
+    <img
+      src="https://i.imgur.com/ZQcoV5B.png"
+      alt="Ranked Gaming Client Logo"
+    >
+
+  </div>
+
+
+  <h1 class="page-title">🌐 Global Rank</h1>
+
+
+  <p class="page-subtitle">
+    RGC Shop — Global Rank
+  </p>
+
+</header>
+
+
+
+
+<section class="custom-order-notice" aria-label="Important custom rank order instructions">
+  <h2>⚠️ IMPORTANT — CUSTOMIZE YOUR RANK BEFORE ORDERING</h2>
+  <p><strong>Click “⚙ Custom”</strong> to design the ideal Global Rank appearance you have in mind. Adjust the nickname, rank title and title color, then click <strong>“↓ Download Text”</strong>.</p>
+  <p><strong>Use the downloaded TXT document to place your order.</strong> It contains your selected customization details so we can understand exactly what you want.</p>
+  <div class="notice-steps">
+    <span class="notice-step">① <strong>Custom</strong> your rank</span>
+    <span class="notice-step">② <strong>Download TXT</strong></span>
+    <span class="notice-step">③ <strong>Send TXT to order</strong></span>
+  </div>
+</section>
+
+
+
+
+<div class="shop-toolbar">
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Global Rank..."
+      autocomplete="off"
+      aria-label="Search Global Rank"
+    >
+
+    <span class="search-icon">
+      🔎
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<div class="result-bar">
+
+  <span class="result-count" id="resultCount">1 product</span>
+
+</div>
+
+
+
+<main class="cards-grid" id="cardsGrid">
+
+  <article class="skin-card" data-tags="global rank" data-search="global rank 1000 rank 100">
+    <div class="card-image">
+      <img src="https://i.imgur.com/hVF95aZ.png" alt="Global Rank 1000" loading="lazy" decoding="async"
+           onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Global Rank 1000</small></div>
+      <div class="id-badge">RGC</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Global Rank 1000</div>
+      <div class="skin-meta">
+        <p><strong>Duration:</strong> 1 Month</p>
+        <p><strong>Price:</strong> $100 / month</p>
+        <div class="product-description"><span class="desc-heading">Included features</span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Avatar:</span> Animation avatar</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Access:</span> Host · Swap · Open · Kick</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Style:</span> Custom Nickname &amp; Rank color</span></span></div>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$100 / month</span>
+        <div class="tag-row">
+          <span class="tag">RGC</span>
+          <span class="tag tag-muted">Monthly</span>
+          <button class="custom-button" type="button" data-product-name="Global Rank 1000" data-product-price="$100 / month">⚙ Custom</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="skin-card" data-tags="global rank" data-search="global rank 1500 rank 125">
+    <div class="card-image">
+      <img src="https://i.imgur.com/WXs3Pq9.png" alt="Global Rank 1500" loading="lazy" decoding="async"
+           onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Global Rank 1500</small></div>
+      <div class="id-badge">RGC</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Global Rank 1500</div>
+      <div class="skin-meta">
+        <p><strong>Duration:</strong> 1 Month</p>
+        <p><strong>Price:</strong> $125 / month</p>
+        <div class="product-description"><span class="desc-heading">Included features</span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Avatar:</span> Animation avatar</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Access:</span> Host · Swap · Open · Kick</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Protection:</span> Ban custom-game ruiners</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Style:</span> Custom Nickname &amp; Rank color</span></span></div>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$125 / month</span>
+        <div class="tag-row">
+          <span class="tag">RGC</span>
+          <span class="tag tag-muted">Monthly</span>
+          <button class="custom-button" type="button" data-product-name="Global Rank 1500" data-product-price="$125 / month">⚙ Custom</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="skin-card" data-tags="global rank" data-search="global rank 2000 rank 150">
+    <div class="card-image">
+      <img src="https://i.imgur.com/wxiHizQ.png" alt="Global Rank 2000" loading="lazy" decoding="async"
+           onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Global Rank 2000</small></div>
+      <div class="id-badge">RGC</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Global Rank 2000</div>
+      <div class="skin-meta">
+        <p><strong>Duration:</strong> 1 Month</p>
+        <p><strong>Price:</strong> $150 / month</p>
+        <div class="product-description"><span class="desc-heading">Included features</span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Avatar:</span> Animation avatar</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Access:</span> Host · Swap · Open · Kick</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Protection:</span> Ban custom-game and public-game ruiners</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Style:</span> Custom Nickname &amp; Rank color</span></span></div>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$150 / month</span>
+        <div class="tag-row">
+          <span class="tag">RGC</span>
+          <span class="tag tag-muted">Monthly</span>
+          <button class="custom-button" type="button" data-product-name="Global Rank 2000" data-product-price="$150 / month">⚙ Custom</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="skin-card" data-tags="global rank" data-search="global rank 3000 rank 200">
+    <div class="card-image">
+      <img src="https://i.imgur.com/U6kQP7Q.png" alt="Global Rank 3000" loading="lazy" decoding="async"
+           onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Global Rank 3000</small></div>
+      <div class="id-badge">RGC</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Global Rank 3000</div>
+      <div class="skin-meta">
+        <p><strong>Duration:</strong> 1 Month</p>
+        <p><strong>Price:</strong> $200 / month</p>
+        <div class="product-description"><span class="desc-heading">Included features</span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Avatar:</span> Animation avatar</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Access:</span> Host · Swap · Open · Kick</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Protection:</span> Ban custom-game and public-game ruiners</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Style:</span> Custom Nickname &amp; Rank color</span></span></div>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$200 / month</span>
+        <div class="tag-row">
+          <span class="tag">RGC</span>
+          <span class="tag tag-muted">Monthly</span>
+          <button class="custom-button" type="button" data-product-name="Global Rank 3000" data-product-price="$200 / month">⚙ Custom</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="skin-card" data-tags="global rank" data-search="patron lod patron 15">
+    <div class="card-image">
+      <img src="https://i.imgur.com/SWsYaDE.png" alt="Patron / LoD Patron" loading="lazy" decoding="async"
+           onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Patron / LoD Patron</small></div>
+      <div class="id-badge">RGC</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Patron / LoD Patron</div>
+      <div class="skin-meta">
+        <p><strong>Duration:</strong> 1 Month</p>
+        <p><strong>Price:</strong> $15 / month</p>
+        <div class="product-description"><span class="desc-heading">Included features</span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Nickname:</span> Purple nickname color</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Access:</span> Host access</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Region:</span> Lod SA &amp; Lod Asia</span></span></div>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$15 / month</span>
+        <div class="tag-row">
+          <span class="tag">RGC</span>
+          <span class="tag tag-muted">Monthly</span>
+          
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="skin-card" data-tags="global rank" data-search="diamond member asia public 20">
+    <div class="card-image">
+      <img src="https://i.imgur.com/BfZjvS0.png" alt="Diamond Member" loading="lazy" decoding="async"
+           onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Diamond Member</small></div>
+      <div class="id-badge">RGC</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Diamond Member</div>
+      <div class="skin-meta">
+        <p><strong>Duration:</strong> 1 Month</p>
+        <p><strong>Price:</strong> $20 / month</p>
+        <div class="product-description"><span class="desc-heading">Included features</span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Avatar:</span> Animation avatar</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Customization:</span> Custom nickname and rank-title color</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Access:</span> Host access</span></span><span class="desc-line"><span class="desc-dot"></span><span><span class="desc-label">Region:</span> All channel in RGC</span></span></div>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$20 / month</span>
+        <div class="tag-row">
+          <span class="tag">RGC</span>
+          <span class="tag tag-muted">Monthly</span>
+          
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
+
+
+
+<div
+  class="no-results"
+  id="noResults"
+>
+  No skins found.
+</div>
+
+
+
+<!-- =========================
+     GLOBAL RANK CUSTOMIZER
+========================= -->
+
+<div class="rank-modal" id="rankModal" aria-hidden="true">
+
+  <div class="rank-modal-panel" role="dialog" aria-modal="true" aria-labelledby="rankCustomizerTitle">
+
+    <div class="rank-modal-header">
+      <h2 id="rankCustomizerTitle">⚙ Global Rank Custom</h2>
+      <button class="rank-modal-close" id="closeCustomizer" type="button" aria-label="Close">
+        ×
+      </button>
+    </div>
+
+    <div class="rank-customizer">
+
+      <section class="rank-settings">
+
+        <div class="rank-settings-title">
+          Custom Settings
+        </div>
+
+        <div class="rank-field">
+          <label for="rankNicknameInput">Nickname</label>
+          <input
+            id="rankNicknameInput"
+            type="text"
+            value="Your Nickname"
+            maxlength="40"
+            autocomplete="off"
+            placeholder="Enter nickname"
+          >
+        </div>
+
+        <div class="rank-field">
+          <label for="rankTitleInput">Rank Title Name</label>
+          <input
+            id="rankTitleInput"
+            type="text"
+            value="Global Rank"
+            maxlength="40"
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="rank-field">
+          <label for="rankLevelInput">Rank Level</label>
+          <input
+            id="rankLevelInput"
+            type="text"
+            value="1000"
+            maxlength="40"
+            autocomplete="off"
+            readonly
+            aria-readonly="true"
+            title="Rank level is fixed by the selected rank product"
+          >
+        </div>
+
+        <input id="rankFontInput" type="hidden" value="Segoe UI">
+
+        <div class="rank-field">
+          <label for="rankColorInput">Rank Title Color</label>
+
+          <div class="rank-color-row">
+            <input
+              id="rankColorInput"
+              type="color"
+              value="#d4af37"
+              aria-label="Rank title color"
+            >
+
+            <span class="rank-color-value" id="rankColorValue">
+              #d4af37
+            </span>
+          </div>
+        </div>
+
+        <div class="rank-help">
+          Changes appear instantly in the preview. When your design is ready, download the TXT document and send it with your order.
+        </div>
+
+      </section>
+
+
+      <section class="rank-preview-area">
+
+        <div class="rank-preview-title">
+          Live Preview
+        </div>
+
+        <div class="rank-preview-stage">
+
+          <div class="rank-preview-card" id="rankPreviewCard">
+            <div class="rank-preview-avatar" aria-hidden="true">R</div>
+            <div class="rank-preview-content">
+              <div class="rank-preview-nickname" id="rankPreviewNickname">Your Nickname</div>
+              <div class="rank-preview-name" id="rankPreviewName">Safelisted</div>
+              <div class="rank-preview-meta">⚔ 0 games&nbsp;&nbsp;&nbsp; ID</div>
+              <div class="rank-preview-accent"></div>
+              <div class="rank-preview-level-badge">LV&nbsp; 14</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="rgc-list-preview-label">RGC Player List Preview</div>
+        <div class="rgc-list-preview" aria-label="RGC player list live preview">
+          <div class="rgc-list-row is-selected">
+            <div class="rgc-list-avatar" aria-hidden="true"><img src="https://i.imgur.com/hVF95aZ.png" alt="Global Rank 1000"><span class="rgc-list-flag"></span></div>
+            <div class="rgc-list-main">
+              <div class="rgc-list-top"><span class="rgc-online-dot"></span><span id="rgcPreviewNickname">Your Nickname</span><span class="rgc-list-you">YOU</span></div>
+              <div class="rgc-list-rank" id="rgcPreviewRankTitle">Global Rank · 1000</div>
+            </div>
+          </div>
+          <div class="rgc-list-row">
+            <div class="rgc-list-avatar" aria-hidden="true" style="background:linear-gradient(145deg,#b7a0c8,#4d4b70)">A<span class="rgc-list-flag"></span></div>
+            <div class="rgc-list-main"><div class="rgc-list-top"><span class="rgc-online-dot"></span><span style="color:#ff5c3b">User</span></div></div>
+          </div>
+          <div class="rgc-list-row">
+            <div class="rgc-list-avatar" aria-hidden="true" style="background:linear-gradient(145deg,#d4af37,#272017)">R<span class="rgc-list-flag"></span></div>
+            <div class="rgc-list-main"><div class="rgc-list-top"><span class="rgc-online-dot"></span><span style="color:#ff222b">User</span></div></div>
+          </div>
+        </div>
+
+
+        <div class="rank-actions">
+
+          <button
+            class="rank-action"
+            id="downloadRankText"
+            type="button"
+          >
+            ↓ Download Text
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SEARCH
+========================= */
+
+const searchInput =
+  document.getElementById(
+    "searchInput"
+  );
+
+const cards =
+  [
+    ...document.querySelectorAll(
+      ".skin-card"
+    )
+  ];
+
+const resultCount =
+  document.getElementById(
+    "resultCount"
+  );
+
+const noResults =
+  document.getElementById(
+    "noResults"
+  );
+
+
+function updateCards(){
+
+  const search =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+  let visible = 0;
+
+
+  cards.forEach(card => {
+
+    const text =
+      (
+        card.dataset.search || ""
+      ).toLowerCase();
+
+
+    const show =
+      !search ||
+      text.includes(search);
+
+
+    card.classList.toggle(
+      "hidden",
+      !show
+    );
+
+
+    if(show){
+      visible++;
+    }
+
+  });
+
+
+  resultCount.textContent =
+    `${visible} ${
+      visible === 1
+        ? "product"
+        : "products"
+    }`;
+
+
+  noResults.style.display =
+    visible
+      ? "none"
+      : "block";
+}
+
+
+searchInput.addEventListener(
+  "input",
+  updateCards
+);
+
+
+/* =========================
+   CURSOR FOLLOWING CARD LIGHT
+========================= */
+
+cards.forEach(card => {
+
+  card.addEventListener(
+    "pointermove",
+    event => {
+
+      const rect =
+        card.getBoundingClientRect();
+
+
+      const x =
+        (
+          (
+            event.clientX -
+            rect.left
+          ) /
+          rect.width
+        ) * 100;
+
+
+      const y =
+        (
+          (
+            event.clientY -
+            rect.top
+          ) /
+          rect.height
+        ) * 100;
+
+
+      card.style.setProperty(
+        "--mx",
+        `${x}%`
+      );
+
+
+      card.style.setProperty(
+        "--my",
+        `${y}%`
+      );
+
+    }
+  );
+
+
+  card.addEventListener(
+    "pointerleave",
+    () => {
+
+      card.style.setProperty(
+        "--mx",
+        "50%"
+      );
+
+
+      card.style.setProperty(
+        "--my",
+        "50%"
+      );
+
+    }
+  );
+
+});
+
+
+/* =========================
+   YOUTUBE
+   OPEN IN NEW TAB
+========================= */
+
+document
+  .querySelectorAll(
+    ".youtube-link"
+  )
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const videoUrl =
+          button.dataset.video;
+
+
+        if(!videoUrl){
+          return;
+        }
+
+
+        window.open(
+          videoUrl,
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+updateCards();
+
+
+/* =========================
+   CHATWHEEL 3-SECOND SWITCH
+   Each image stays visible for 3 seconds.
+========================= */
+
+const chatwheelImages =
+  document.querySelectorAll(
+    ".chatwheel-flash .chatwheel-img"
+  );
+
+if(chatwheelImages.length >= 2){
+
+  let chatwheelIndex = 0;
+
+  chatwheelImages.forEach((img, index) => {
+    img.style.position = "absolute";
+    img.style.opacity = index === 0 ? "1" : "0";
+  });
+
+  setInterval(() => {
+
+    chatwheelImages[chatwheelIndex].style.opacity = "0";
+
+    chatwheelIndex =
+      (chatwheelIndex + 1) % chatwheelImages.length;
+
+    chatwheelImages[chatwheelIndex].style.opacity = "1";
+
+  }, 3000);
+}
+
+
+/* =========================
+   GLOBAL RANK CUSTOMIZER
+========================= */
+
+const rankModal = document.getElementById("rankModal");
+const openCustomizer = document.getElementById("openCustomizer");
+let activeRankProduct = { name: "Global Rank 1000", price: "$100 / month" };
+const closeCustomizer = document.getElementById("closeCustomizer");
+
+const rankNicknameInput = document.getElementById("rankNicknameInput");
+const rankTitleInput = document.getElementById("rankTitleInput");
+const rankLevelInput = document.getElementById("rankLevelInput");
+const rankColorInput = document.getElementById("rankColorInput");
+const rankFontInput = document.getElementById("rankFontInput");
+const rankBoldInput = null;
+
+const rankPreviewNickname = document.getElementById("rankPreviewNickname");
+const rankPreviewName = document.getElementById("rankPreviewName");
+const rankColorValue = document.getElementById("rankColorValue");
+const rgcPreviewNickname = document.getElementById("rgcPreviewNickname");
+const rgcPreviewRankTitle = document.getElementById("rgcPreviewRankTitle");
+
+function updateRankPreview(){
+
+  const nickname =
+    rankNicknameInput.value.trim() || "Your Nickname";
+
+  const title =
+    rankTitleInput.value.trim() || "Global Rank";
+
+  const color =
+    rankColorInput.value || "#d4af37";
+
+  rankPreviewNickname.textContent = nickname;
+  rankPreviewName.textContent = title;
+
+  rankPreviewName.style.color = color;
+  rankPreviewName.style.fontFamily = "Segoe UI";
+  rankPreviewName.style.fontWeight = "400";
+  rankColorValue.textContent = color.toUpperCase();
+  rgcPreviewNickname.textContent = nickname;
+  rgcPreviewNickname.style.fontFamily = "Segoe UI";
+  rgcPreviewRankTitle.textContent = title + " · " + (rankLevelInput.value || "1000");
+  rgcPreviewRankTitle.style.color = color;
+  rgcPreviewRankTitle.style.fontFamily = "Segoe UI";
+  rgcPreviewRankTitle.style.fontWeight = "400";
+}
+
+function openRankCustomizer(){
+
+  updateRankPreview();
+
+  rankModal.classList.add("show");
+  rankModal.setAttribute("aria-hidden","false");
+
+  document.body.style.overflow = "hidden";
+}
+
+function closeRankCustomizer(){
+
+  rankModal.classList.remove("show");
+  rankModal.setAttribute("aria-hidden","true");
+
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".custom-button[data-product-name]").forEach(button => {
+  button.addEventListener("click", () => {
+    activeRankProduct = {
+      name: button.dataset.productName || "Global Rank 1000",
+      price: button.dataset.productPrice || "$100 / month"
+    };
+
+    // Rank Level is fixed to the numeric level of the selected rank.
+    const matchedLevel = activeRankProduct.name.match(/\b(1000|1500|2000|3000)\b/);
+    rankLevelInput.value = matchedLevel ? matchedLevel[1] : "1000";
+    rankLevelInput.readOnly = true;
+
+    openRankCustomizer();
+  });
+});
+
+if(closeCustomizer){
+  closeCustomizer.addEventListener(
+    "click",
+    closeRankCustomizer
+  );
+}
+
+rankModal.addEventListener(
+  "click",
+  event => {
+
+    if(event.target === rankModal){
+      closeRankCustomizer();
+    }
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if(
+      event.key === "Escape" &&
+      rankModal.classList.contains("show")
+    ){
+      closeRankCustomizer();
+    }
+
+  }
+);
+
+rankNicknameInput.addEventListener("input", updateRankPreview);
+rankTitleInput.addEventListener("input", updateRankPreview);
+rankLevelInput.addEventListener("input", updateRankPreview);
+rankColorInput.addEventListener("input", updateRankPreview);
+rankFontInput.addEventListener("change", updateRankPreview);
+
+
+
+/* =========================
+   DOWNLOAD TEXT
+========================= */
+
+document
+  .getElementById("downloadRankText")
+  .addEventListener(
+    "click",
+    () => {
+
+      const nickname =
+        rankNicknameInput.value.trim() || "Your Nickname";
+
+      const title =
+        rankTitleInput.value.trim() || "Global Rank";
+
+      const matchedLevel = (activeRankProduct.name || "").match(/\b(1000|1500|2000|3000)\b/);
+      const level = matchedLevel ? matchedLevel[1] : rankLevelInput.value.trim();
+
+      const color =
+        rankColorInput.value || "#d4af37";
+
+      const font =
+        "Segoe UI";
+
+      const bold = "No";
+
+      const text =
+`RGC GLOBAL RANK CUSTOM ORDER
+
+Product: ${activeRankProduct.name}
+Price: ${activeRankProduct.price}
+Nickname: ${nickname}
+Rank Title: ${title}
+Rank Level: ${level}
+Rank Title Color: ${color}
+Font: ${font}
+Bold: ${bold}
+
+Please use this TXT document as my Global Rank customization order.
+`;
+
+      const blob =
+        new Blob(
+          [text],
+          {type:"text/plain;charset=utf-8"}
+        );
+
+      const url =
+        URL.createObjectURL(blob);
+
+      const a =
+        document.createElement("a");
+
+      a.href = url;
+      a.download =
+        `${title.replace(/[^a-z0-9_-]+/gi,"_") || "Global_Rank"}_custom.txt`;
+
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
+
+    }
+  );
+
+
+</script>
+
+
+
+
+
+
+<footer class="rgc-site-footer" role="contentinfo">
+  <span class="footer-brand">RGC Dota Official Skins Shop — Ranked Gaming Client</span>
+  <span class="footer-copyright">© 2026 All Rights Reserved.</span>
+</footer>
+
+</body>
+</html>

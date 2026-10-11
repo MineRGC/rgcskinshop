@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark">
+<title>Courier — RGC Skin Shop</title>
+
+<style>
+
+:root{
+  --bg-main:#05080d;
+  --bg-secondary:#07111d;
+
+  --bg-card:rgba(8,14,23,.90);
+  --bg-hover:rgba(10,19,31,.97);
+
+  --gold:#d4af37;
+  --gold-light:#f4d97b;
+
+  --blue:#0094ff;
+  --blue-light:#43b7ff;
+
+  --red:#e63946;
+  --red-light:#ff6672;
+
+  --text-main:#eef4fa;
+  --text-secondary:#aebdcd;
+  --muted:#718296;
+
+  --border:rgba(0,148,255,.16);
+  --border-hover:rgba(0,148,255,.48);
+
+  --shadow:rgba(0,0,0,.58);
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+
+  padding:42px 20px 70px;
+
+  color:var(--text-main);
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  line-height:1.6;
+
+  background:
+
+    radial-gradient(
+      circle at 18% 4%,
+      rgba(0,148,255,.10),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(0,92,170,.075),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(230,57,70,.025),
+      transparent 32%
+    ),
+
+    linear-gradient(
+      180deg,
+      #05080d 0%,
+      #07111d 48%,
+      #05080d 100%
+    );
+}
+
+button,
+input{
+  font:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header{
+  max-width:1400px;
+
+  margin:0 auto 30px;
+
+  text-align:center;
+
+  position:relative;
+
+  padding-bottom:28px;
+}
+
+
+/* Deep blue atmospheric glow */
+
+.page-header::before{
+  content:"";
+
+  position:absolute;
+
+  top:-42px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:480px;
+  height:190px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0,148,255,.11),
+      transparent 70%
+    );
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title{
+  position:relative;
+
+  font-size:
+    clamp(
+      1.8rem,
+      4vw,
+      2.6rem
+    );
+
+  font-weight:800;
+
+  color:var(--gold);
+
+  letter-spacing:.5px;
+
+  text-shadow:
+    0 0 8px rgba(212,175,55,.35),
+    0 0 25px rgba(212,175,55,.12);
+
+  margin-bottom:7px;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.page-subtitle{
+  position:relative;
+
+  color:var(--blue-light);
+
+  font-size:.95rem;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+
+  text-shadow:
+    0 0 12px rgba(0,148,255,.18);
+}
+
+
+/* =========================
+   HEADER LINE
+========================= */
+
+.page-header::after{
+  content:"";
+
+  position:absolute;
+
+  bottom:0;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:min(420px,80%);
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0,148,255,.65),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(0,148,255,.35);
+}
+
+
+/* =========================
+   RGC TITLE LOGO
+========================= */
+
+.rgc-title-logo{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  margin:0 auto 12px;
+}
+
+.rgc-title-logo img{
+  width:min(112px,24vw);
+
+  height:auto;
+
+  max-height:88px;
+
+  object-fit:contain;
+
+  display:block;
+
+  filter:
+    drop-shadow(
+      0 0 6px rgba(255,215,90,.55)
+    )
+    drop-shadow(
+      0 0 18px rgba(255,215,90,.28)
+    );
+
+  animation:
+    rgcLogoPulse 2.6s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.rgc-title-logo img:hover{
+  transform:scale(1.05);
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(255,215,90,.85)
+    )
+    drop-shadow(
+      0 0 24px rgba(255,215,90,.55)
+    );
+}
+
+
+@keyframes rgcLogoPulse{
+
+  0%,100%{
+    filter:
+      drop-shadow(
+        0 0 5px rgba(255,215,90,.45)
+      )
+      drop-shadow(
+        0 0 14px rgba(255,215,90,.22)
+      );
+  }
+
+  50%{
+    filter:
+      drop-shadow(
+        0 0 9px rgba(255,215,90,.78)
+      )
+      drop-shadow(
+        0 0 22px rgba(255,215,90,.42)
+      );
+  }
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.shop-toolbar{
+  max-width:1400px;
+
+  margin:0 auto 18px;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+}
+
+.search-box{
+  position:relative;
+
+  width:min(430px,100%);
+}
+
+.search-box input{
+  width:100%;
+
+  height:42px;
+
+  padding:
+    0
+    42px
+    0
+    16px;
+
+  border-radius:22px;
+
+  border:
+    1px solid
+    rgba(0,148,255,.18);
+
+  background:
+    rgba(5,12,20,.84);
+
+  color:var(--text-main);
+
+  outline:none;
+
+  font-size:.9rem;
+
+  transition:.25s;
+
+  backdrop-filter:blur(10px);
+}
+
+.search-box input::placeholder{
+  color:#718296;
+}
+
+.search-box input:focus{
+  border-color:
+    rgba(0,148,255,.65);
+
+  box-shadow:
+
+    0 0 0 2px
+    rgba(0,148,255,.08),
+
+    0 0 18px
+    rgba(0,148,255,.18);
+}
+
+.search-icon{
+  position:absolute;
+
+  right:16px;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  color:var(--blue-light);
+
+  font-size:15px;
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   RESULT BAR
+========================= */
+
+.result-bar{
+  max-width:1400px;
+
+  margin:0 auto 15px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  color:#718296;
+
+  font-size:.78rem;
+}
+
+.result-count{
+  font-weight:600;
+}
+
+
+/* =========================
+   CARD GRID
+========================= */
+
+.cards-grid{
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(270px,1fr)
+    );
+
+  gap:22px;
+}
+
+
+/* =========================
+   SKIN CARD
+========================= */
+
+.skin-card{
+
+  --mx:50%;
+  --my:50%;
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  flex-direction:column;
+
+  min-width:0;
+
+  background:
+    var(--bg-card);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:14px;
+
+  box-shadow:
+    0 5px 18px
+    var(--shadow);
+
+  backdrop-filter:blur(10px);
+
+  transition:
+    transform .3s,
+    border-color .3s,
+    box-shadow .3s,
+    background .3s;
+}
+
+
+/* =========================
+   CURSOR FOLLOWING LIGHT
+========================= */
+
+.skin-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:inherit;
+
+  background:
+
+    radial-gradient(
+      circle 150px
+      at var(--mx) var(--my),
+
+      rgba(0,148,255,.17),
+
+      rgba(0,148,255,.07)
+      34%,
+
+      transparent 72%
+    );
+
+  opacity:0;
+
+  pointer-events:none;
+
+  z-index:5;
+
+  transition:
+    opacity .18s ease;
+}
+
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.skin-card:hover{
+
+  transform:
+    translateY(-6px);
+
+  background:
+    var(--bg-hover);
+
+  border-color:
+    rgba(0,148,255,.48);
+
+  box-shadow:
+
+    0 12px 32px
+    rgba(0,0,0,.65),
+
+    0 0 25px
+    rgba(0,148,255,.13),
+
+    0 0 42px
+    rgba(0,80,150,.10);
+}
+
+.skin-card:hover::before{
+  opacity:1;
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card-image{
+
+  width:100%;
+
+  height:185px;
+
+  padding:9px;
+
+  box-sizing:border-box;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(
+      circle at center,
+      rgba(0,148,255,.12),
+      transparent 65%
+    ),
+
+    linear-gradient(
+      135deg,
+      #162333,
+      #0b121c
+    );
+
+  position:relative;
+}
+
+.card-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(0,0,0,.28)
+    );
+
+  pointer-events:none;
+}
+
+.card-image img{
+
+  width:100%;
+
+  height:100%;
+
+  max-width:100%;
+  max-height:100%;
+
+  object-fit:contain;
+
+  object-position:center;
+
+  transition:
+    filter .3s;
+
+  display:block;
+}
+
+.skin-card:hover
+.card-image img{
+
+  filter:
+    brightness(1.06);
+}
+
+
+/* =========================
+   ID BADGE
+========================= */
+
+.id-badge{
+
+  position:absolute;
+
+  top:10px;
+  left:10px;
+
+  z-index:3;
+
+  padding:3px 8px;
+
+  border-radius:6px;
+
+  background:
+    rgba(4,8,13,.82);
+
+  border:
+    1px solid
+    rgba(212,175,55,.45);
+
+  color:var(--gold-light);
+
+  font-size:.7rem;
+
+  font-weight:800;
+
+  backdrop-filter:blur(6px);
+}
+
+
+/* =========================
+   IMAGE FALLBACK
+========================= */
+
+.image-fallback{
+
+  display:none;
+
+  position:absolute;
+
+  inset:0;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-direction:column;
+
+  color:#66778a;
+
+  font-size:12px;
+
+  gap:4px;
+}
+
+.image-fallback small{
+  color:#455465;
+}
+
+.card-image.image-error
+.image-fallback{
+  display:flex;
+}
+
+
+/* =========================
+   CARD BODY
+========================= */
+
+.card-body{
+
+  display:flex;
+
+  flex-direction:column;
+
+  flex:1;
+
+  padding:
+    16px
+    17px
+    17px;
+}
+
+
+/* =========================
+   SKIN NAME
+========================= */
+
+.skin-name{
+
+  min-height:45px;
+
+  font-size:1rem;
+
+  line-height:1.35;
+
+  font-weight:700;
+
+  color:var(--gold);
+
+  margin-bottom:8px;
+
+  text-shadow:
+    0 0 7px
+    rgba(212,175,55,.1);
+}
+
+
+/* =========================
+   META
+========================= */
+
+.skin-meta{
+
+  color:var(--text-secondary);
+
+  font-size:.78rem;
+
+  margin-bottom:13px;
+
+  min-height:74px;
+}
+
+.skin-meta p{
+  margin:3px 0;
+}
+
+.skin-meta strong{
+  color:#d0d8e1;
+
+  font-weight:600;
+}
+
+
+/* =========================
+   VERSION LINE
+========================= */
+
+.skin-meta
+.version-line{
+
+  display:block;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+.version-separator{
+
+  opacity:.55;
+
+  padding:0 4px;
+}
+
+
+/* =========================
+   CARD BOTTOM
+========================= */
+
+.card-bottom{
+
+  margin-top:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price-tag{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-width:52px;
+
+  padding:5px 13px;
+
+  border-radius:20px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #a97908,
+      var(--gold),
+      #e0bd4e
+    );
+
+  color:#111;
+
+  font-size:.88rem;
+
+  font-weight:800;
+
+  box-shadow:
+    0 2px 8px
+    rgba(212,175,55,.16);
+}
+
+
+/* =========================
+   TAGS
+========================= */
+
+.tag-row{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:flex-end;
+
+  gap:5px;
+
+  flex-wrap:wrap;
+}
+
+.tag,
+.youtube-link{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  padding:3px 8px;
+
+  border-radius:5px;
+
+  font-size:.67rem;
+
+  line-height:1.3;
+}
+
+
+/* Blue tags */
+
+.tag{
+
+  background:
+    rgba(0,148,255,.10);
+
+  border:
+    1px solid
+    rgba(0,148,255,.13);
+
+  color:#66baff;
+}
+
+
+/* Muted tag */
+
+.tag-muted{
+
+  background:
+    rgba(130,140,150,.08);
+
+  color:#7e8997;
+
+  border-color:
+    rgba(130,140,150,.11);
+}
+
+
+/* =========================
+   YOUTUBE BUTTON
+========================= */
+
+.youtube-link{
+
+  gap:4px;
+
+  border:
+    1px solid
+    rgba(230,57,70,.18);
+
+  background:
+    rgba(230,57,70,.09);
+
+  color:
+    var(--red-light);
+
+  text-decoration:none;
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.youtube-link:hover{
+
+  color:#fff;
+
+  background:
+    rgba(230,57,70,.22);
+
+  border-color:
+    rgba(230,57,70,.38);
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 0 10px
+    rgba(230,57,70,.15);
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results{
+
+  display:none;
+
+  max-width:1400px;
+
+  margin:55px auto;
+
+  text-align:center;
+
+  color:#737f8e;
+
+  font-size:.95rem;
+}
+
+.skin-card.hidden{
+  display:none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .cards-grid{
+
+    grid-template-columns:
+      repeat(
+        auto-fill,
+        minmax(235px,1fr)
+      );
+
+    gap:15px;
+  }
+
+  .card-image{
+
+    height:165px;
+
+    padding:8px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  body{
+    padding:
+      28px
+      11px
+      45px;
+  }
+
+  .page-header{
+    margin-bottom:22px;
+  }
+
+  .cards-grid{
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+
+    gap:10px;
+  }
+
+  .card-image{
+
+    height:135px;
+
+    padding:7px;
+  }
+
+  .card-body{
+    padding:12px;
+  }
+
+  .skin-name{
+
+    font-size:.84rem;
+
+    min-height:43px;
+  }
+
+  .skin-meta{
+
+    font-size:.69rem;
+
+    min-height:88px;
+  }
+
+  .skin-meta
+  .version-line{
+
+    font-size:.66rem;
+  }
+
+  .price-tag{
+
+    font-size:.76rem;
+
+    padding:
+      4px
+      10px;
+  }
+
+  .tag,
+  .youtube-link{
+
+    font-size:.62rem;
+
+    padding:
+      3px
+      6px;
+  }
+
+  .card-bottom{
+    align-items:flex-start;
+  }
+
+  .rgc-title-logo{
+    margin-bottom:8px;
+  }
+
+  .rgc-title-logo img{
+
+    width:
+      min(88px,22vw);
+
+    max-height:70px;
+  }
+}
+
+
+@media(max-width:390px){
+
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card-image{
+
+    height:175px;
+
+    padding:8px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="page-header">
+
+  <div class="rgc-title-logo">
+
+    <img
+      src="https://i.imgur.com/ZQcoV5B.png"
+      alt="Ranked Gaming Client Logo"
+    >
+
+  </div>
+
+
+  <h1 class="page-title">
+    <img src="https://i.imgur.com/6VVB7vh.png" alt="" style="height:1em;width:1em;vertical-align:-0.12em;"> Courier Skins
+  </h1>
+
+
+  <p class="page-subtitle">
+    RGC Skin Shop — Courier Collection
+  </p>
+
+</header>
+
+
+
+<div class="shop-toolbar">
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search courier, skin or other..."
+      autocomplete="off"
+      aria-label="Search couriers"
+    >
+
+    <span class="search-icon">
+      🔎
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<div class="result-bar">
+
+  <span
+    class="result-count"
+    id="resultCount"
+  >
+    45 skins
+  </span>
+
+</div>
+
+
+
+<main
+  class="cards-grid"
+  id="cardsGrid"
+>
+
+<!-- =========================
+     #106
+========================= -->
+
+<article
+  class="skin-card"
+  data-tags="dota lod"
+  data-search="#106 ourier Pack Christmas Courier DotA 7.04h0 LoD 6.92x"
+>
+
+  <div class="card-image">
+
+    <img
+      src="https://i.imgur.com/95ysNpY.png"
+      alt="#106 ourier Pack Christmas"
+      loading="lazy"
+      decoding="async"
+      onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+    >
+
+    <div class="image-fallback">
+      <span>IMAGE UNAVAILABLE</span>
+      <small>#106</small>
+    </div>
+
+    <div class="id-badge">
+      #106
+    </div>
+
+  </div>
+
+
+  <div class="card-body">
+
+    <div class="skin-name">
+      #106 ourier Pack Christmas
+    </div>
+
+    <div class="skin-meta">
+
+      <p>
+        <strong>Works on:</strong>
+        Ground and Flying Couriers
+      </p>
+
+      <p class="version-line">
+        <strong>Available since:</strong>
+        DotA 7.04h0
+
+        <span class="version-separator">
+          •
+        </span>
+
+        <strong>LoD:</strong>
+        LoD 6.92x
+      </p>
+
+    </div>
+
+
+    <div class="card-bottom">
+
+      <span class="price-tag">
+        $12
+      </span>
+
+      <div class="tag-row">
+
+        <span class="tag">
+          Dota
+        </span>
+
+        <span class="tag">
+          LoD
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- =========================
+     #107
+========================= -->
+
+<article
+  class="skin-card"
+  data-tags="dota lod"
+  data-search="#107 Courier Pack Halloween Courier DotA 7.04h0 LoD 6.92x"
+>
+
+  <div class="card-image">
+
+    <img
+      src="https://i.imgur.com/5OwouzL.png"
+      alt="#107 Courier Pack Halloween"
+      loading="lazy"
+      decoding="async"
+      onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+    >
+
+    <div class="image-fallback">
+      <span>IMAGE UNAVAILABLE</span>
+      <small>#107</small>
+    </div>
+
+    <div class="id-badge">
+      #107
+    </div>
+
+  </div>
+
+
+  <div class="card-body">
+
+    <div class="skin-name">
+      #107 Courier Pack Halloween
+    </div>
+
+    <div class="skin-meta">
+
+      <p>
+        <strong>Works on:</strong>
+        Ground and Flying Couriers
+      </p>
+
+      <p class="version-line">
+        <strong>Available since:</strong>
+        DotA 7.04h0
+
+        <span class="version-separator">
+          •
+        </span>
+
+        <strong>LoD:</strong>
+        LoD 6.92x
+      </p>
+
+    </div>
+
+
+    <div class="card-bottom">
+
+      <span class="price-tag">
+        $12
+      </span>
+
+      <div class="tag-row">
+
+        <span class="tag">
+          Dota
+        </span>
+
+        <span class="tag">
+          LoD
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- =========================
+     #108
+========================= -->
+
+<article
+  class="skin-card"
+  data-tags="dota lod"
+  data-search="#108 Courier Pack 1 Courier DotA 7.04h0 LoD 6.92x"
+>
+
+  <div class="card-image">
+
+    <img
+      src="https://i.imgur.com/tlli380.png"
+      alt="#108 Courier Pack 1"
+      loading="lazy"
+      decoding="async"
+      onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+    >
+
+    <div class="image-fallback">
+      <span>IMAGE UNAVAILABLE</span>
+      <small>#108</small>
+    </div>
+
+    <div class="id-badge">
+      #108
+    </div>
+
+  </div>
+
+
+  <div class="card-body">
+
+    <div class="skin-name">
+      #108 Courier Pack 1
+    </div>
+
+    <div class="skin-meta">
+
+      <p>
+        <strong>Works on:</strong>
+        Ground and Flying Couriers
+      </p>
+
+      <p class="version-line">
+        <strong>Available since:</strong>
+        DotA 7.04h0
+
+        <span class="version-separator">
+          •
+        </span>
+
+        <strong>LoD:</strong>
+        LoD 6.92x
+      </p>
+
+    </div>
+
+
+    <div class="card-bottom">
+
+      <span class="price-tag">
+        $11
+      </span>
+
+      <div class="tag-row">
+
+        <span class="tag">
+          Dota
+        </span>
+
+        <span class="tag">
+          LoD
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- =========================
+     #109
+========================= -->
+
+<article
+  class="skin-card"
+  data-tags="dota lod"
+  data-search="#109 Courier Pack 2 Courier DotA 7.04h0 LoD 6.92x"
+>
+
+  <div class="card-image">
+
+    <img
+      src="https://i.imgur.com/epSFADS.png"
+      alt="#109 Courier Pack 2"
+      loading="lazy"
+      decoding="async"
+      onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+    >
+
+    <div class="image-fallback">
+      <span>IMAGE UNAVAILABLE</span>
+      <small>#109</small>
+    </div>
+
+    <div class="id-badge">
+      #109
+    </div>
+
+  </div>
+
+
+  <div class="card-body">
+
+    <div class="skin-name">
+      #109 Courier Pack 2
+    </div>
+
+    <div class="skin-meta">
+
+      <p>
+        <strong>Works on:</strong>
+        Ground and Flying Couriers
+      </p>
+
+      <p class="version-line">
+        <strong>Available since:</strong>
+        DotA 7.04h0
+
+        <span class="version-separator">
+          •
+        </span>
+
+        <strong>LoD:</strong>
+        LoD 6.92x
+      </p>
+
+    </div>
+
+
+    <div class="card-bottom">
+
+      <span class="price-tag">
+        $9
+      </span>
+
+      <div class="tag-row">
+
+        <span class="tag">
+          Dota
+        </span>
+
+        <span class="tag">
+          LoD
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- =========================
+     #64
+========================= -->
+
+<article
+  class="skin-card"
+  data-tags="dota lod"
+  data-search="#64 Courier Cosmic Courier DotA v6.89a0 LoD v6.86g1"
+>
+
+  <div class="card-image">
+
+    <img
+      src="https://i.imgur.com/OqJwgJ2.jpg"
+      alt="#64 Courier Cosmic"
+      loading="lazy"
+      decoding="async"
+      onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+    >
+
+    <div class="image-fallback">
+      <span>IMAGE UNAVAILABLE</span>
+      <small>#64</small>
+    </div>
+
+    <div class="id-badge">
+      #64
+    </div>
+
+  </div>
+
+
+  <div class="card-body">
+
+    <div class="skin-name">
+      #64 Courier Cosmic
+    </div>
+
+    <div class="skin-meta">
+
+      <p>
+        <strong>Works on:</strong>
+        Flying courier
+      </p>
+
+      <p class="version-line">
+        <strong>Available since:</strong>
+        DotA v6.89a0
+
+        <span class="version-separator">
+          •
+        </span>
+
+        <strong>LoD:</strong>
+        LoD v6.86g1
+      </p>
+
+    </div>
+
+
+    <div class="card-bottom">
+
+      <span class="price-tag">
+        $3
+      </span>
+
+      <div class="tag-row">
+
+        <span class="tag">
+          Dota
+        </span>
+
+        <span class="tag">
+          LoD
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- =========================
+     #63
+========================= -->
+
+<article
+  class="skin-card"
+  data-tags="dota lod"
+  data-search="#63 Courier Glider Courier DotA v6.89a0 LoD v6.86g1"
+>
+
+  <div class="card-image">
+
+    <img
+      src="https://i.imgur.com/bhyKnmS.jpg"
+      alt="#63 Courier Glider"
+      loading="lazy"
+      decoding="async"
+      onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+    >
+
+    <div class="image-fallback">
+      <span>IMAGE UNAVAILABLE</span>
+      <small>#63</small>
+    </div>
+
+    <div class="id-badge">
+      #63
+    </div>
+
+  </div>
+
+
+  <div class="card-body">
+
+    <div class="skin-name">
+      #63 Courier Glider
+    </div>
+
+    <div class="skin-meta">
+
+      <p>
+        <strong>Works on:</strong>
+        Flying courier
+      </p>
+
+      <p class="version-line">
+        <strong>Available since:</strong>
+        DotA v6.89a0
+
+        <span class="version-separator">
+          •
+        </span>
+
+        <strong>LoD:</strong>
+        LoD v6.86g1
+      </p>
+
+    </div>
+
+
+    <div class="card-bottom">
+
+      <span class="price-tag">
+        $3
+      </span>
+
+      <div class="tag-row">
+
+        <span class="tag">
+          Dota
+        </span>
+
+        <span class="tag">
+          LoD
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+</main>
+
+
+
+<div
+  class="no-results"
+  id="noResults"
+>
+  No skins found.
+</div>
+
+
+
+<script>
+
+/* =========================
+   SEARCH
+========================= */
+
+const searchInput =
+  document.getElementById(
+    "searchInput"
+  );
+
+const cards =
+  [
+    ...document.querySelectorAll(
+      ".skin-card"
+    )
+  ];
+
+const resultCount =
+  document.getElementById(
+    "resultCount"
+  );
+
+const noResults =
+  document.getElementById(
+    "noResults"
+  );
+
+
+function updateCards(){
+
+  const search =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+  let visible = 0;
+
+
+  cards.forEach(card => {
+
+    const text =
+      (
+        card.dataset.search || ""
+      ).toLowerCase();
+
+
+    const show =
+      !search ||
+      text.includes(search);
+
+
+    card.classList.toggle(
+      "hidden",
+      !show
+    );
+
+
+    if(show){
+      visible++;
+    }
+
+  });
+
+
+  resultCount.textContent =
+    `${visible} ${
+      visible === 1
+        ? "skin"
+        : "skins"
+    }`;
+
+
+  noResults.style.display =
+    visible
+      ? "none"
+      : "block";
+}
+
+
+searchInput.addEventListener(
+  "input",
+  updateCards
+);
+
+
+/* =========================
+   CURSOR FOLLOWING CARD LIGHT
+========================= */
+
+cards.forEach(card => {
+
+  card.addEventListener(
+    "pointermove",
+    event => {
+
+      const rect =
+        card.getBoundingClientRect();
+
+
+      const x =
+        (
+          (
+            event.clientX -
+            rect.left
+          ) /
+          rect.width
+        ) * 100;
+
+
+      const y =
+        (
+          (
+            event.clientY -
+            rect.top
+          ) /
+          rect.height
+        ) * 100;
+
+
+      card.style.setProperty(
+        "--mx",
+        `${x}%`
+      );
+
+
+      card.style.setProperty(
+        "--my",
+        `${y}%`
+      );
+
+    }
+  );
+
+
+  card.addEventListener(
+    "pointerleave",
+    () => {
+
+      card.style.setProperty(
+        "--mx",
+        "50%"
+      );
+
+
+      card.style.setProperty(
+        "--my",
+        "50%"
+      );
+
+    }
+  );
+
+});
+
+
+/* =========================
+   YOUTUBE
+   OPEN IN NEW TAB
+========================= */
+
+document
+  .querySelectorAll(
+    ".youtube-link"
+  )
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const videoUrl =
+          button.dataset.video;
+
+
+        if(!videoUrl){
+          return;
+        }
+
+
+        window.open(
+          videoUrl,
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+updateCards();
+
+</script>
+
+
+</body>
+</html>

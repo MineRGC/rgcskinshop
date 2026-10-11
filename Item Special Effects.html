@@ -1,0 +1,3044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark">
+<title>Announcer — RGC Skin Shop</title>
+
+<style>
+
+:root{
+  --bg-main:#05080d;
+  --bg-secondary:#07111d;
+
+  --bg-card:rgba(8,14,23,.90);
+  --bg-hover:rgba(10,19,31,.97);
+
+  --gold:#d4af37;
+  --gold-light:#f4d97b;
+
+  --blue:#0094ff;
+  --blue-light:#43b7ff;
+
+  --red:#e63946;
+  --red-light:#ff6672;
+
+  --text-main:#eef4fa;
+  --text-secondary:#aebdcd;
+  --muted:#718296;
+
+  --border:rgba(0,148,255,.16);
+  --border-hover:rgba(0,148,255,.48);
+
+  --shadow:rgba(0,0,0,.58);
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+
+  padding:42px 20px 70px;
+
+  color:var(--text-main);
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  line-height:1.6;
+
+  background:
+
+    radial-gradient(
+      circle at 18% 4%,
+      rgba(0,148,255,.10),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(0,92,170,.075),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(230,57,70,.025),
+      transparent 32%
+    ),
+
+    linear-gradient(
+      180deg,
+      #05080d 0%,
+      #07111d 48%,
+      #05080d 100%
+    );
+}
+
+button,
+input{
+  font:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header{
+  max-width:1400px;
+
+  margin:0 auto 30px;
+
+  text-align:center;
+
+  position:relative;
+
+  padding-bottom:28px;
+}
+
+
+/* Deep blue atmospheric glow */
+
+.page-header::before{
+  content:"";
+
+  position:absolute;
+
+  top:-42px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:480px;
+  height:190px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0,148,255,.11),
+      transparent 70%
+    );
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title{
+  position:relative;
+
+  font-size:
+    clamp(
+      1.8rem,
+      4vw,
+      2.6rem
+    );
+
+  font-weight:800;
+
+  color:var(--gold);
+
+  letter-spacing:.5px;
+
+  text-shadow:
+    0 0 8px rgba(212,175,55,.35),
+    0 0 25px rgba(212,175,55,.12);
+
+  margin-bottom:7px;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.page-subtitle{
+  position:relative;
+
+  color:var(--blue-light);
+
+  font-size:.95rem;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+
+  text-shadow:
+    0 0 12px rgba(0,148,255,.18);
+}
+
+
+/* =========================
+   HEADER LINE
+========================= */
+
+.page-header::after{
+  content:"";
+
+  position:absolute;
+
+  bottom:0;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:min(420px,80%);
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0,148,255,.65),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(0,148,255,.35);
+}
+
+
+/* =========================
+   RGC TITLE LOGO
+========================= */
+
+.rgc-title-logo{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  margin:0 auto 12px;
+}
+
+.rgc-title-logo img{
+  width:min(112px,24vw);
+
+  height:auto;
+
+  max-height:88px;
+
+  object-fit:contain;
+
+  display:block;
+
+  filter:
+    drop-shadow(
+      0 0 6px rgba(255,215,90,.55)
+    )
+    drop-shadow(
+      0 0 18px rgba(255,215,90,.28)
+    );
+
+  animation:
+    rgcLogoPulse 2.6s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.rgc-title-logo img:hover{
+  transform:scale(1.05);
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(255,215,90,.85)
+    )
+    drop-shadow(
+      0 0 24px rgba(255,215,90,.55)
+    );
+}
+
+
+@keyframes rgcLogoPulse{
+
+  0%,100%{
+    filter:
+      drop-shadow(
+        0 0 5px rgba(255,215,90,.45)
+      )
+      drop-shadow(
+        0 0 14px rgba(255,215,90,.22)
+      );
+  }
+
+  50%{
+    filter:
+      drop-shadow(
+        0 0 9px rgba(255,215,90,.78)
+      )
+      drop-shadow(
+        0 0 22px rgba(255,215,90,.42)
+      );
+  }
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.shop-toolbar{
+  max-width:1400px;
+
+  margin:0 auto 18px;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+}
+
+.search-box{
+  position:relative;
+
+  width:min(430px,100%);
+}
+
+.search-box input{
+  width:100%;
+
+  height:42px;
+
+  padding:
+    0
+    42px
+    0
+    16px;
+
+  border-radius:22px;
+
+  border:
+    1px solid
+    rgba(0,148,255,.18);
+
+  background:
+    rgba(5,12,20,.84);
+
+  color:var(--text-main);
+
+  outline:none;
+
+  font-size:.9rem;
+
+  transition:.25s;
+
+  backdrop-filter:blur(10px);
+}
+
+.search-box input::placeholder{
+  color:#718296;
+}
+
+.search-box input:focus{
+  border-color:
+    rgba(0,148,255,.65);
+
+  box-shadow:
+
+    0 0 0 2px
+    rgba(0,148,255,.08),
+
+    0 0 18px
+    rgba(0,148,255,.18);
+}
+
+.search-icon{
+  position:absolute;
+
+  right:16px;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  color:var(--blue-light);
+
+  font-size:15px;
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   RESULT BAR
+========================= */
+
+.result-bar{
+  max-width:1400px;
+
+  margin:0 auto 15px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  color:#718296;
+
+  font-size:.78rem;
+}
+
+.result-count{
+  font-weight:600;
+}
+
+
+/* =========================
+   CARD GRID
+========================= */
+
+.cards-grid{
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(270px,1fr)
+    );
+
+  gap:22px;
+}
+
+
+/* =========================
+   SKIN CARD
+========================= */
+
+.skin-card{
+
+  --mx:50%;
+  --my:50%;
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  flex-direction:column;
+
+  min-width:0;
+
+  background:
+    var(--bg-card);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:14px;
+
+  box-shadow:
+    0 5px 18px
+    var(--shadow);
+
+  backdrop-filter:blur(10px);
+
+  transition:
+    transform .3s,
+    border-color .3s,
+    box-shadow .3s,
+    background .3s;
+}
+
+
+/* =========================
+   CURSOR FOLLOWING LIGHT
+========================= */
+
+.skin-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:inherit;
+
+  background:
+
+    radial-gradient(
+      circle 150px
+      at var(--mx) var(--my),
+
+      rgba(0,148,255,.17),
+
+      rgba(0,148,255,.07)
+      34%,
+
+      transparent 72%
+    );
+
+  opacity:0;
+
+  pointer-events:none;
+
+  z-index:5;
+
+  transition:
+    opacity .18s ease;
+}
+
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.skin-card:hover{
+
+  transform:
+    translateY(-6px);
+
+  background:
+    var(--bg-hover);
+
+  border-color:
+    rgba(0,148,255,.48);
+
+  box-shadow:
+
+    0 12px 32px
+    rgba(0,0,0,.65),
+
+    0 0 25px
+    rgba(0,148,255,.13),
+
+    0 0 42px
+    rgba(0,80,150,.10);
+}
+
+.skin-card:hover::before{
+  opacity:1;
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card-image{
+
+  width:100%;
+
+  height:185px;
+
+  padding:9px;
+
+  box-sizing:border-box;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(
+      circle at center,
+      rgba(0,148,255,.12),
+      transparent 65%
+    ),
+
+    linear-gradient(
+      135deg,
+      #162333,
+      #0b121c
+    );
+
+  position:relative;
+}
+
+.card-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(0,0,0,.28)
+    );
+
+  pointer-events:none;
+}
+
+.card-image img{
+
+  width:100%;
+
+  height:100%;
+
+  max-width:100%;
+  max-height:100%;
+
+  object-fit:contain;
+
+  object-position:center;
+
+  transition:
+    filter .3s;
+
+  display:block;
+}
+
+.skin-card:hover
+.card-image img{
+
+  filter:
+    brightness(1.06);
+}
+
+
+/* =========================
+   ID BADGE
+========================= */
+
+.id-badge{
+
+  position:absolute;
+
+  top:10px;
+  left:10px;
+
+  z-index:3;
+
+  padding:3px 8px;
+
+  border-radius:6px;
+
+  background:
+    rgba(4,8,13,.82);
+
+  border:
+    1px solid
+    rgba(212,175,55,.45);
+
+  color:var(--gold-light);
+
+  font-size:.7rem;
+
+  font-weight:800;
+
+  backdrop-filter:blur(6px);
+}
+
+
+/* =========================
+   IMAGE FALLBACK
+========================= */
+
+.image-fallback{
+
+  display:none;
+
+  position:absolute;
+
+  inset:0;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-direction:column;
+
+  color:#66778a;
+
+  font-size:12px;
+
+  gap:4px;
+}
+
+.image-fallback small{
+  color:#455465;
+}
+
+.card-image.image-error
+.image-fallback{
+  display:flex;
+}
+
+
+/* =========================
+   CARD BODY
+========================= */
+
+.card-body{
+
+  display:flex;
+
+  flex-direction:column;
+
+  flex:1;
+
+  padding:
+    16px
+    17px
+    17px;
+}
+
+
+/* =========================
+   SKIN NAME
+========================= */
+
+.skin-name{
+
+  min-height:45px;
+
+  font-size:1rem;
+
+  line-height:1.35;
+
+  font-weight:700;
+
+  color:var(--gold);
+
+  margin-bottom:8px;
+
+  text-shadow:
+    0 0 7px
+    rgba(212,175,55,.1);
+}
+
+
+/* =========================
+   META
+========================= */
+
+.skin-meta{
+
+  color:var(--text-secondary);
+
+  font-size:.78rem;
+
+  margin-bottom:13px;
+
+  min-height:74px;
+}
+
+.skin-meta p{
+  margin:3px 0;
+}
+
+.skin-meta strong{
+  color:#d0d8e1;
+
+  font-weight:600;
+}
+
+
+/* =========================
+   VERSION LINE
+========================= */
+
+.skin-meta
+.version-line{
+
+  display:block;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+.version-separator{
+
+  opacity:.55;
+
+  padding:0 4px;
+}
+
+
+/* =========================
+   CARD BOTTOM
+========================= */
+
+.card-bottom{
+
+  margin-top:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price-tag{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-width:52px;
+
+  padding:5px 13px;
+
+  border-radius:20px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #a97908,
+      var(--gold),
+      #e0bd4e
+    );
+
+  color:#111;
+
+  font-size:.88rem;
+
+  font-weight:800;
+
+  box-shadow:
+    0 2px 8px
+    rgba(212,175,55,.16);
+}
+
+
+/* =========================
+   TAGS
+========================= */
+
+.tag-row{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:flex-end;
+
+  gap:5px;
+
+  flex-wrap:wrap;
+}
+
+.tag,
+.youtube-link{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  padding:3px 8px;
+
+  border-radius:5px;
+
+  font-size:.67rem;
+
+  line-height:1.3;
+}
+
+
+/* Blue tags */
+
+.tag{
+
+  background:
+    rgba(0,148,255,.10);
+
+  border:
+    1px solid
+    rgba(0,148,255,.13);
+
+  color:#66baff;
+}
+
+
+/* Muted tag */
+
+.tag-muted{
+
+  background:
+    rgba(130,140,150,.08);
+
+  color:#7e8997;
+
+  border-color:
+    rgba(130,140,150,.11);
+}
+
+
+/* =========================
+   YOUTUBE BUTTON
+========================= */
+
+.youtube-link{
+
+  gap:4px;
+
+  border:
+    1px solid
+    rgba(230,57,70,.18);
+
+  background:
+    rgba(230,57,70,.09);
+
+  color:
+    var(--red-light);
+
+  text-decoration:none;
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.youtube-link:hover{
+
+  color:#fff;
+
+  background:
+    rgba(230,57,70,.22);
+
+  border-color:
+    rgba(230,57,70,.38);
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 0 10px
+    rgba(230,57,70,.15);
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results{
+
+  display:none;
+
+  max-width:1400px;
+
+  margin:55px auto;
+
+  text-align:center;
+
+  color:#737f8e;
+
+  font-size:.95rem;
+}
+
+.skin-card.hidden{
+  display:none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .cards-grid{
+
+    grid-template-columns:
+      repeat(
+        auto-fill,
+        minmax(235px,1fr)
+      );
+
+    gap:15px;
+  }
+
+  .card-image{
+
+    height:165px;
+
+    padding:8px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  body{
+    padding:
+      28px
+      11px
+      45px;
+  }
+
+  .page-header{
+    margin-bottom:22px;
+  }
+
+  .cards-grid{
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+
+    gap:10px;
+  }
+
+  .card-image{
+
+    height:135px;
+
+    padding:7px;
+  }
+
+  .card-body{
+    padding:12px;
+  }
+
+  .skin-name{
+
+    font-size:.84rem;
+
+    min-height:43px;
+  }
+
+  .skin-meta{
+
+    font-size:.69rem;
+
+    min-height:88px;
+  }
+
+  .skin-meta
+  .version-line{
+
+    font-size:.66rem;
+  }
+
+  .price-tag{
+
+    font-size:.76rem;
+
+    padding:
+      4px
+      10px;
+  }
+
+  .tag,
+  .youtube-link{
+
+    font-size:.62rem;
+
+    padding:
+      3px
+      6px;
+  }
+
+  .card-bottom{
+    align-items:flex-start;
+  }
+
+  .rgc-title-logo{
+    margin-bottom:8px;
+  }
+
+  .rgc-title-logo img{
+
+    width:
+      min(88px,22vw);
+
+    max-height:70px;
+  }
+}
+
+
+@media(max-width:390px){
+
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card-image{
+
+    height:175px;
+
+    padding:8px;
+  }
+}
+
+
+
+/* =========================
+   DUAL IMAGE CARD
+========================= */
+
+.card-image.dual-images{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.dual-image-wrap{
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  align-items:center;
+  justify-items:center;
+  position:relative;
+  z-index:1;
+}
+
+.dual-image-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+
+
+/* #79 Chatwheel - 3 second image replacement flash */
+.card-image.chatwheel-flash{
+  position:relative;
+}
+
+.card-image.chatwheel-flash .chatwheel-img{
+  position:absolute;
+  inset:9px;
+  width:calc(100% - 18px);
+  height:calc(100% - 18px);
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+  object-position:center;
+}
+
+.card-image.chatwheel-flash .chatwheel-one{
+  z-index:1;
+}
+
+.card-image.chatwheel-flash .chatwheel-two{
+  z-index:2;
+}
+
+
+
+/* =========================
+   #110 SHOWCASE CARD
+========================= */
+
+.showcase-card{
+  grid-column:1 / -1;
+}
+
+.showcase-head{
+  min-height:62px;
+  padding:15px 17px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  border-bottom:1px solid rgba(0,148,255,.10);
+}
+
+.showcase-title{
+  color:var(--gold);
+  font-size:1.08rem;
+  font-weight:800;
+  text-shadow:0 0 7px rgba(212,175,55,.12);
+}
+
+.showcase-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:10px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,148,255,.08),
+      transparent 68%
+    ),
+    linear-gradient(
+      135deg,
+      #101d2c,
+      #09111b
+    );
+}
+
+.showcase-image-box{
+  min-width:0;
+  height:255px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  padding:8px;
+  border:1px solid rgba(0,148,255,.14);
+  border-radius:10px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,148,255,.10),
+      transparent 68%
+    ),
+    #07101a;
+  text-decoration:none;
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease;
+}
+
+.showcase-image-box:hover{
+  border-color:rgba(0,148,255,.48);
+  box-shadow:
+    0 0 22px rgba(0,148,255,.13),
+    inset 0 0 18px rgba(0,148,255,.05);
+  transform:translateY(-2px);
+}
+
+.showcase-image-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  transition:filter .25s ease;
+}
+
+.showcase-image-box:hover img{
+  filter:brightness(1.07);
+}
+
+.showcase-image-label{
+  position:absolute;
+  left:9px;
+  bottom:9px;
+  padding:3px 8px;
+  border-radius:5px;
+  background:rgba(4,8,13,.82);
+  border:1px solid rgba(0,148,255,.20);
+  color:#66baff;
+  font-size:.67rem;
+  font-weight:700;
+  backdrop-filter:blur(6px);
+}
+
+.showcase-description{
+  min-height:auto;
+}
+
+@media(max-width:600px){
+  .showcase-images{
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+    padding:7px;
+  }
+
+  .showcase-image-box{
+    height:175px;
+    padding:6px;
+  }
+
+  .showcase-head{
+    padding:12px;
+  }
+
+  .showcase-title{
+    font-size:.9rem;
+  }
+}
+
+@media(max-width:390px){
+  .showcase-images{
+    grid-template-columns:1fr;
+  }
+
+  .showcase-image-box{
+    height:190px;
+  }
+}
+
+/* =========================
+   EFFECT DESCRIPTION NOTES
+   ========================= */
+
+.effect-note{
+  margin:3px 0 7px;
+  font-weight:600;
+}
+
+.effect-note.amethyst-note{
+  color:#c78cff;
+  text-shadow:0 0 8px rgba(199,140,255,.18);
+}
+
+.effect-note.silver-note{
+  color:#cbd3dc;
+  text-shadow:0 0 8px rgba(203,211,220,.14);
+}
+
+.effect-note.gold-note{
+  color:#f0c94f;
+  text-shadow:0 0 8px rgba(240,201,79,.18);
+}
+
+
+/* =========================
+   LEVEL DESCRIPTION BORDER
+========================= */
+
+.level-note-box{
+  margin-top:2px;
+  margin-bottom:13px;
+  padding:10px 11px;
+  border:1px solid rgba(212,175,55,.30);
+  border-radius:9px;
+  background:rgba(212,175,55,.035);
+  box-shadow:
+    inset 0 0 12px rgba(212,175,55,.025),
+    0 0 8px rgba(0,0,0,.10);
+}
+
+.level-note-box .skin-meta{
+  margin-bottom:0;
+  min-height:auto;
+}
+
+.level-note-box .skin-meta p{
+  margin:3px 0;
+}
+
+
+/* Center tags under the two showcase images */
+.showcase-card .showcase-tags{
+  width:100%;
+  justify-content:center;
+  gap:8px;
+}
+
+
+/* Explicit level cost and time-limit information */
+.level-purchase-info{
+  margin-top:10px;
+  margin-bottom:12px;
+  padding:7px 10px;
+  text-align:center;
+  font-size:13px;
+  line-height:1.5;
+  color:#b9c9d8;
+  border-top:1px solid rgba(212,175,55,.18);
+}
+.level-purchase-info .purchase-label{
+  font-weight:700;
+  color:#d4af37;
+}
+.level-purchase-info .purchase-value{
+  color:#e7edf4;
+  font-weight:600;
+}
+
+
+/* Level 1/2/3: full price + time limit in the gold price pill,
+   with category tags centered underneath. */
+.level-card-bottom{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  width:100%;
+}
+
+.level-price-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:9px 18px;
+  border-radius:999px;
+  background:linear-gradient(180deg, #e8c95a 0%, #d4af37 100%);
+  color:#111a22;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.35;
+  text-align:center;
+  box-shadow:
+    0 4px 14px rgba(212,175,55,.22),
+    inset 0 1px 0 rgba(255,255,255,.28);
+  border:1px solid rgba(255,235,150,.55);
+}
+
+.level-tag-row{
+  width:100%;
+  justify-content:center !important;
+  align-items:center;
+  gap:8px !important;
+}
+
+
+/* =========================================================
+   LEVEL 1 / 2 / 3 — COLOR-MATCHED FLAGSHIP CARDS
+   ========================================================= */
+
+.flagship-card{
+  --flag-main:#d4af37;
+  --flag-light:#f4d97b;
+  --flag-soft:rgba(212,175,55,.16);
+  --flag-glow:rgba(212,175,55,.28);
+  --flag-bg1:rgba(25,18,6,.96);
+  --flag-bg2:rgba(8,12,18,.97);
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at var(--mx) var(--my),var(--flag-soft),transparent 34%),
+    linear-gradient(145deg,var(--flag-bg1),var(--flag-bg2) 62%,#05080d);
+  border:1px solid var(--flag-main);
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.62),
+    0 0 20px var(--flag-glow),
+    inset 0 0 24px rgba(255,255,255,.018);
+  overflow:hidden;
+}
+
+.flagship-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(135deg,transparent 8%,var(--flag-light) 28%,transparent 48%,var(--flag-main) 72%,transparent 92%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:.72;
+  pointer-events:none;
+  z-index:7;
+}
+
+.flagship-card:hover{
+  transform:translateY(-7px);
+  border-color:var(--flag-light);
+  box-shadow:
+    0 15px 38px rgba(0,0,0,.70),
+    0 0 30px var(--flag-glow),
+    0 0 58px rgba(0,0,0,.22),
+    inset 0 0 28px var(--flag-soft);
+}
+
+.flagship-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:radial-gradient(circle 155px at var(--mx) var(--my),rgba(255,255,255,.10),var(--flag-soft) 32%,transparent 72%);
+  opacity:.72;
+  pointer-events:none;
+  z-index:5;
+}
+
+.flagship-card .card-image{
+  height:200px;
+  padding:12px;
+  background:
+    radial-gradient(circle at center,var(--flag-soft),transparent 64%),
+    linear-gradient(135deg,#151c25,#070b11);
+  border-bottom:1px solid var(--flag-main);
+}
+
+.flagship-card .card-image::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid var(--flag-main);
+  border-radius:9px;
+  box-shadow:inset 0 0 18px var(--flag-soft),0 0 14px rgba(0,0,0,.32);
+  pointer-events:none;
+  z-index:2;
+}
+
+.flagship-card .card-image img{
+  position:relative;
+  z-index:1;
+  filter:drop-shadow(0 0 5px var(--flag-glow)) drop-shadow(0 0 15px rgba(0,0,0,.35));
+}
+
+.flagship-card:hover .card-image img{
+  filter:brightness(1.07) drop-shadow(0 0 8px var(--flag-glow)) drop-shadow(0 0 18px rgba(0,0,0,.38));
+}
+
+.flagship-card .flagship-ribbon{
+  position:absolute;
+  top:11px;
+  right:11px;
+  z-index:4;
+  padding:4px 10px;
+  border-radius:999px;
+  color:#101010;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.25px;
+  background:linear-gradient(135deg,var(--flag-light),var(--flag-main));
+  border:1px solid rgba(255,255,255,.32);
+  box-shadow:0 3px 12px var(--flag-glow),inset 0 1px 0 rgba(255,255,255,.45);
+}
+
+.flagship-card .id-badge{
+  z-index:4;
+  border-color:var(--flag-main);
+  color:var(--flag-light);
+  box-shadow:0 0 9px var(--flag-soft);
+}
+
+.flagship-card .flagship-kicker{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:-1px 0 7px;
+  color:var(--flag-light);
+  font-size:.64rem;
+  font-weight:800;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px var(--flag-glow);
+}
+
+.flagship-card .flagship-kicker::before,
+.flagship-card .flagship-kicker::after{
+  content:"";
+  width:34px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--flag-main));
+  box-shadow:0 0 7px var(--flag-glow);
+}
+
+.flagship-card .flagship-kicker::after{transform:scaleX(-1);}
+
+.flagship-card .skin-name{
+  color:var(--flag-light);
+  text-shadow:0 0 8px var(--flag-glow),0 0 20px rgba(0,0,0,.28);
+}
+
+.flagship-card .level-note-box{
+  border-color:var(--flag-main);
+  background:var(--flag-soft);
+  box-shadow:inset 0 0 14px var(--flag-soft),0 0 10px rgba(0,0,0,.14);
+}
+
+.flagship-card .version-line strong{color:var(--flag-light);}
+
+.flagship-card .level-price-pill{
+  position:relative;
+  overflow:hidden;
+  min-height:42px;
+  padding:9px 18px;
+  border-radius:999px;
+  color:#111a22;
+  border:1px solid rgba(255,255,255,.42);
+  background:linear-gradient(135deg,var(--flag-light) 0%,var(--flag-main) 52%,var(--flag-light) 100%);
+  box-shadow:0 4px 15px var(--flag-glow),inset 0 1px 0 rgba(255,255,255,.42);
+}
+
+.flagship-card .level-price-pill::after{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-45%;
+  width:28%;
+  height:160%;
+  transform:skewX(-22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.68),transparent);
+  animation:levelFlagshipPriceShine 3.8s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes levelFlagshipPriceShine{
+  0%,58%{left:-45%;opacity:0}
+  66%{opacity:.9}
+  78%{left:125%;opacity:0}
+  100%{left:125%;opacity:0}
+}
+
+.flagship-card .level-tag-row .tag{
+  background:var(--flag-soft);
+  border-color:var(--flag-main);
+  color:var(--flag-light);
+  box-shadow:0 0 7px rgba(0,0,0,.12);
+}
+
+/* Level 1 — Amethyst / purple */
+.level1-card{
+  --flag-main:#b56cff;
+  --flag-light:#e0b7ff;
+  --flag-soft:rgba(181,108,255,.18);
+  --flag-glow:rgba(181,108,255,.34);
+  --flag-bg1:rgba(35,13,55,.96);
+  --flag-bg2:rgba(8,10,18,.97);
+}
+
+/* Level 2 — Silver */
+.level2-card{
+  --flag-main:#bfc8d4;
+  --flag-light:#f1f5fa;
+  --flag-soft:rgba(191,200,212,.16);
+  --flag-glow:rgba(191,200,212,.27);
+  --flag-bg1:rgba(28,34,42,.97);
+  --flag-bg2:rgba(7,11,17,.97);
+}
+
+/* Level 3 — Gold */
+.level3-card{
+  --flag-main:#d4af37;
+  --flag-light:#ffe58a;
+  --flag-soft:rgba(212,175,55,.18);
+  --flag-glow:rgba(212,175,55,.34);
+  --flag-bg1:rgba(40,28,6,.97);
+  --flag-bg2:rgba(8,11,16,.97);
+}
+
+@media(max-width:600px){
+  .flagship-card .card-image{height:150px;padding:9px;}
+  .flagship-card .card-image::before{inset:7px;}
+  .flagship-card .flagship-ribbon{top:8px;right:8px;padding:3px 7px;font-size:.58rem;}
+  .flagship-card .flagship-kicker{font-size:.54rem;letter-spacing:1.2px;gap:5px;}
+  .flagship-card .flagship-kicker::before,
+  .flagship-card .flagship-kicker::after{width:20px;}
+}
+
+@media(max-width:390px){
+  .flagship-card .card-image{height:175px;}
+}
+
+
+/* =========================================================
+   EMOTICONS COMMAND MODAL
+   Opens from the Emoticons card without leaving this page.
+   ========================================================= */
+
+.emoticon-meta{
+  min-height:0;
+  margin-bottom:5px;
+}
+
+.emoticon-meta .emoticon-view-link{
+  margin:3px 0 0;
+}
+
+.emoticon-view-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  max-width:100%;
+  margin:-1px 0 12px;
+  padding:6px 10px;
+  border:1px solid rgba(212,175,55,.42);
+  border-radius:7px;
+  background:rgba(212,175,55,.055);
+  color:var(--gold-light);
+  font-size:.73rem;
+  font-weight:700;
+  line-height:1.2;
+  text-decoration:none;
+  cursor:pointer;
+  box-shadow:0 0 10px rgba(212,175,55,.04);
+  margin-top:-8px;
+  transition:.25s ease;
+}
+.emoticon-view-link:hover{
+  color:#fff;
+  background:rgba(212,175,55,.13);
+  border-color:rgba(244,217,123,.72);
+  box-shadow:0 0 16px rgba(212,175,55,.13);
+  transform:translateY(-1px);
+}
+
+.emote-modal{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(2,5,9,.78);
+  backdrop-filter:blur(8px);
+}
+.emote-modal.open{display:flex;}
+
+.emote-modal-panel{
+  position:relative;
+  width:min(920px,100%);
+  max-height:min(86vh,820px);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,.34);
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(0,148,255,.10),transparent 42%),
+    linear-gradient(145deg,rgba(10,18,29,.98),rgba(4,8,14,.99));
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.72),
+    0 0 35px rgba(0,148,255,.10),
+    0 0 25px rgba(212,175,55,.06);
+  animation:emoteModalIn .22s ease-out;
+}
+@keyframes emoteModalIn{
+  from{opacity:0;transform:translateY(12px) scale(.985);}
+  to{opacity:1;transform:translateY(0) scale(1);}
+}
+
+.emote-modal-head{
+  flex:0 0 auto;
+  padding:18px 20px 14px;
+  border-bottom:1px solid rgba(0,148,255,.13);
+}
+.emote-modal-title-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.emote-modal-title{
+  color:var(--gold-light);
+  font-size:1.12rem;
+  font-weight:800;
+  text-shadow:0 0 9px rgba(212,175,55,.15);
+}
+.emote-modal-subtitle{
+  margin-top:3px;
+  color:var(--text-secondary);
+  font-size:.76rem;
+}
+.emote-modal-close{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  border:1px solid rgba(0,148,255,.22);
+  border-radius:8px;
+  background:rgba(0,148,255,.06);
+  color:#9fcdf0;
+  font-size:1.15rem;
+  line-height:1;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.emote-modal-close:hover{
+  color:#fff;
+  border-color:rgba(0,148,255,.55);
+  background:rgba(0,148,255,.13);
+}
+
+.emote-modal-toolbar{
+  padding:12px 20px;
+  border-bottom:1px solid rgba(0,148,255,.10);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.emote-modal-search{
+  width:min(420px,100%);
+  height:38px;
+  padding:0 13px;
+  border:1px solid rgba(0,148,255,.20);
+  border-radius:19px;
+  outline:none;
+  background:rgba(4,10,17,.84);
+  color:var(--text-main);
+  font-size:.82rem;
+}
+.emote-modal-search::placeholder{color:#68798d;}
+.emote-modal-search:focus{
+  border-color:rgba(0,148,255,.60);
+  box-shadow:0 0 0 2px rgba(0,148,255,.07),0 0 16px rgba(0,148,255,.13);
+}
+.emote-modal-count{
+  color:#718296;
+  font-size:.72rem;
+  font-weight:600;
+}
+
+.emote-modal-scroll{
+  overflow:auto;
+  padding:0 20px 18px;
+}
+.emote-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0 7px;
+  font-size:.8rem;
+}
+.emote-table thead th{
+  position:sticky;
+  top:0;
+  z-index:3;
+  padding:11px 12px;
+  text-align:left;
+  color:#a9c4db;
+  font-size:.69rem;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  background:#07111d;
+  border-bottom:1px solid rgba(0,148,255,.16);
+}
+.emote-table thead th:first-child{width:112px;}
+.emote-section-row td{
+  padding:13px 12px 5px;
+  color:var(--gold);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+.emote-row td{
+  padding:7px 10px;
+  background:rgba(8,15,24,.78);
+  border-top:1px solid rgba(0,148,255,.10);
+  border-bottom:1px solid rgba(0,148,255,.10);
+}
+.emote-row td:first-child{
+  border-left:1px solid rgba(0,148,255,.10);
+  border-radius:9px 0 0 9px;
+}
+.emote-row td:last-child{
+  border-right:1px solid rgba(0,148,255,.10);
+  border-radius:0 9px 9px 0;
+}
+.emote-row:hover td{
+  background:rgba(10,21,34,.96);
+  border-color:rgba(0,148,255,.22);
+}
+.emote-preview-box{
+  width:82px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,.12);
+  border-radius:7px;
+  background:
+    radial-gradient(circle at center,rgba(0,148,255,.08),transparent 70%),
+    #050a11;
+}
+.emote-preview-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.emote-preview-box.image-error::after{
+  content:"No preview";
+  color:#5e6d7e;
+  font-size:.63rem;
+}
+.emote-preview-box.image-error img{display:none;}
+
+.emote-aliases{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.emote-command{
+  padding:5px 9px;
+  border:1px solid rgba(0,148,255,.20);
+  border-radius:6px;
+  background:rgba(0,148,255,.075);
+  color:#8ccaff;
+  font:inherit;
+  font-size:.76rem;
+  line-height:1.2;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.emote-command:hover{
+  color:#fff;
+  border-color:rgba(0,148,255,.52);
+  background:rgba(0,148,255,.15);
+  box-shadow:0 0 10px rgba(0,148,255,.11);
+  transform:translateY(-1px);
+}
+.emote-command.copied{
+  color:#111;
+  border-color:#f4d97b;
+  background:#d4af37;
+}
+.emote-empty{
+  display:none;
+  padding:35px 10px 45px;
+  text-align:center;
+  color:#718296;
+  font-size:.82rem;
+}
+
+body.emote-modal-open{overflow:hidden;}
+
+@media(max-width:600px){
+  .emoticon-view-link{font-size:.67rem;padding:5px 8px;margin-bottom:10px;}
+  .emote-modal{padding:9px;}
+  .emote-modal-panel{max-height:92vh;border-radius:13px;}
+  .emote-modal-head{padding:14px 13px 11px;}
+  .emote-modal-toolbar{padding:10px 13px;}
+  .emote-modal-scroll{padding:0 10px 13px;}
+  .emote-modal-title{font-size:.98rem;}
+  .emote-modal-subtitle{font-size:.67rem;}
+  .emote-table{font-size:.72rem;}
+  .emote-table thead th{padding:9px 7px;font-size:.61rem;}
+  .emote-table thead th:first-child{width:78px;}
+  .emote-row td{padding:6px;}
+  .emote-preview-box{width:65px;height:50px;}
+  .emote-command{font-size:.68rem;padding:4px 7px;}
+  .emote-section-row td{padding:10px 6px 4px;font-size:.64rem;}
+}
+
+</style>
+</head>
+
+
+<body>
+
+<header class="page-header">
+  <div class="rgc-title-logo">
+    <img
+      src="https://i.imgur.com/ZQcoV5B.png"
+      alt="Ranked Gaming Client Logo"
+    >
+  </div>
+
+  <h1 class="page-title">
+    <img src="https://i.imgur.com/uDMEX3n.png" alt="" style="height:1em;width:1em;vertical-align:-0.12em;">
+    Item Special Effects
+  </h1>
+
+  <p class="page-subtitle">
+    RGC Skin Shop — Item Special Effects Collection
+  </p>
+</header>
+
+<div class="shop-toolbar">
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search effect, level or other..."
+      autocomplete="off"
+      aria-label="Search item special effects"
+    >
+    <span class="search-icon">🔎</span>
+  </div>
+</div>
+
+<div class="result-bar">
+  <span class="result-count" id="resultCount">7 items</span>
+</div>
+
+<main class="cards-grid" id="cardsGrid">
+
+  <!-- #110 -->
+  <article
+    class="skin-card showcase-card"
+    data-tags="dota lod purple silver gold chat shining"
+    data-search="#110 Colored Shining Chat DotA 7.04h0 LoD 6.92x Amethyst Silver Gold"
+  >
+    <div class="showcase-head">
+      <div class="showcase-title">#110 Colored Shining &amp; Chat</div>
+    </div>
+
+    <div class="showcase-images">
+      <a
+        class="showcase-image-box"
+        href="https://i.imgur.com/kbjdr4W.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://i.imgur.com/kbjdr4W.jpg"
+          alt="Colored Shining & Chat showcase 1"
+          loading="lazy"
+          decoding="async"
+        >
+        <span class="showcase-image-label">Showcase 1</span>
+      </a>
+
+      <a
+        class="showcase-image-box"
+        href="https://i.imgur.com/geKxCBC.gif"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://i.imgur.com/geKxCBC.gif"
+          alt="Colored Shining & Chat showcase 2"
+          loading="lazy"
+          decoding="async"
+        >
+        <span class="showcase-image-label">Showcase 2</span>
+      </a>
+    </div>
+
+    <div class="card-body">
+
+      <div class="card-bottom">
+        <div class="tag-row showcase-tags">
+          <span class="tag">Dota</span>
+          <span class="tag">LoD</span>
+          <span class="tag">Purple</span>
+          <span class="tag">Chat</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Level 1 -->
+  <article
+    class="skin-card level1-card flagship-card"
+    data-tags="dota lod amethyst level 1 purple"
+    data-search="Level 1 Amethyst DotA 7.04h0 LoD 6.92x"
+  >
+    <div class="card-image">
+      <img
+        src="https://i.imgur.com/kbjdr4W.jpg"
+        alt="Level 1 Amethyst"
+        loading="lazy"
+        decoding="async"
+        onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+      >
+      <div class="image-fallback">
+        <span>IMAGE UNAVAILABLE</span>
+        <small>Level 1</small>
+      </div>
+      <div class="flagship-ribbon"><span>✦ Exclusive</span></div>
+      <div class="id-badge">LV.1</div>
+    </div>
+
+    <div class="card-body">
+      <div class="flagship-kicker">Premium Collection</div>
+      <div class="skin-name">Level 1: Amethyst</div>
+
+      <div class="level-note-box">
+  <div class="skin-meta">
+<p class="effect-note amethyst-note">
+          Contains special in purple colors effects for Bottle, Eul, Shiva, Phase Boots and Steamrollers,
+          Maelstrom and derivatives, and for Spell Steal.
+        </p>
+  </div>
+</div>
+<div class="skin-meta">
+<p class="version-line">
+          <strong>Available since:</strong> DotA 7.04h0
+          <span class="version-separator">•</span>
+          <strong>LoD:</strong> 6.92x
+        </p>
+</div>
+
+      <div class="card-bottom level-card-bottom">
+        <div class="level-price-pill">
+          $12 / 1 month, $24 / 3 months
+        </div>
+        <div class="tag-row level-tag-row">
+          <span class="tag">Dota</span>
+          <span class="tag">LoD</span>
+          <span class="tag">Amethyst</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Level 2 -->
+  <article
+    class="skin-card level2-card flagship-card"
+    data-tags="dota lod silver level 2 chat vip"
+    data-search="Level 2 Silver DotA 7.04h0 LoD 6.92x"
+  >
+    <div class="card-image">
+      <img
+        src="https://i.imgur.com/kbjdr4W.jpg"
+        alt="Level 2 Silver"
+        loading="lazy"
+        decoding="async"
+        onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+      >
+      <div class="image-fallback">
+        <span>IMAGE UNAVAILABLE</span>
+        <small>Level 2</small>
+      </div>
+      <div class="flagship-ribbon"><span>✦ Exclusive</span></div>
+      <div class="id-badge">LV.2</div>
+    </div>
+
+    <div class="card-body">
+      <div class="flagship-kicker">Premium Collection</div>
+      <div class="skin-name">Level 2: Silver</div>
+
+      <div class="level-note-box">
+  <div class="skin-meta">
+<p class="effect-note silver-note">
+          Contains silver colored effects for things from Amethyst list.
+        </p>
+        <p class="effect-note silver-note">
+          Contains improved hero levelup effects.
+        </p>
+  </div>
+</div>
+<div class="skin-meta">
+<p class="version-line">
+          <strong>Available since:</strong> DotA 7.04h0
+          <span class="version-separator">•</span>
+          <strong>LoD:</strong> 6.92x
+        </p>
+</div>
+
+      <div class="card-bottom level-card-bottom">
+        <div class="level-price-pill">
+          $20 / 1 month, $40 / 3 months
+        </div>
+        <div class="tag-row level-tag-row">
+          <span class="tag">Dota</span>
+          <span class="tag">LoD</span>
+          <span class="tag">Silver</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Level 3 -->
+  <article
+    class="skin-card level3-card flagship-card"
+    data-tags="dota lod gold level 3 chat vip force staff"
+    data-search="Level 3 Gold DotA 7.04h0 LoD 6.92x"
+  >
+    <div class="card-image">
+      <img
+        src="https://i.imgur.com/kbjdr4W.jpg"
+        alt="Level 3 Gold"
+        loading="lazy"
+        decoding="async"
+        onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+      >
+      <div class="image-fallback">
+        <span>IMAGE UNAVAILABLE</span>
+        <small>Level 3</small>
+      </div>
+      <div class="flagship-ribbon"><span>✦ Exclusive</span></div>
+      <div class="id-badge">LV.3</div>
+    </div>
+
+    <div class="card-body">
+      <div class="flagship-kicker">Premium Collection</div>
+      <div class="skin-name">Level 3: Gold</div>
+
+      <div class="level-note-box">
+  <div class="skin-meta">
+<p class="effect-note gold-note">
+          Contains golden effects from previous lists, also special effects for Force Staff and derivatives.
+        </p>
+        <p class="effect-note gold-note">
+          Contains special hero levelup effect.
+        </p>
+  </div>
+</div>
+<div class="skin-meta">
+<p class="version-line">
+          <strong>Available since:</strong> DotA 7.04h0
+          <span class="version-separator">•</span>
+          <strong>LoD:</strong> 6.92x
+        </p>
+</div>
+
+      <div class="card-bottom level-card-bottom">
+        <div class="level-price-pill">
+          $30 / 1 month, $60 / 3 months
+        </div>
+        <div class="tag-row level-tag-row">
+          <span class="tag">Dota</span>
+          <span class="tag">LoD</span>
+          <span class="tag">Gold</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Emoticons -->
+  <article class="skin-card" data-tags="dota lod item special effects" data-search="Emoticons DotA 6.88w9 LoD 6.85p7.1">
+    <div class="card-image">
+      <img src="https://i.imgur.com/j0TpnGn.jpg" alt="Emoticons" loading="lazy" decoding="async" onerror="this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Emoticons</small></div>
+      <div class="id-badge">Emoticons</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Emoticons</div>
+      <div class="skin-meta emoticon-meta">
+        <p class="version-line">
+          <strong>Available since:</strong>
+          DotA v6.88w9
+          <span class="version-separator">•</span>
+          <strong>LoD:</strong>
+          v6.85p7.1
+        </p>
+        <button type="button" class="emoticon-view-link" id="openEmoticonsModal">
+          ✦ View Emoticons &amp; Commands
+        </button>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$5</span>
+        <div class="tag-row">
+          <span class="tag">Dota</span>
+          <span class="tag">LoD</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Deny Mark -->
+  <article class="skin-card" data-tags="dota lod item special effects" data-search="Deny Mark DotA 6.88w9 LoD 6.85p7.1">
+    <div class="card-image">
+      <img src="https://i.imgur.com/O06swee.jpg" alt="Deny Mark" loading="lazy" decoding="async" onerror="this.style.display='none';">
+      <div class="image-fallback"><span>IMAGE UNAVAILABLE</span><small>Deny Mark</small></div>
+      <div class="id-badge">Deny Mark</div>
+    </div>
+    <div class="card-body">
+      <div class="skin-name">Deny Mark</div>
+      <div class="skin-meta">
+        <p class="version-line">
+          <strong>Available since:</strong>
+          DotA v6.88w9
+          <span class="version-separator">•</span>
+          <strong>LoD:</strong>
+          v6.85p7.1
+        </p>
+      </div>
+      <div class="card-bottom">
+        <span class="price-tag">$1</span>
+        <div class="tag-row">
+          <span class="tag">Dota</span>
+          <span class="tag">LoD</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- #0 -->
+  <article
+    class="skin-card"
+    data-tags="dota lod shadow fiend set"
+    data-search="#0 Shadow Fiend's Set DotA 6.88w9 LoD 6.85p7.1"
+  >
+    <div class="card-image">
+      <img
+        src="https://i.imgur.com/SH2CCNM.jpg"
+        alt="#0 Shadow Fiend's Set"
+        loading="lazy"
+        decoding="async"
+        onerror="this.closest('.card-image').classList.add('image-error');this.style.display='none';"
+      >
+      <div class="image-fallback">
+        <span>IMAGE UNAVAILABLE</span>
+        <small>#0</small>
+      </div>
+      <div class="id-badge">#0</div>
+    </div>
+
+    <div class="card-body">
+      <div class="skin-name">#0 Shadow Fiend's Set</div>
+
+      <div class="skin-meta">
+        <p><strong>Effects:</strong> Shadow raze &amp; blink dagger effects</p>
+        <p><strong>Works on:</strong> Shadow Fiend</p>
+        <p><strong>Duration:</strong> forever</p>
+        <p class="version-line">
+          <strong>Available since:</strong> DotA v6.88w9
+          <span class="version-separator">•</span>
+          <strong>LoD:</strong> v6.85p7.1
+        </p>
+      </div>
+
+      <div class="card-bottom">
+        <span class="price-tag">$5</span>
+        <div class="tag-row">
+          <span class="tag">Dota</span>
+          <span class="tag">LoD</span>
+          <button
+            class="youtube-link"
+            type="button"
+            data-video="https://youtu.be/2mQ4Y7OAhKA"
+            aria-label="Watch Shadow Fiend's Set video"
+          >▶ Video</button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<div class="no-results" id="noResults">No items found.</div>
+
+<!-- =========================================================
+     EMOTICONS COMMAND MODAL
+     ========================================================= -->
+<div class="emote-modal" id="emoticonsModal" aria-hidden="true">
+  <div class="emote-modal-panel" role="dialog" aria-modal="true" aria-labelledby="emoteModalTitle">
+    <div class="emote-modal-head">
+      <div class="emote-modal-title-row">
+        <div>
+          <div class="emote-modal-title" id="emoteModalTitle">Emoticons &amp; Commands</div>
+          <div class="emote-modal-subtitle">Click any command to copy it.</div>
+        </div>
+        <button type="button" class="emote-modal-close" id="closeEmoticonsModal" aria-label="Close">×</button>
+      </div>
+    </div>
+
+    <div class="emote-modal-toolbar">
+      <input
+        type="text"
+        class="emote-modal-search"
+        id="emoteModalSearch"
+        placeholder="Search emoticon or command..."
+        autocomplete="off"
+        aria-label="Search emoticon or command"
+      >
+      <span class="emote-modal-count" id="emoteModalCount"></span>
+    </div>
+
+    <div class="emote-modal-scroll">
+      <table class="emote-table">
+        <thead>
+          <tr>
+            <th>Preview</th>
+            <th>Command / Alias</th>
+          </tr>
+        </thead>
+        <tbody id="emoteTableBody">
+          <tr class="emote-section-row">
+            <td colspan="2">Emoticons Pack 1</td>
+          </tr>
+          <tr class="emote-row" data-emote-search="322">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/Smile322.png" alt="322" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="322" title="Copy 322">322</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="angry">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileAngry0.png" alt="angry" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="angry" title="Copy angry">angry</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="mad">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileAngry1.png" alt="mad" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="mad" title="Copy mad">mad</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="bellissimo bls">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileBelissimo.png" alt="bellissimo" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="bellissimo" title="Copy bellissimo">bellissimo</button><button type="button" class="emote-command" data-command="bls" title="Copy bls">bls</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="biblethump bib">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileBibleThump.png" alt="biblethump" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="biblethump" title="Copy biblethump">biblethump</button><button type="button" class="emote-command" data-command="bib" title="Copy bib">bib</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="crab">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileCrab.png" alt="crab" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="crab" title="Copy crab">crab</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="cry">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileCry.png" alt="cry" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="cry" title="Copy cry">cry</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="dendiface dendi">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileDendi.png" alt="DendiFace" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="DendiFace" title="Copy DendiFace">DendiFace</button><button type="button" class="emote-command" data-command="Dendi" title="Copy Dendi">Dendi</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="dislike">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileDown.png" alt="dislike" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="dislike" title="Copy dislike">dislike</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="drooling droo">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileDroolingFace.png" alt="drooling" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="drooling" title="Copy drooling">drooling</button><button type="button" class="emote-command" data-command="droo" title="Copy droo">droo</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="ggez">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileGGEZ.png" alt="ggez" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="ggez" title="Copy ggez">ggez</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="happy">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileHappy2.png" alt="happy" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="happy" title="Copy happy">happy</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="&lt;3">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileHeart.png" alt="&lt;3" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="&lt;3" title="Copy &lt;3">&lt;3</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="&lt;3">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileHeart2.png" alt="&lt;3" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="&lt;3" title="Copy &lt;3">&lt;3</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="frog">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileIceFraug.png" alt="frog" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="frog" title="Copy frog">frog</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="illuminaty ilmt">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileIlluminati.png" alt="illuminaty" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="illuminaty" title="Copy illuminaty">illuminaty</button><button type="button" class="emote-command" data-command="ilmt" title="Copy ilmt">ilmt</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="slow">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileSlow.png" alt="slow" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="slow" title="Copy slow">slow</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="kappa kpp">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileKappa.png" alt="Kappa" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="Kappa" title="Copy Kappa">Kappa</button><button type="button" class="emote-command" data-command="kpp" title="Copy kpp">kpp</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="kappapride kappap">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileKappaPride.png" alt="KappaPride" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="KappaPride" title="Copy KappaPride">KappaPride</button><button type="button" class="emote-command" data-command="Kappap" title="Copy Kappap">Kappap</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search=":*">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileKiss0.png" alt=":*" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command=":*" title="Copy :*">:*</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="hi koncha">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileKonCha.png" alt="hi" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="hi" title="Copy hi">hi</button><button type="button" class="emote-command" data-command="koncha" title="Copy koncha">koncha</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="lol">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileLoL0.png" alt="lol" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="lol" title="Copy lol">lol</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="rofl">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileLoL1.png" alt="rofl" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="rofl" title="Copy rofl">rofl</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search=":d">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileLoL2.png" alt=":D" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command=":D" title="Copy :D">:D</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="lul">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileLUL.png" alt="LUL" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="LUL" title="Copy LUL">LUL</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="monkas">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileMonkaS.png" alt="monkaS" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="monkaS" title="Copy monkaS">monkaS</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="peka">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmilePeka.png" alt="peka" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="peka" title="Copy peka">peka</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="pekagasm pekag">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmilePekagasm.png" alt="pekagasm" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="pekagasm" title="Copy pekagasm">pekagasm</button><button type="button" class="emote-command" data-command="pekag" title="Copy pekag">pekag</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="pogchamp pgch">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmilePogChamp.png" alt="PogChamp" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="PogChamp" title="Copy PogChamp">PogChamp</button><button type="button" class="emote-command" data-command="pgch" title="Copy pgch">pgch</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="punoko">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmilePunOko.png" alt="punoko" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="punoko" title="Copy punoko">punoko</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="rainbow rnb">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileRainbow.png" alt="rainbow" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="rainbow" title="Copy rainbow">rainbow</button><button type="button" class="emote-command" data-command="rnb" title="Copy rnb">rnb</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="rly">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileRly.png" alt="rly" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="rly" title="Copy rly">rly</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="sleep">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileSleep.png" alt="sleep" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="sleep" title="Copy sleep">sleep</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="smorc">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileSMOrc.png" alt="SMOrc" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="SMOrc" title="Copy SMOrc">SMOrc</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="cool">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileSunglasses.png" alt="cool" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="cool" title="Copy cool">cool</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="&gt;&lt; rage">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileTable.png" alt="&gt;&lt;" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="&gt;&lt;" title="Copy &gt;&lt;">&gt;&lt;</button><button type="button" class="emote-command" data-command="rage" title="Copy rage">rage</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="hmm">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileThinking.png" alt="hmm" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="hmm" title="Copy hmm">hmm</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="like">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileUp.png" alt="like" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="like" title="Copy like">like</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="slow">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileSlow.png" alt="slow" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="slow" title="Copy slow">slow</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="wut">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileWut0.png" alt="wut" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="wut" title="Copy wut">wut</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="yao">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileYao.png" alt="yao" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="yao" title="Copy yao">yao</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="boss">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/boss.gif" alt="boss" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="boss" title="Copy boss">boss</button></td>
+      </tr>
+          <tr class="emote-section-row">
+            <td colspan="2">Added since v6.88w4</td>
+          </tr>
+          <tr class="emote-row" data-emote-search="-_- fry">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/frays.png" alt="-_-" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="-_-" title="Copy -_-">-_-</button><button type="button" class="emote-command" data-command="fry" title="Copy fry">fry</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="impossibru imp">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/impos.png" alt="impossibru" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="impossibru" title="Copy impossibru">impossibru</button><button type="button" class="emote-command" data-command="imp" title="Copy imp">imp</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="prep">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/haHa.png" alt="prep" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="prep" title="Copy prep">prep</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="risitas">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/risitas.png" alt="risitas" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="risitas" title="Copy risitas">risitas</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="nooo noooo">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileNooo.png" alt="nooo" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="nooo" title="Copy nooo">nooo</button><button type="button" class="emote-command" data-command="noooo" title="Copy noooo">noooo</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="fu">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/pack1/SmileFU.png" alt="fu" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="fu" title="Copy fu">fu</button></td>
+      </tr>
+          <tr class="emote-section-row">
+            <td colspan="2">Pudge Scarecrow Set</td>
+          </tr>
+          <tr class="emote-row" data-emote-search="mid">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/specials_pudge/SmileMID.png" alt="mid" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="mid" title="Copy mid">mid</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="john">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/specials_pudge/johnny.png" alt="john" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="john" title="Copy john">john</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="joker">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/specials_pudge/joker.png" alt="joker" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="joker" title="Copy joker">joker</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="joker2">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/specials_pudge/joker2.png" alt="joker2" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="joker2" title="Copy joker2">joker2</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="psycho">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/specials_pudge/psycho.png" alt="psycho" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="psycho" title="Copy psycho">psycho</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="psycho2">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/specials_pudge/psycho2.png" alt="psycho2" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="psycho2" title="Copy psycho2">psycho2</button></td>
+      </tr>
+<tr class="emote-row" data-emote-search="wss">
+        <td class="emote-preview">
+          <div class="emote-preview-box">
+            <img src="https://d1stats.ru/img/donate/smiles/specials_pudge/wyss.png" alt="wss" loading="lazy" decoding="async"
+                 onerror="this.closest('.emote-preview-box').classList.add('image-error');">
+          </div>
+        </td>
+        <td class="emote-aliases"><button type="button" class="emote-command" data-command="wss" title="Copy wss">wss</button></td>
+      </tr>
+        </tbody>
+      </table>
+      <div class="emote-empty" id="emoteEmpty">No matching emoticons found.</div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const cards = [...document.querySelectorAll(".skin-card")];
+const resultCount = document.getElementById("resultCount");
+const noResults = document.getElementById("noResults");
+
+function updateCards(){
+  const search = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+
+  cards.forEach(card => {
+    const text = (card.dataset.search || "").toLowerCase();
+    const show = !search || text.includes(search);
+
+    card.classList.toggle("hidden", !show);
+
+    if(show) visible++;
+  });
+
+  resultCount.textContent =
+    `${visible} ${visible === 1 ? "item" : "items"}`;
+
+  noResults.style.display = visible ? "none" : "block";
+}
+
+searchInput.addEventListener("input", updateCards);
+
+cards.forEach(card => {
+  card.addEventListener("pointermove", event => {
+    const rect = card.getBoundingClientRect();
+
+    const x =
+      ((event.clientX - rect.left) / rect.width) * 100;
+
+    const y =
+      ((event.clientY - rect.top) / rect.height) * 100;
+
+    card.style.setProperty("--mx", `${x}%`);
+    card.style.setProperty("--my", `${y}%`);
+  });
+
+  card.addEventListener("pointerleave", () => {
+    card.style.setProperty("--mx", "50%");
+    card.style.setProperty("--my", "50%");
+  });
+});
+
+document.querySelectorAll(".youtube-link").forEach(button => {
+  button.addEventListener("click", () => {
+    const videoUrl = button.dataset.video;
+    if(videoUrl){
+      window.open(videoUrl, "_blank", "noopener,noreferrer");
+    }
+  });
+});
+
+/* Emoticons modal */
+const emoticonsModal = document.getElementById("emoticonsModal");
+const openEmoticonsModal = document.getElementById("openEmoticonsModal");
+const closeEmoticonsModal = document.getElementById("closeEmoticonsModal");
+const emoteModalSearch = document.getElementById("emoteModalSearch");
+const emoteModalCount = document.getElementById("emoteModalCount");
+const emoteEmpty = document.getElementById("emoteEmpty");
+const emoteRows = [...document.querySelectorAll(".emote-row")];
+const emoteSections = [...document.querySelectorAll(".emote-section-row")];
+
+function updateEmoteModalRows(){
+  const q = emoteModalSearch.value.trim().toLowerCase();
+  let visible = 0;
+
+  emoteRows.forEach(row => {
+    const show = !q || (row.dataset.emoteSearch || "").includes(q);
+    row.style.display = show ? "" : "none";
+    if(show) visible++;
+  });
+
+  /* Hide section headings that have no visible rows underneath. */
+  emoteSections.forEach(section => {
+    let next = section.nextElementSibling;
+    let hasVisible = false;
+    while(next && !next.classList.contains("emote-section-row")){
+      if(next.classList.contains("emote-row") && next.style.display !== "none"){
+        hasVisible = true;
+        break;
+      }
+      next = next.nextElementSibling;
+    }
+    section.style.display = hasVisible ? "" : "none";
+  });
+
+  emoteModalCount.textContent = `${visible} ${visible === 1 ? "command row" : "command rows"}`;
+  emoteEmpty.style.display = visible ? "none" : "block";
+}
+
+function openEmoteModal(){
+  emoticonsModal.classList.add("open");
+  emoticonsModal.setAttribute("aria-hidden","false");
+  document.body.classList.add("emote-modal-open");
+  updateEmoteModalRows();
+  setTimeout(() => emoteModalSearch.focus(), 40);
+}
+
+function closeEmoteModal(){
+  emoticonsModal.classList.remove("open");
+  emoticonsModal.setAttribute("aria-hidden","true");
+  document.body.classList.remove("emote-modal-open");
+}
+
+openEmoticonsModal.addEventListener("click", openEmoteModal);
+closeEmoticonsModal.addEventListener("click", closeEmoteModal);
+
+emoticonsModal.addEventListener("click", event => {
+  if(event.target === emoticonsModal) closeEmoteModal();
+});
+
+document.addEventListener("keydown", event => {
+  if(event.key === "Escape" && emoticonsModal.classList.contains("open")){
+    closeEmoteModal();
+  }
+});
+
+emoteModalSearch.addEventListener("input", updateEmoteModalRows);
+
+document.querySelectorAll(".emote-command").forEach(button => {
+  button.addEventListener("click", async () => {
+    const command = button.dataset.command || "";
+    try{
+      await navigator.clipboard.writeText(command);
+    }catch(error){
+      const temp = document.createElement("textarea");
+      temp.value = command;
+      temp.style.position = "fixed";
+      temp.style.opacity = "0";
+      document.body.appendChild(temp);
+      temp.focus();
+      temp.select();
+      document.execCommand("copy");
+      temp.remove();
+    }
+
+    const original = button.textContent;
+    button.classList.add("copied");
+    button.textContent = "Copied!";
+    setTimeout(() => {
+      button.classList.remove("copied");
+      button.textContent = original;
+    }, 900);
+  });
+});
+
+updateCards();
+</script>
+
+
+</body>
+</html>
