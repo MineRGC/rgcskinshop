@@ -1162,10 +1162,10 @@ input{
 
 .rank-actions{
   display:flex;
-  justify-content:flex-end;
+  justify-content:flex-start;
   gap:10px;
   flex-wrap:wrap;
-  margin-top:18px;
+  margin-top:10px;
 }
 
 .rank-action{
@@ -1198,7 +1198,7 @@ input{
 }
 
 .rank-help{
-  margin-top:13px;
+  margin-top:8px;
   color:#66778a;
   font-size:.7rem;
   line-height:1.5;
@@ -2048,13 +2048,23 @@ input{
           Changes appear instantly in the preview. When your design is ready, download the TXT document and send it with your order.
         </div>
 
+        <div class="rank-actions rank-actions-settings">
+          <button
+            class="rank-action primary"
+            id="downloadRankText"
+            type="button"
+          >
+            ↓ Download Text
+          </button>
+        </div>
+
       </section>
 
 
       <section class="rank-preview-area">
 
         <div class="rank-preview-title">
-          Live Preview
+          Profil Previews
         </div>
 
         <div class="rank-preview-stage">
@@ -2066,7 +2076,7 @@ input{
               <div class="rank-preview-name" id="rankPreviewName">Safelisted</div>
               <div class="rank-preview-meta">⚔ 0 games&nbsp;&nbsp;&nbsp; ID</div>
               <div class="rank-preview-accent"></div>
-              <div class="rank-preview-level-badge">LV&nbsp; 14</div>
+              <div class="rank-preview-level-badge">LV&nbsp; 0</div>
             </div>
           </div>
 
@@ -2091,18 +2101,6 @@ input{
           </div>
         </div>
 
-
-        <div class="rank-actions">
-
-          <button
-            class="rank-action"
-            id="downloadRankText"
-            type="button"
-          >
-            ↓ Download Text
-          </button>
-
-        </div>
 
       </section>
 
