@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="no-referrer" name="referrer"/>
 <title>RGC Skins — Purchase Guide</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -74,6 +75,45 @@ footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid r
 #rgc-dropdown-nav .rgc-dd-hamburger span{display:block!important;width:25px!important;height:3px!important;border-radius:3px!important;background:linear-gradient(90deg,#f8df87,#d4af37)!important;box-shadow:0 0 5px rgba(212,175,55,.22)!important;}
 #rgc-dropdown-nav .rgc-dd-menu{top:calc(100% + 8px)!important;left:0!important;}
 @media(max-width:600px){#rgc-dropdown-nav{position:relative!important;margin:10px 0 18px 10px!important;}#rgc-dropdown-nav .rgc-dd-trigger{min-height:54px!important;gap:10px!important;padding:6px 12px 6px 7px!important;}#rgc-dropdown-nav .rgc-dd-logo{width:40px!important;height:40px!important;flex-basis:40px!important;}#rgc-dropdown-nav .rgc-dd-hamburger{width:25px!important;height:25px!important;gap:4px!important;}#rgc-dropdown-nav .rgc-dd-hamburger span{width:23px!important;height:3px!important;}#rgc-dropdown-nav .rgc-dd-menu{width:min(280px,calc(100vw - 24px))!important;}}
+
+/* Skin price calculator */
+.skin-calculator{margin:24px 0 8px;padding:22px;border:1px solid rgba(0,148,255,.35);border-radius:18px;background:linear-gradient(145deg,rgba(7,17,31,.96),rgba(13,20,32,.94));box-shadow:0 12px 30px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.04);position:relative;z-index:1}
+.skin-calculator *{box-sizing:border-box}
+.skin-calc-heading{display:flex;align-items:center;gap:11px;margin-bottom:6px}.skin-calc-heading .calc-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(0,148,255,.13);border:1px solid rgba(0,148,255,.28);font-size:22px}
+.skin-calculator h3{font-size:22px;line-height:1.3;color:#fff;margin:0}.skin-calc-subtitle{color:#9eacbf;font-size:13px;margin:0 0 18px}
+.skin-calc-search-row{display:flex;gap:9px}.skin-calc-search-row input{flex:1;min-width:0;background:#080e18;border:1px solid #2a3b52;color:#f4f7fc;border-radius:10px;padding:12px 13px;font-size:14px;outline:none}.skin-calc-search-row input:focus{border-color:#0094ff;box-shadow:0 0 0 3px rgba(0,148,255,.12)}
+.skin-calc-btn{border:1px solid rgba(0,148,255,.48);border-radius:10px;background:linear-gradient(135deg,#0879c9,#075da3);color:#fff;padding:11px 15px;font-weight:750;font-size:13px;cursor:pointer;transition:transform .15s,filter .15s;white-space:nowrap}.skin-calc-btn:hover{filter:brightness(1.15);transform:translateY(-1px)}.skin-calc-btn.secondary{background:#111b2a;border-color:#31445e;color:#dce8f7}.skin-calc-help{color:#8191a7;font-size:12px;margin:8px 0 14px}
+.skin-calc-results{display:grid;gap:8px;margin-top:10px}.skin-calc-result{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid rgba(129,153,183,.16);background:rgba(255,255,255,.025);border-radius:12px;min-width:0}.skin-calc-result-copy{flex:1;min-width:0}.skin-calc-name{color:#f2f6fc;font-weight:750;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.skin-calc-meta{color:#91a1b7;font-size:11px;margin-top:3px}.skin-calc-price{color:#f4d66d;font-weight:800;white-space:nowrap;font-size:14px}.skin-calc-empty{padding:14px;border:1px dashed rgba(129,153,183,.3);border-radius:10px;color:#95a5ba;font-size:13px;text-align:center}
+.skin-calc-selected{margin-top:22px;border-top:1px solid rgba(129,153,183,.18);padding-top:18px}.skin-calc-section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.skin-calc-section-title h4{font-size:15px;color:#fff;margin:0}.skin-calc-count{color:#93a3b8;font-size:12px}.skin-calc-line{padding:13px 12px;margin-bottom:8px;border:1px solid rgba(129,153,183,.18);background:rgba(255,255,255,.025);border-radius:12px}.skin-calc-line-top{display:flex;align-items:flex-start;gap:10px}.skin-calc-line-copy{flex:1;min-width:0}.skin-calc-line-name{font-size:13px;font-weight:750;color:#f4f7fc;overflow-wrap:anywhere}.skin-calc-line-category{font-size:11px;color:#8fa0b7;margin-top:2px}.skin-calc-line-total{font-size:14px;color:#f4d66d;font-weight:800;white-space:nowrap}.skin-calc-line-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:11px}.skin-calc-line select,.skin-calc-line input{background:#080e18;color:#eef4ff;border:1px solid #2a3b52;border-radius:8px;padding:8px 9px;font-size:12px;max-width:100%}.skin-calc-remove{margin-left:auto;border:0;background:transparent;color:#ff9292;cursor:pointer;font-size:12px;padding:6px}.skin-calc-total-box{margin-top:14px;padding:17px;border-radius:13px;border:1px solid rgba(244,214,109,.28);background:linear-gradient(120deg,rgba(244,214,109,.08),rgba(0,148,255,.07));display:flex;align-items:center;justify-content:space-between;gap:12px}.skin-calc-total-label{font-size:12px;color:#a8b5c7;text-transform:uppercase;letter-spacing:1.2px}.skin-calc-total-value{font-size:28px;font-weight:850;color:#f7dc79;line-height:1.25}.skin-calc-warning{font-size:12px;color:#ffcf8b;margin-top:10px}.skin-calc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.skin-calc-copy-status{font-size:12px;color:#8fd5a9;min-height:18px;margin-top:8px}.skin-calc-disclaimer{color:#8494a9;font-size:11px;margin-top:13px;line-height:1.6}
+@media(max-width:600px){.skin-calculator{padding:15px;margin-top:18px}.skin-calculator h3{font-size:19px}.skin-calc-search-row{flex-direction:column}.skin-calc-search-row .skin-calc-btn{width:100%}.skin-calc-result{gap:8px;align-items:flex-start;flex-wrap:wrap}.skin-calc-result-copy{flex-basis:calc(100% - 20px)}.skin-calc-price{margin-left:30px}.skin-calc-total-value{font-size:25px}.skin-calc-total-box{align-items:flex-start;flex-direction:column}}
+
+
+/* Clean purchase-guide layout refresh */
+body{max-width:1040px;padding:34px 22px 56px;line-height:1.65}
+.header-wrap{margin:0 auto 24px;padding:14px 12px 22px;max-width:820px}
+.header-wrap h1{font-size:clamp(25px,3vw,32px);line-height:1.25;letter-spacing:.35px}
+.subtitle{font-size:14px;line-height:1.7;margin-top:10px}
+.disclaimer-box{max-width:900px;margin:0 auto 22px;padding:15px 20px;border-radius:12px}
+.step{padding:clamp(16px,2.5vw,26px);margin:0 auto 18px;max-width:940px;border-radius:14px;border-left-width:3px}
+.step-header{display:flex;align-items:center;gap:13px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(148,163,184,.17)}
+.step-num{display:flex;align-items:center;justify-content:center;flex:0 0 38px;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,rgba(0,148,255,.22),rgba(0,148,255,.08));border:1px solid rgba(0,148,255,.45);color:#8ed4ff;font-size:16px;font-weight:800;box-shadow:none}
+.step-title-grid{display:grid;grid-template-columns:1fr;gap:2px;min-width:0}
+.step-title-en,.step-title-es{margin:0!important;line-height:1.35}
+.step-title-en{font-size:19px!important;color:#f4f7fb!important;font-weight:750}
+.step-title-es{font-size:13px!important;color:#9eacbd!important;font-weight:500}
+.language-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.language-box,.language-column,.language-instructions{min-width:0}
+.language-box{padding:17px;border-radius:11px;border:1px solid rgba(148,163,184,.16);background:rgba(5,11,20,.48)}
+.language-box p{margin:0 0 10px}
+.language-box p:last-child{margin-bottom:0}
+.language-box h3,.language-box h4{margin-top:0}
+#skin-price-calculator{margin-top:18px!important;border-radius:13px!important}
+#skin-price-calculator input,#skin-price-calculator select{max-width:100%}
+#skin-calc-results,#skin-calc-cart{min-width:0;overflow-wrap:anywhere}
+.contact-section{max-width:940px;margin:22px auto 0;border-radius:14px;padding:clamp(16px,2.5vw,24px)}
+footer{max-width:940px;margin:22px auto 0;border-radius:12px;padding:18px 14px}
+@media(max-width:680px){body{padding:18px 12px 34px}.rgc-title-logo img{width:72px;height:72px}.language-columns{grid-template-columns:1fr;gap:10px}.step{padding:15px;margin-bottom:13px}.step-header{gap:10px;margin-bottom:13px;padding-bottom:11px}.step-num{flex-basis:34px;width:34px;height:34px;border-radius:9px}.step-title-en{font-size:17px!important}.language-box{padding:14px}.disclaimer-box{padding:13px 14px}}
+@media(prefers-reduced-motion:reduce){.header-wrap:after{animation:none}}
 </style>
 <style id="rgc-dropdown-nav-style">
 #rgc-dropdown-nav, #rgc-dropdown-nav * { box-sizing:border-box; }
@@ -100,34 +140,33 @@ footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid r
 @keyframes rgcLogoGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(212,175,55,.55)) drop-shadow(0 0 13px rgba(0,148,255,.28));transform:scale(1)}50%{filter:drop-shadow(0 0 13px rgba(244,217,123,.95)) drop-shadow(0 0 24px rgba(0,148,255,.48));transform:scale(1.035)}}
 @media(prefers-reduced-motion:reduce){.rgc-title-logo img{animation:none}}
 </style>
-
-<link rel="icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
-<link rel="shortcut icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
-<link rel="apple-touch-icon" href="https://i.imgur.com/ZQcoV5B.png">
+<link href="https://i.imgur.com/ZQcoV5B.png" rel="icon" type="image/png"/>
+<link href="https://i.imgur.com/ZQcoV5B.png" rel="shortcut icon" type="image/png"/>
+<link href="https://i.imgur.com/ZQcoV5B.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <div id="rgc-dropdown-nav">
-  <button class="rgc-dd-trigger" type="button" aria-expanded="false" aria-controls="rgc-dd-menu">
-    <img class="rgc-dd-logo" src="https://i.imgur.com/ZQcoV5B.png" alt="RGC Logo">
-    <span class="rgc-dd-hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
-    <span class="rgc-dd-brand"><strong>RGC SKIN SHOP</strong><small>DOTA 1 COLLECTION</small></span>
-    <span class="rgc-dd-chevron" aria-hidden="true">▾</span>
-  </button>
-  <nav class="rgc-dd-menu" id="rgc-dd-menu" aria-label="Site navigation">
-    <a href="index.html">⌂ <span>Home</span></a>
-    <div class="rgc-dd-divider"></div>
-    <div class="rgc-dd-subtitle">Skin Shop</div>
-    <a href="Strength%20hero.html">✦ <span>Strength Heroes</span></a>
-    <a href="Agility%20hero.html">✦ <span>Agility Heroes</span></a>
-    <a href="Intelligence%20hero.html">✦ <span>Intelligence Heroes</span></a>
-    <a href="Courier.html">✦ <span>Courier</span></a>
-    <a href="Announcer.html">✦ <span>Announcer</span></a>
-    <a href="Item%20Special%20Effects.html">✦ <span>Item Special Effects</span></a>
-    <div class="rgc-dd-divider"></div>
-    <a href="Global%20Rank.html">♛ <span>Global Rank</span></a>
-    <a href="Special%20offers.html">★ <span>Special Offers</span></a>
-    <a href="About%20Pay.html">✉ <span>Contact / About Pay</span></a>
-  </nav>
+<button aria-controls="rgc-dd-menu" aria-expanded="false" class="rgc-dd-trigger" type="button">
+<img alt="RGC Logo" class="rgc-dd-logo" src="https://i.imgur.com/ZQcoV5B.png"/>
+<span aria-hidden="true" class="rgc-dd-hamburger"><span></span><span></span><span></span></span>
+<span class="rgc-dd-brand"><strong>RGC SKIN SHOP</strong><small>DOTA 1 COLLECTION</small></span>
+<span aria-hidden="true" class="rgc-dd-chevron">▾</span>
+</button>
+<nav aria-label="Site navigation" class="rgc-dd-menu" id="rgc-dd-menu">
+<a href="index.html">⌂ <span>Home</span></a>
+<div class="rgc-dd-divider"></div>
+<div class="rgc-dd-subtitle">Skin Shop</div>
+<a href="Strength%20hero.html">✦ <span>Strength Heroes</span></a>
+<a href="Agility%20hero.html">✦ <span>Agility Heroes</span></a>
+<a href="Intelligence%20hero.html">✦ <span>Intelligence Heroes</span></a>
+<a href="Courier.html">✦ <span>Courier</span></a>
+<a href="Announcer.html">✦ <span>Announcer</span></a>
+<a href="Item%20Special%20Effects.html">✦ <span>Item Special Effects</span></a>
+<div class="rgc-dd-divider"></div>
+<a href="Global%20Rank.html">♛ <span>Global Rank</span></a>
+<a href="Special%20offers.html">★ <span>Special Offers</span></a>
+<a href="About%20Pay.html">✉ <span>Contact / About Pay</span></a>
+</nav>
 </div>
 <script id="rgc-dropdown-nav-script">
 (function(){
@@ -141,141 +180,82 @@ footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid r
  root.addEventListener('mouseleave',function(){if(window.matchMedia('(hover:hover)').matches)setOpen(false);});
 })();
 </script>
-
 <div class="header-wrap">
-<div class="rgc-title-logo"><img src="https://i.imgur.com/ZQcoV5B.png" alt="RGC Logo"></div>
+<div class="rgc-title-logo"><img alt="RGC Logo" src="https://i.imgur.com/ZQcoV5B.png"/></div>
 <h1>RGC Skins Purchase Guide</h1>
-<p class="subtitle">Follow the steps below to complete your order —<br>Sigue los pasos para completar tu compra</p>
+<p class="subtitle">Follow the steps below to complete your order —<br/>Sigue los pasos para completar tu compra</p>
 </div>
-
 <div class="disclaimer-box">
-<p class="disclaimer-text">⚠️ <span class="en">Any purchase made without prior communication with Mine will not be held responsible in case of fraud or loss.</span><br>⚠️ <span class="es">Cualquier compra realizada sin comunicación previa con Mine no será cubierta en caso de estafa o pérdida.</span></p>
+<p class="disclaimer-text">⚠️ <span class="en">Any purchase made without prior communication with Mine will not be held responsible in case of fraud or loss.</span><br/>⚠️ <span class="es">Cualquier compra realizada sin comunicación previa con Mine no será cubierta en caso de estafa o pérdida.</span></p>
+</div>
+<div class="step">
+<div class="step-header bilingual-step-header">
+<span class="step-num">1</span>
+<div class="step-title-grid">
+<h2 class="step-title-en">Select &amp; Calculate</h2>
+<h2 class="step-title-es">Seleccionar y calcular</h2>
+</div>
+</div>
+<div class="language-columns">
+<div class="language-box english-box">
+<div class="language-title">ENGLISH</div>
+<p>Select the skins you like, then calculate the total price.</p>
+</div>
+<div class="language-box spanish-box">
+<div class="language-title">ESPAÑOL</div>
+<p>Selecciona los aspectos que desees y calcula el precio total.</p>
+</div>
+</div>
+<section aria-labelledby="skin-calc-title" class="skin-calculator" id="skin-price-calculator">
+<div class="skin-calc-heading"><div aria-hidden="true" class="calc-icon">✦</div><div><h3 id="skin-calc-title">Skin Price Calculator</h3><div style="color:#91a1b7;font-size:12px">Calculadora de precios de skins</div></div></div>
+<p class="skin-calc-subtitle">Search by skin ID or name, add the items you want, and see your estimated total instantly.</p>
+<div class="skin-calc-search-row"><input aria-label="Search skin by ID or name" autocomplete="off" id="skin-calc-query" placeholder="Try #100, #106, Earth Spirit..." type="search"/><button class="skin-calc-btn" id="skin-calc-search" type="button">Search skins</button></div>
+<p class="skin-calc-help">You can search by number or name. Separate multiple searches with commas or new lines. / Puedes buscar por número o nombre.</p>
+<div aria-live="polite" class="skin-calc-results" id="skin-calc-results"><div class="skin-calc-empty">Enter a skin ID or name to find products.</div></div>
+<div class="skin-calc-selected">
+<div class="skin-calc-section-title"><h4>Your selected skins / Tus skins seleccionadas</h4><span class="skin-calc-count" id="skin-calc-count">0 items</span></div>
+<div id="skin-calc-cart"><div class="skin-calc-empty">No skins selected yet.</div></div>
+<div class="skin-calc-total-box"><div><div class="skin-calc-total-label">Estimated total / Total estimado</div><div class="skin-calc-total-value" id="skin-calc-total">$0.00</div></div><button class="skin-calc-btn secondary" id="skin-calc-clear" type="button">Clear selection</button></div>
+<div class="skin-calc-warning" hidden="" id="skin-calc-warning"></div>
+<div class="skin-calc-actions"><button class="skin-calc-btn" id="skin-calc-copy" type="button">Copy order summary</button><button class="skin-calc-btn secondary" id="skin-calc-download" type="button">Download order summary (.txt)</button></div>
+<div aria-live="polite" class="skin-calc-copy-status" id="skin-calc-status"></div>
+<p class="skin-calc-disclaimer">This is an estimate based on the listed shop prices. Please contact the seller to confirm availability and the final amount before payment. / Este es un cálculo estimado; confirma la disponibilidad y el importe final con el vendedor antes de pagar.</p>
+</div>
+</section>
 </div>
 
 <div class="step">
 <div class="step-header bilingual-step-header">
-  <span class="step-num">1</span>
-  <div class="step-title-grid">
-    <h2 class="step-title-en">Select &amp; Calculate</h2>
-    <h2 class="step-title-es">Seleccionar y calcular</h2>
-  </div>
+<span class="step-num">2</span>
+<div class="step-title-grid">
+<h2 class="step-title-en">Send Payment</h2>
+<h2 class="step-title-es">Enviar pago</h2>
+</div>
 </div>
 <div class="language-columns">
-  <div class="language-box english-box">
-    <div class="language-title">ENGLISH</div>
-    <p>Select the skins you like, then calculate the total price.</p>
-  </div>
-  <div class="language-box spanish-box">
-    <div class="language-title">ESPAÑOL</div>
-    <p>Selecciona los aspectos que desees y calcula el precio total.</p>
-  </div>
+<div class="language-box english-box payment-language-box">
+<div class="language-title">ENGLISH</div>
+<p>After confirmation, choose your payment method below.</p>
+<div class="payment-label">PayPal</div>
+<div class="payment-grid">
+<a class="paypal-btn" href="https://www.paypal.com/paypalme/RGCMine" rel="noopener noreferrer" target="_blank"><div class="pp-logo"><span>PAY</span><span>PAL</span></div><div class="paypal-email">zls.mine@hotmail.com</div></a>
+<a class="paypal-btn" href="https://www.paypal.com" rel="noopener noreferrer" target="_blank"><div class="pp-logo"><span>PAY</span><span>PAL</span></div><div class="paypal-email">Thebikeshvibeau@gmail.com</div></a>
 </div>
+<div class="payment-label">Western Union</div>
+<div class="wu-wrap"><p style="margin:15px 0 8px;color:#aaa;font-size:14px">Western Union</p><a class="wu-btn" href="https://www.westernunion.com" rel="noopener noreferrer" target="_blank"><span class="wu-text"><span>W</span>ESTERN <span>U</span>NION</span></a><p class="wu-note">💬 Contact <span class="mine-name">Mine</span> to receive the transfer details before sending.</p></div>
+<p class="note">⚠️ All payment methods are solely for payment purposes; confirm details directly with <span class="mine-name">Mine</span> before sending.</p>
 </div>
-
-<div class="step">
-<div class="step-header bilingual-step-header">
-  <span class="step-num">2</span>
-  <div class="step-title-grid">
-    <h2 class="step-title-en">Contact the Seller</h2>
-    <h2 class="step-title-es">Contactar al vendedor</h2>
-  </div>
+<div class="language-box spanish-box payment-language-box">
+<div class="language-title">ESPAÑOL</div>
+<p>Tras confirmar tu pedido, contacta con el vendedor para acordar el método de pago.</p>
+<div class="south-america-note"><strong>🌎 Jugadores de Sudamérica:</strong> envía un mensaje a <span class="Lviso-name">Lviso</span> antes de realizar el pago.</div>
+<div class="payment-info-card">
+<div class="payment-info-icon">💳</div>
+<div class="payment-info-title">Método de pago</div>
+<p>Contacta con el vendedor para obtener información sobre el pago y elegir un método de pago aceptado por ambas partes.</p>
+<div class="payment-info-highlight">🤝 Acuerda el método de pago directamente con el vendedor antes de realizar cualquier transferencia.</div>
 </div>
-<div class="language-columns">
-  <div class="language-box english-box">
-    <div class="language-title">ENGLISH</div>
-    <p>Contact the skin seller — <span class="mine-name">Mine</span> — via any of the methods below to confirm availability and total amount.</p>
-  </div>
-  <div class="language-box spanish-box">
-    <div class="language-title">ESPAÑOL</div>
-    <p>Contacta al vendedor — <span class="Lviso-name">Lviso</span> — por cualquiera de los métodos siguientes para confirmar disponibilidad y monto total.</p>
-  </div>
-</div>
-</div>
-
-<div class="step">
-<div class="step-header bilingual-step-header">
-  <span class="step-num">3</span>
-  <div class="step-title-grid">
-    <h2 class="step-title-en">Send Payment</h2>
-    <h2 class="step-title-es">Enviar pago</h2>
-  </div>
-</div>
-<div class="language-columns">
-  <div class="language-box english-box payment-language-box">
-    <div class="language-title">ENGLISH</div>
-    <p>After confirmation, choose your payment method below.</p>
-    <div class="payment-label">PayPal</div>
-    <div class="payment-grid">
-      <a href="https://www.paypal.com/paypalme/RGCMine" target="_blank" rel="noopener noreferrer" class="paypal-btn"><div class="pp-logo"><span>PAY</span><span>PAL</span></div><div class="paypal-email">zls.mine@hotmail.com</div></a>
-      <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer" class="paypal-btn"><div class="pp-logo"><span>PAY</span><span>PAL</span></div><div class="paypal-email">Thebikeshvibeau@gmail.com</div></a>
-    </div>
-
-    <div class="payment-label">Western Union</div>
-    <div class="wu-wrap"><p style="margin:15px 0 8px;color:#aaa;font-size:14px">Western Union</p><a href="https://www.westernunion.com" target="_blank" rel="noopener noreferrer" class="wu-btn"><span class="wu-text"><span>W</span>ESTERN <span>U</span>NION</span></a><p class="wu-note">💬 Contact <span class="mine-name">Mine</span> to receive the transfer details before sending.</p></div>
-
-    <p class="note">⚠️ All payment methods are solely for payment purposes; confirm details directly with <span class="mine-name">Mine</span> before sending.</p>
-  </div>
-
-  <div class="language-box spanish-box payment-language-box">
-    <div class="language-title">ESPAÑOL</div>
-    <p>Tras confirmar tu pedido, contacta con el vendedor para acordar el método de pago.</p>
-    <div class="south-america-note"><strong>🌎 Jugadores de Sudamérica:</strong> envía un mensaje a <span class="Lviso-name">Lviso</span> antes de realizar el pago.</div>
-
-    <div class="payment-info-card">
-      <div class="payment-info-icon">💳</div>
-      <div class="payment-info-title">Método de pago</div>
-      <p>Contacta con el vendedor para obtener información sobre el pago y elegir un método de pago aceptado por ambas partes.</p>
-      <div class="payment-info-highlight">🤝 Acuerda el método de pago directamente con el vendedor antes de realizar cualquier transferencia.</div>
-    </div>
-
-    <p class="note">⚠️ No realices ningún pago hasta haber contactado con el vendedor y confirmado el método de pago acordado por ambas partes.</p>
-  </div>
-</div>
-</div>
-
-<div class="step">
-<div class="step-header bilingual-step-header">
-  <span class="step-num">4</span>
-  <div class="step-title-grid">
-    <h2 class="step-title-en">Confirm Payment</h2>
-    <h2 class="step-title-es">Confirmar pago</h2>
-  </div>
-</div>
-<div class="language-columns">
-  <div class="language-box english-box">
-    <div class="language-title">ENGLISH</div>
-    <p>After successful payment, send a message via the same channel with the payment screenshot and skin names.</p>
-    <a href="mailto:RGC.Mine@hotmail.com?subject=RGC%20Skins%20Purchase&amp;body=Hello,%0A%0APayment%20confirmed.%20Method%20%5BPayPal%20%2F%20Western%20Union%5D%0A%0AScreenshot%20attached.%0A%0ASkin%20names%0A-%20%5BName%201%5D%0A-%20%5BName%202%5D%0A%0ATotal%20amount%20%5BAmount%5D%0A" class="email-btn">✉️ SEND PAYMENT CONFIRMATION</a>
-    <p class="confirmation-note">📎 Subject &amp; template will be filled automatically.</p>
-  </div>
-  <div class="language-box spanish-box">
-    <div class="language-title">ESPAÑOL</div>
-    <p>Una vez realizado el pago, envía un mensaje por el mismo canal con la captura de pago y los nombres de los aspectos.</p>
-    <a href="mailto:RGC.Mine@hotmail.com?subject=RGC%20Skins%20Purchase&amp;body=Hello,%0A%0APayment%20confirmed.%20Method%20%5BPayPal%20%2F%20Western%20Union%5D%0A%0AScreenshot%20attached.%0A%0ASkin%20names%0A-%20%5BName%201%5D%0A-%20%5BName%202%5D%0A%0ATotal%20amount%20%5BAmount%5D%0A" class="email-btn">✉️ CONFIRMAR PAGO</a>
-    <p class="confirmation-note">📎 El asunto y la plantilla se rellenarán automáticamente.</p>
-  </div>
-</div>
-</div>
-
-<div class="step">
-<div class="step-header bilingual-step-header">
-  <span class="step-num">5</span>
-  <div class="step-title-grid">
-    <h2 class="step-title-en">Delivery</h2>
-    <h2 class="step-title-es">Entrega</h2>
-  </div>
-</div>
-<div class="language-columns">
-  <div class="language-box english-box delivery-language-box">
-    <div class="language-title">ENGLISH</div>
-    <p>Your skin(s) will be applied within</p>
-    <strong>24 HOURS MAXIMUM</strong>
-  </div>
-  <div class="language-box spanish-box delivery-language-box">
-    <div class="language-title">ESPAÑOL</div>
-    <p>Tu aspecto se aplicará en un plazo máximo de</p>
-    <strong>24 HORAS MÁXIMO</strong>
-  </div>
+<p class="note">⚠️ No realices ningún pago hasta haber contactado con el vendedor y confirmado el método de pago acordado por ambas partes.</p>
 </div>
 </div>
 </div>
@@ -283,35 +263,122 @@ footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid r
 <div class="contact-section">
 <h3 class="contact-heading">📬 Contact Us — Contáctanos</h3>
 <div class="contact-grid">
-<div class="contact-item"><div class="contact-icon"><img src="https://i.imgur.com/zHwOTxU.png" alt="Discord"></div><div class="contact-label">Discord</div><div class="contact-value"><a href="https://discord.gg/rankedgamingclient" target="_blank" rel="noopener noreferrer">discord.gg/rankedgamingclient</a><div class="discord-id">Mine</div></div></div>
+<div class="contact-item"><div class="contact-icon"><img alt="Discord" src="https://i.imgur.com/zHwOTxU.png"/></div><div class="contact-label">Discord</div><div class="contact-value"><a href="https://discord.gg/rankedgamingclient" rel="noopener noreferrer" target="_blank">discord.gg/rankedgamingclient</a><div class="discord-id">Mine</div></div></div>
 <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-label">Email — Seller</div><div class="contact-value"><a href="mailto:RGC.Mine@hotmail.com">RGC.Mine@hotmail.com</a></div></div>
-<div class="contact-item whatsapp-card"><div class="contact-icon"><img src="https://i.imgur.com/7YfH5yt.png" alt="WhatsApp"></div><div class="contact-label">WhatsApp — Lviso</div><div class="contact-value"><a class="whatsapp-number" href="https://wa.me/51983493728" target="_blank" rel="noopener noreferrer">+51 983 493 728</a><div class="discord-id">Lviso</div></div></div>
-
-<div class="contact-item"><div class="contact-icon"><img src="https://i.imgur.com/hVF95aZ.png" alt="RGC Client"></div><div class="contact-label">RGC Client</div><div class="contact-value">Direct Message <span class="mine-name">Mine</span></div></div>
-<div class="contact-item"><div class="contact-icon"><img src="https://i.imgur.com/hVF95aZ.png" alt="RGC Client"></div><div class="contact-label">Cliente RGC</div><div class="contact-value">Mensaje directo a <span class="Lviso-name">Lviso</span></div></div>
+<div class="contact-item whatsapp-card"><div class="contact-icon"><img alt="WhatsApp" src="https://i.imgur.com/7YfH5yt.png"/></div><div class="contact-label">WhatsApp — Lviso</div><div class="contact-value"><a class="whatsapp-number" href="https://wa.me/51983493728" rel="noopener noreferrer" target="_blank">+51 983 493 728</a><div class="discord-id">Lviso</div></div></div>
+<div class="contact-item"><div class="contact-icon"><img alt="RGC Client" src="https://i.imgur.com/hVF95aZ.png"/></div><div class="contact-label">RGC Client</div><div class="contact-value">Direct Message <span class="mine-name">Mine</span></div></div>
+<div class="contact-item"><div class="contact-icon"><img alt="RGC Client" src="https://i.imgur.com/hVF95aZ.png"/></div><div class="contact-label">Cliente RGC</div><div class="contact-value">Mensaje directo a <span class="Lviso-name">Lviso</span></div></div>
 <div class="contact-item reseller-card"><div class="contact-icon"><span aria-hidden="true">👥</span></div><div class="contact-label">Reseller List</div><div class="reseller-entry reseller-entry-inline"><span class="reseller-name">Resupport</span><span class="reseller-region">SA</span><span class="reseller-separator">,</span><span class="reseller-name">Crow</span><span class="reseller-region">EU</span></div></div>
 </div>
 <div class="whatsapp-community">
-  <div class="whatsapp-community-copy">
-    <div class="community-kicker">RGC Community</div>
-    <div class="whatsapp-community-title"><img src="https://i.imgur.com/7YfH5yt.png" alt="WhatsApp"> Join Our WhatsApp Group!</div>
-    <p>Stay connected with the RGC community and get in touch with other players.</p>
-    <p>Únete a nuestra comunidad de WhatsApp y mantente en contacto con otros jugadores.</p>
-  </div>
-  <div class="whatsapp-community-actions">
-    <div class="group-qr-frame"><img class="group-qr" src="https://i.imgur.com/G4b2unn.png" alt="WhatsApp group QR code"></div>
-    <button class="whatsapp-group-link" type="button" data-open-url="https://chat.whatsapp.com/ELbQaQXvXFt3Fxe7I6wLr4">JOIN GROUP ↗</button>
-  </div>
+<div class="whatsapp-community-copy">
+<div class="community-kicker">RGC Community</div>
+<div class="whatsapp-community-title"><img alt="WhatsApp" src="https://i.imgur.com/7YfH5yt.png"/> Join Our WhatsApp Group!</div>
+<p>Stay connected with the RGC community and get in touch with other players.</p>
+<p>Únete a nuestra comunidad de WhatsApp y mantente en contacto con otros jugadores.</p>
 </div>
-<p class="contact-tip"><span class="en">Contact Mine directly through Discord, Email, or RGC Client before purchasing. SA players can message Lvisothrough RGC or WhatsApp.</span><br><span class="es">Contacta a Mine directamente por Discord, Email o el Cliente RGC antes de comprar. Los jugadores de Sudamérica pueden enviar un mensaje a Lvisopor RGC o WhatsApp.</span></p>
+<div class="whatsapp-community-actions">
+<div class="group-qr-frame"><img alt="WhatsApp group QR code" class="group-qr" src="https://i.imgur.com/G4b2unn.png"/></div>
+<button class="whatsapp-group-link" data-open-url="https://chat.whatsapp.com/ELbQaQXvXFt3Fxe7I6wLr4" type="button">JOIN GROUP ↗</button>
 </div>
-
-<footer><p>Thank you for your purchase — Gracias por tu compra</p><p style="margin-top:5px;">Please allow up to 24 hours for delivery — Por favor, espera hasta 24 horas para la entrega</p><div class="footer-disclaimer">⚠️ <span class="en">Any purchase made without prior communication with Mine — we take no responsibility for any fraud or loss.</span><br>⚠️ <span class="es">Cualquier compra sin contacto previo con Mine — no nos hacemos responsables de estafas ni pérdidas.</span></div></footer>
-
+</div>
+<p class="contact-tip"><span class="en">Contact Mine directly through Discord, Email, or RGC Client before purchasing. SA players can message Lvisothrough RGC or WhatsApp.</span><br/><span class="es">Contacta a Mine directamente por Discord, Email o el Cliente RGC antes de comprar. Los jugadores de Sudamérica pueden enviar un mensaje a Lvisopor RGC o WhatsApp.</span></p>
+</div>
+<footer><p>Thank you for your purchase — Gracias por tu compra</p><p style="margin-top:5px;">Please allow up to 24 hours for delivery — Por favor, espera hasta 24 horas para la entrega</p><div class="footer-disclaimer">⚠️ <span class="en">Any purchase made without prior communication with Mine — we take no responsibility for any fraud or loss.</span><br/>⚠️ <span class="es">Cualquier compra sin contacto previo con Mine — no nos hacemos responsables de estafas ni pérdidas.</span></div></footer>
 <script>
 document.querySelectorAll('[data-open-url]').forEach(button=>{button.addEventListener('click',function(){window.open(button.dataset.openUrl,'_blank','noopener,noreferrer')})});
 const lightCards=document.querySelectorAll('.step,.contact-item,.paypal-btn,.wu-wrap,.contact-section,.disclaimer-box');
 lightCards.forEach(card=>{card.addEventListener('mousemove',function(e){const rect=this.getBoundingClientRect();this.style.setProperty('--mouse-x',(e.clientX-rect.left)+'px');this.style.setProperty('--mouse-y',(e.clientY-rect.top)+'px')});card.addEventListener('mouseleave',function(){this.style.setProperty('--mouse-x','-400px');this.style.setProperty('--mouse-y','-400px')})});
+</script>
+<script id="skin-calc-data" type="application/json">[{"id":"1002","name":"#1002 Anti-Mage Basher D2","category":"Agility Heroes","price":50.0,"price1":null,"price3":null,"rule":"Fixed price","search":"1002 Anti-Mage Basher D2 Magina DotA v7.03 LoD 6.89s","source":"Agility hero.html","image":"https://i.imgur.com/YTr6Aca.gif"},{"id":"105","name":"#105 Swamp Razor","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"105 Swamp Razor Razor DotA v7.04h0 LoD v6.92z","source":"Agility hero.html","image":"https://i.imgur.com/z9RJDVY.gif"},{"id":"113","name":"#113 Ember Spirit Armored","category":"Agility Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"113 Ember Spirit Armored Ember Spirit DotA 7.04h0 LoD 6.92x","source":"Agility hero.html","image":"https://i.imgur.com/PqJef0a.gif"},{"id":"114","name":"#114 Ember Warrior","category":"Agility Heroes","price":13.0,"price1":null,"price3":null,"rule":"Fixed price","search":"114 Ember Warrior Ember Spirit DotA 7.04h0 LoD 6.92x","source":"Agility hero.html","image":"https://i.imgur.com/SiRzUTN.gif"},{"id":"118","name":"#118 Dragon Viper","category":"Agility Heroes","price":13.0,"price1":null,"price3":null,"rule":"Fixed price","search":"118 Dragon Viper Viper DotA 7.04h0 LoD 6.92x","source":"Agility hero.html","image":"https://i.imgur.com/qvH17tE.gif"},{"id":"124","name":"#124 Ice Clinkz","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"124 Ice Clinkz Bone Fletcher DotA 7.04h0 LoD 6.92x","source":"Agility hero.html","image":"https://i.imgur.com/xiDZ5vx.gif"},{"id":"128","name":"#128 Tiger Ursa","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"128 Tiger Ursa Ursa Warrior DotA 7.04h0 LoD 6.92x","source":"Agility hero.html","image":"https://i.imgur.com/mGaTwn7.gif"},{"id":"132","name":"#132 Moon Rider Christmas","category":"Agility Heroes","price":12.0,"price1":null,"price3":null,"rule":"Fixed price","search":"132 Moon Rider Christmas Moon Rider Luna DotA 7.04h0 LoD 6.92x","source":"Agility hero.html","image":"https://i.imgur.com/VjQda3L.gif"},{"id":"80","name":"#80 Melting Assassin","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"80 Melting Assassin Phantom Assassin DotA v7.00e0 LoD 6.89s","source":"Agility hero.html","image":"https://i.imgur.com/52izNPc.jpg"},{"id":"90","name":"#90 Naga the Trident","category":"Agility Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"90 Naga the Trident Naga Siren DotA v7.00e0 LoD 6.89s","source":"Agility hero.html","image":"https://i.imgur.com/hb55Rrl.jpg"},{"id":"91","name":"#91 Sharpshooter Drow","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"91 Sharpshooter Drow Drow Ranger DotA v7.00e0 LoD 6.89s","source":"Agility hero.html","image":"https://i.imgur.com/Jh89HGO.jpg"},{"id":"94","name":"#94 Syberian Druid","category":"Agility Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"94 Syberian Druid Lone Druid DotA v7.00e0 LoD 6.89s","source":"Agility hero.html","image":"https://i.imgur.com/KGKqOP4.png"},{"id":"97","name":"#97 Raging Morphling","category":"Agility Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"97 Raging Morphling Morphling DotA v7.00e0 LoD 6.89s","source":"Agility hero.html","image":"https://i.imgur.com/RtxAxul.jpg"},{"id":"100","name":"#100 Boatless Void","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"100 Boatless Void Void DotA v7.01 LoD v6.90","source":"Agility hero.html","image":"https://i.imgur.com/Orb8KIh.jpg"},{"id":"101","name":"#101 Phashion Assassin","category":"Agility Heroes","price":12.0,"price1":null,"price3":null,"rule":"Fixed price","search":"101 Phashion Assassin Phantom Assassin DotA v7.01 LoD 6.89s","source":"Agility hero.html","image":"https://i.imgur.com/oUBES6d.jpg"},{"id":"78","name":"#78 Dark Monkey King","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"78 Dark Monkey King Monkey King DotA v6.90a8 LoD unavailable","source":"Agility hero.html","image":"https://i.imgur.com/Igd4vph.jpg"},{"id":"67","name":"#67 Brutal Phantom Lancer","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"67 Brutal Phantom Lancer Phantom Lancer DotA v6.89a8 LoD 6.88a0","source":"Agility hero.html","image":"https://i.imgur.com/rnE6GIw.jpg"},{"id":"70","name":"#70 Weaver Icy","category":"Agility Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"70 Weaver Icy Weaver DotA v6.89a8 LoD 6.88a0","source":"Agility hero.html","image":"https://i.imgur.com/1ZB71wJ.jpg"},{"id":"71","name":"#71 Juggernaut Slasher","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"71 Juggernaut Slasher Juggernaut DotA v6.89a8 LoD 6.88a0","source":"Agility hero.html","image":"https://i.imgur.com/EigDV0M.jpg"},{"id":"75","name":"#75 Gyroshark","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"75 Gyroshark Gyrocopter DotA v6.89a8 LoD 6.88a0","source":"Agility hero.html","image":"https://i.imgur.com/KrL24E4.jpg"},{"id":"76","name":"#76 Spectre TRON","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"76 Spectre TRON Spectre DotA v6.89a8 LoD 6.88a0","source":"Agility hero.html","image":"https://i.imgur.com/yTVWasP.jpg"},{"id":"55","name":"#55 Golden Slark","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"55 Golden Slark Slark DotA v6.89a8 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/rQjnOSo.jpg"},{"id":"57","name":"#57 Violet Razor","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"57 Violet Razor Razor DotA v6.89a8 LoD 6.88a0","source":"Agility hero.html","image":"https://i.imgur.com/2fMYyws.jpg"},{"id":"4","name":"#4 Priestess of the Moon","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"4 Priestess of the Moon Potm Mirana DotA v6.88w9 LoD v6.85p7.1","source":"Agility hero.html","image":"https://i.imgur.com/5SuLFl2.jpg"},{"id":"10","name":"#10 Clinkz Deadeye","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"10 Clinkz Deadeye Clinkz DotA v6.88w9 LoD v6.85p7.1","source":"Agility hero.html","image":"https://i.imgur.com/IkmqTuQ.jpg"},{"id":"11","name":"#11 Anti Mage","category":"Agility Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"11 Anti Mage Magina DotA v6.88w9 LoD v6.85p7.1","source":"Agility hero.html","image":"https://i.imgur.com/gcYqmBJ.jpg"},{"id":"12","name":"#12 Bloody Juggernaut","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"12 Bloody Juggernaut Juggernaut DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/xJGRFPE.jpg"},{"id":"14","name":"#14 Sadistic Venomancer","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"14 Sadistic Venomancer Venomancer DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/HmDFyb8.jpg"},{"id":"15","name":"#15 Snow Broodmother","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"15 Snow Broodmother Broodmother DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/4qEPyVM.jpg"},{"id":"16","name":"#16 Forsaken Drow","category":"Agility Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"16 Forsaken Drow Drow DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/KeMHwGc.jpg"},{"id":"18","name":"#18 Cursed Ursa","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"18 Cursed Ursa Ursa DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/7iY93tA.jpg"},{"id":"22","name":"#22 Elite Sniper","category":"Agility Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"22 Elite Sniper Sniper DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/Ay0ydsI.jpg"},{"id":"23","name":"#23 Shadow Seeker","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"23 Shadow Seeker Bloodseeker DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/FY8zg0N.jpg"},{"id":"26","name":"#26 Starlord Void","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"26 Starlord Void Void DotA v6.88x0 LoD v6.86a","source":"Agility hero.html","image":"https://i.imgur.com/9AxaSEX.jpg"},{"id":"27","name":"#27 Phantom Assassin","category":"Agility Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"27 Phantom Assassin Phantom Assassin DotA v6.88x4 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/KnPvqZY.jpg"},{"id":"32","name":"#32 Luna","category":"Agility Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"32 Luna Moon Rider DotA v6.88x4 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/wL3VAFQ.jpg"},{"id":"33","name":"#33 Dark Troll Warlord","category":"Agility Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"33 Dark Troll Warlord Troll Warlord DotA v6.88x4 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/AIvEJqb.jpg"},{"id":"35","name":"#35 Slark the Fisherman","category":"Agility Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"35 Slark the Fisherman Slark DotA v6.88x4 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/eXYOEdT.jpg"},{"id":"37","name":"#37 Naga Enchantress","category":"Agility Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"37 Naga Enchantress Naga Siren DotA v6.88x4 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/WWOVAAR.jpg"},{"id":"44","name":"#44 Spectral Diffusion","category":"Agility Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"44 Spectral Diffusion Spectre DotA v6.88x4 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/WsyrfA8.jpg"},{"id":"48","name":"#48 Venomancer","category":"Agility Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"48 Venomancer Venomancer DotA v6.88x4 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/jkLPfPb.jpg"},{"id":"51","name":"#51 Soul Eater Fiend","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"51 Soul Eater Fiend ShadowFriend DotA v6.88x8 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/kBp3odf.jpg"},{"id":"52","name":"#52 Elite Assassin","category":"Agility Heroes","price":6.0,"price1":null,"price3":null,"rule":"Fixed price","search":"52 Elite Assassin Rikimaru DotA v6.88x8 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/EHi2e6m.jpg"},{"id":"53","name":"#53 Halloween Sniper","category":"Agility Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"53 Halloween Sniper Sniper DotA v6.88x8 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/vYEmNc7.jpg"},{"id":"56","name":"#56 Monkey King 2","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"56 Monkey King 2 Monkey King DotA v6.89a0 LoD unavailable","source":"Agility hero.html","image":"https://i.imgur.com/uX4IAhF.jpg"},{"id":"65","name":"#65 Bounty Hunter","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"65 Bounty Hunter Gondar DotA v6.88a6 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/s9ge62L.jpg"},{"id":"66","name":"#66 Medusa Gorgon","category":"Agility Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"66 Medusa Gorgon Medusa DotA v6.88a6 LoD v6.86g","source":"Agility hero.html","image":"https://i.imgur.com/3SCNH0I.jpg"},{"id":"79","name":"#79 Chatwheel","category":"Announcer","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#79 Chatwheel any hero DotA v7.00b0 LoD unsupported","source":"Announcer.html","image":"https://i.imgur.com/chuz8xb.png"},{"id":"77","name":"#77 Announcer Anime","category":"Announcer","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#77 Announcer Anime any hero DotA v6.89a8 LoD 6.88d2","source":"Announcer.html","image":"https://i.imgur.com/CbNcDDv.jpg"},{"id":"","name":"Announcer Sexy","category":"Announcer","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"Announcer Sexy any hero DotA v6.88w9 LoD v6.85p7.1","source":"Announcer.html","image":"https://i.imgur.com/O5SDMHn.jpg"},{"id":"106","name":"#106 Courier Pack Christmas","category":"Courier","price":12.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#106 ourier Pack Christmas Courier DotA 7.04h0 LoD 6.92x","source":"Courier.html","image":"https://i.imgur.com/95ysNpY.png"},{"id":"107","name":"#107 Courier Pack Halloween","category":"Courier","price":12.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#107 Courier Pack Halloween Courier DotA 7.04h0 LoD 6.92x","source":"Courier.html","image":"https://i.imgur.com/5OwouzL.png"},{"id":"108","name":"#108 Courier Pack 1","category":"Courier","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#108 Courier Pack 1 Courier DotA 7.04h0 LoD 6.92x","source":"Courier.html","image":"https://i.imgur.com/tlli380.png"},{"id":"109","name":"#109 Courier Pack 2","category":"Courier","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#109 Courier Pack 2 Courier DotA 7.04h0 LoD 6.92x","source":"Courier.html","image":"https://i.imgur.com/epSFADS.png"},{"id":"64","name":"#64 Courier Cosmic","category":"Courier","price":3.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#64 Courier Cosmic Courier DotA v6.89a0 LoD v6.86g1","source":"Courier.html","image":"https://i.imgur.com/OqJwgJ2.jpg"},{"id":"63","name":"#63 Courier Glider","category":"Courier","price":3.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#63 Courier Glider Courier DotA v6.89a0 LoD v6.86g1","source":"Courier.html","image":"https://i.imgur.com/bhyKnmS.jpg"},{"id":"1003","name":"#1003 Universe devourer","category":"Intelligence Heroes","price":50.0,"price1":null,"price3":null,"rule":"Fixed price","search":"1003 Universe devourer Enigma DotA v7.03 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/ENAHmk8.gif"},{"id":"111","name":"#111 Lich King","category":"Intelligence Heroes","price":13.0,"price1":null,"price3":null,"rule":"Fixed price","search":"111 Lich King Lich DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/Z7KhiDK.gif"},{"id":"115","name":"#115 Pugna Pumpkinhead","category":"Intelligence Heroes","price":13.0,"price1":null,"price3":null,"rule":"Fixed price","search":"115 Pugna Pumpkinhead Oblivion DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/5H1wFVb.gif"},{"id":"119","name":"#119 Emerald Wyvern","category":"Intelligence Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"119 Emerald Wyvern Winter Wyvern DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/xUhqb5W.gif"},{"id":"126","name":"#126 Warlock Santa","category":"Intelligence Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"126 Warlock Santa Warlock DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/mNMnpKR.gif"},{"id":"127","name":"#127 Warlock Cleric","category":"Intelligence Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"127 Warlock Cleric Warlock DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/P0cCl1S.gif"},{"id":"129","name":"#129 Ancient Furion","category":"Intelligence Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"129 Ancient Furion Furion DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/AW0OL3e.gif"},{"id":"130","name":"#130 Scary Banshee","category":"Intelligence Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"130 Scary Banshee Death prophet DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/oZTUEzO.gif"},{"id":"133","name":"#133 Sand Witch Doctor","category":"Intelligence Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"133 Sand Witch Doctor Witch Doctor DotA 7.04h0 LoD 6.92x","source":"Intelligence hero.html","image":"https://i.imgur.com/gkpygWW.gif"},{"id":"84","name":"#84 Skywratch Lightning","category":"Intelligence Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"84 Skywratch Lightning Skywrath Mage DotA v7.00e0 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/ktj8E9O.jpg"},{"id":"85","name":"#85 Puck Butterfly","category":"Intelligence Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"85 Puck Butterfly Puck DotA v7.00e0 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/TIhsUkT.jpg"},{"id":"86","name":"#86 Necroween","category":"Intelligence Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"86 Necroween Necrolyte DotA v7.00e0 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/hq9XMcx.jpg"},{"id":"88","name":"#88 Ice Queen","category":"Intelligence Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"88 Ice Queen Akasha DotA v7.00e0 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/df261HF.jpg"},{"id":"98","name":"#98 Crystal Waifu","category":"Intelligence Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"98 Crystal Waifu Crystal Maiden DotA v7.00e0 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/PviuvfV.jpg"},{"id":"93","name":"#93 Lord of the space","category":"Intelligence Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"93 Lord of the space Enigma DotA v7.00e0 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/3wVNCAg.jpg"},{"id":"96","name":"#96 Serpent Shaman","category":"Intelligence Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"96 Serpent Shaman Rhasta DotA v7.00e0 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/RsqJYEg.jpg"},{"id":"103","name":"#103 Fiery Windrunner","category":"Intelligence Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"103 Fiery Windrunner Windrunner DotA v7.01 LoD 6.89s","source":"Intelligence hero.html","image":"https://i.imgur.com/dBtn8mT.jpg"},{"id":"73","name":"#73 Silencer","category":"Intelligence Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"73 Silencer Silencer DotA v6.89a8 LoD 6.88a0","source":"Intelligence hero.html","image":"https://i.imgur.com/Vkxdgw3.jpg"},{"id":"3","name":"#3 Queen of Pain","category":"Intelligence Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"3 Queen of Pain Akasha DotA v6.88w9 LoD v6.85p7.1","source":"Intelligence hero.html","image":"https://i.imgur.com/LeXPTCT.jpg"},{"id":"8","name":"#8 Dark Invoker","category":"Intelligence Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"8 Dark Invoker Invoker DotA v6.89a3 LoD v6.86g0","source":"Intelligence hero.html","image":"https://i.imgur.com/apTIN9W.jpg"},{"id":"19","name":"#19 Theramore Maiden","category":"Intelligence Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"19 Theramore Maiden Crystal Maiden DotA v6.88x0 LoD v6.86a","source":"Intelligence hero.html","image":"https://i.imgur.com/HCWR4WL.jpg"},{"id":"21","name":"#21 Iron Lightning Zeus","category":"Intelligence Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"21 Iron Lightning Zeus Zeus DotA v6.88x0 LoD v6.86a","source":"Intelligence hero.html","image":"https://i.imgur.com/CBd353J.jpg"},{"id":"25","name":"#25 Sci-fi Tinker","category":"Intelligence Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"25 Sci-fi Tinker Tinker DotA v6.88x0 LoD v6.86a","source":"Intelligence hero.html","image":"https://i.imgur.com/5Y1wKgK.jpg"},{"id":"28","name":"#28 Lina The Highest","category":"Intelligence Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"28 Lina The Highest Lina DotA v6.88x8 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/BoXuSG1.jpg"},{"id":"29","name":"#29 Wild Enchantress","category":"Intelligence Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"29 Wild Enchantress Enchantress DotA v6.88x4 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/XrrQ3Qa.jpg"},{"id":"30","name":"#30 Leshrac the tormentor","category":"Intelligence Heroes","price":6.0,"price1":null,"price3":null,"rule":"Fixed price","search":"30 Leshrac the tormentor Leshrac DotA v6.88x4 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/tYyvBF2.jpg"},{"id":"38","name":"#38 Windrunner D2","category":"Intelligence Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"38 Windrunner D2 Windrunner DotA v6.88x4 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/n1chBTp.jpg"},{"id":"41","name":"#41 Grim Necrolyte","category":"Intelligence Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"41 Grim Necrolyte Necrolyte DotA v6.88x4 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/WyG7txT.jpg"},{"id":"42","name":"#42 Strom Warrior","category":"Intelligence Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"42 Strom Warrior Strom DotA v6.88x4 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/0TT7QEP.jpg"},{"id":"58","name":"#58 Battle Orge Magi","category":"Intelligence Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"58 Battle Orge Magi Orge Magi DotA v6.89a0 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/ug0GA6d.jpg"},{"id":"59","name":"#59 Furion on Stag","category":"Intelligence Heroes","price":6.0,"price1":null,"price3":null,"rule":"Fixed price","search":"59 Furion on Stag Furion DotA v6.89a0 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/HyHEv6A.jpg"},{"id":"60","name":"#60 Ghost Banshee","category":"Intelligence Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"60 Ghost Banshee Death prophet DotA v6.89a0 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/kQfMsyk.jpg"},{"id":"62","name":"#62 Occult Witch Doctor","category":"Intelligence Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"62 Occult Witch Doctor Witch Doctor DotA v6.89a0 LoD v6.86g","source":"Intelligence hero.html","image":"https://i.imgur.com/9JANExL.jpg"},{"id":"110","name":"#110 Colored Shining & Chat","category":"Item Special Effects","price":null,"price1":null,"price3":null,"rule":"Tiered subscription: Level 1/2/3 and 1-month/3-month duration","search":"#110 Colored Shining & Chat DotA 7.04h0 LoD 6.92x Amethyst Silver Gold","source":"Item Special Effects.html","image":"https://i.imgur.com/kbjdr4W.jpg"},{"id":"EMOTICONS","name":"Emoticons","category":"Item Special Effects","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"Emoticons DotA 6.88w9 LoD 6.85p7.1","source":"Item Special Effects.html","image":"https://i.imgur.com/j0TpnGn.jpg"},{"id":"DENY-MARK","name":"Deny Mark","category":"Item Special Effects","price":1.0,"price1":null,"price3":null,"rule":"Fixed price","search":"Deny Mark DotA 6.88w9 LoD 6.85p7.1","source":"Item Special Effects.html","image":"https://i.imgur.com/O06swee.jpg"},{"id":"0","name":"#0 Shadow Fiend's Set","category":"Item Special Effects","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"#0 Shadow Fiend's Set DotA 6.88w9 LoD 6.85p7.1","source":"Item Special Effects.html","image":"https://i.imgur.com/SH2CCNM.jpg"},{"id":"1000","name":"#1000 Omniknight the Icebreaker","category":"Strength Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"1000 Omniknight the Icebreaker Omniknight DotA v6.88w9 LoD v6.85p7.1","source":"Strength hero.html","image":"https://i.imgur.com/15ymb20.gif"},{"id":"99","name":"#99 Mars Atlantis","category":"Strength Heroes","price":12.0,"price1":null,"price3":null,"rule":"Fixed price","search":"99 Mars Atlantis Mars DotA v7.04 Unavailable","source":"Strength hero.html","image":"https://i.imgur.com/mOeFYTk.gif"},{"id":"104","name":"#104 XMas Pudge","category":"Strength Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"104 XMas Pudge Pudge DotA v7.04h0 LoD v6.92z","source":"Strength hero.html","image":"https://i.imgur.com/4qzmlf5.gif"},{"id":"112","name":"#112 Treant Protector","category":"Strength Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"112 Treant Protector Treant Protector DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/4s987Bh.gif"},{"id":"116","name":"#116 Chaos Pegasus","category":"Strength Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"116 Chaos Pegasus Chaos Knight DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/c68ZpqA.gif"},{"id":"117","name":"#117 Chaos Ghost Rider","category":"Strength Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"117 Chaos Ghost Rider Chaos Knight DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/KEUZaPQ.gif"},{"id":"120","name":"#120 Spring Panda","category":"Strength Heroes","price":13.0,"price1":null,"price3":null,"rule":"Fixed price","search":"120 Spring Panda Pandaren Brewmaster DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/TxEX6ws.gif"},{"id":"121","name":"#121 Purple Pit Lord","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"121 Purple Pit Lord Pit Lord DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/rKTYgDP.gif"},{"id":"122","name":"#122 Shredder baseball","category":"Strength Heroes","price":13.0,"price1":null,"price3":null,"rule":"Fixed price","search":"122 Shredder baseball Goblin shredder DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/U4u0pq1.gif"},{"id":"123","name":"#123 Shredder Ripper","category":"Strength Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"123 Shredder Ripper Goblin shredder DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/eLSmNTS.gif"},{"id":"125","name":"#125 Earthshaker","category":"Strength Heroes","price":13.0,"price1":null,"price3":null,"rule":"Fixed price","search":"125 Earthshaker Earthshaker DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/8aej8Sq.gif"},{"id":"131","name":"#131 Tiny Ironman","category":"Strength Heroes","price":14.0,"price1":null,"price3":null,"rule":"Fixed price","search":"131 Tiny Ironman Tiny DotA 7.04h0 LoD 6.92x","source":"Strength hero.html","image":"https://i.imgur.com/2v6SxRy.gif"},{"id":"81","name":"#81 Skeleton Lord","category":"Strength Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"81 Skeleton Lord Skeleton King DotA v7.00e0 LoD 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/fp6hG8C.jpg"},{"id":"82","name":"#82 Spirit Catcher","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"82 Spirit Catcher Spirit Breaker DotA v7.00e0 LoD 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/ch8JFg3.jpg"},{"id":"666","name":"#666 Doom","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"666 Doom Doom DotA v7.00e0 LoD 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/FB01MYe.jpg"},{"id":"83","name":"#83 Lightning Sven","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"83 Lightning Sven Sven DotA v7.00e0 LoD 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/ecG1WOz.jpg"},{"id":"87","name":"#87 Burning Centaur","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"87 Burning Centaur Centaur DotA v7.00e0 LoD: 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/oWw1ckD.jpg"},{"id":"89","name":"#89 The Real Night Stalker","category":"Strength Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"89 The Real Night Stalker Balanar DotA v7.00e0 LoD 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/VobNgmG.gif"},{"id":"95","name":"#95 Flickerball","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"95 Flickerball IO Wisp DotA","source":"Strength hero.html","image":"https://i.imgur.com/KXs2jmt.jpg"},{"id":"102","name":"#102 Tusk The Firemaster","category":"Strength Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"102 Tusk The Firemaster Tusk DotA v7.01 LoD 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/uPN2GvW.jpg"},{"id":"68","name":"#68 Captain Hook","category":"Strength Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"68 Captain Hook Pudge DotA v6.89a8 LoD - 6.88a0","source":"Strength hero.html","image":"https://i.imgur.com/kN66aGU.jpg"},{"id":"69","name":"#69 Metal Axe","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"69 Metal Axe Axe DotA v6.89a8 LoD - 6.88a0","source":"Strength hero.html","image":"https://i.imgur.com/cNRa7Rf.jpg"},{"id":"74","name":"#74 Abaddon","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"74 Abaddon Abaddon DotA v6.89a8 LoD - 6.88a0","source":"Strength hero.html","image":"https://i.imgur.com/Oh9BOZk.jpg"},{"id":"72","name":"#72 IceBack","category":"Strength Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"72 IceBack Bristleback DotA v6.89a9 LoD - 6.88a0","source":"Strength hero.html","image":"https://i.imgur.com/fDMFzLW.jpg"},{"id":"2","name":"#2 Pudge The Scarecrow","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"2 Pudge The Scarecrow Pudge DotA v6.88w9 LoD v6.85p7.1","source":"Strength hero.html","image":"https://i.imgur.com/xshabeQ.jpg"},{"id":"5","name":"#5 Sladar The Tidebaron","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"5 Sladar The Tidebaron Sladar DotA v6.88w9 LoD v6.85p7.1","source":"Strength hero.html","image":"https://i.imgur.com/JWDtzm5.jpg"},{"id":"6","name":"#6 Tidehunter the Druid","category":"Strength Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"6 Tidehunter the Druid Tidehunter DotA v6.88w9 LoD v6.85p7.1","source":"Strength hero.html","image":"https://i.imgur.com/44vp8fw.jpg"},{"id":"9","name":"#9 Terenas the legion commander","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"9 Terenas the legion commander Legion Commander DotA v6.88w9 LoD v6.85p7.1","source":"Strength hero.html","image":"https://i.imgur.com/a4iMLWC.jpg"},{"id":"13","name":"#13 Tuskar The Turtlehunter","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"13 Tuskar The Turtlehunter Tusk DotA v6.88x0 LoD v6.86a","source":"Strength hero.html","image":"https://i.imgur.com/iBThVJX.jpg"},{"id":"17","name":"#17 Ice Magnataur","category":"Strength Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"17 Ice Magnataur Magnus DotA v6.88x0 LoD v6.86a","source":"Strength hero.html","image":"https://i.imgur.com/aQdTItN.jpg"},{"id":"20","name":"#20 Black Iron Admiral","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"20 Black Iron Admiral Kunkka DotA v6.88x0 LoD v6.86a","source":"Strength hero.html","image":"https://i.imgur.com/IHy5arf.jpg"},{"id":"24","name":"#24 Axe Garrosh","category":"Strength Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"24 Axe Garrosh Axe DotA v6.88x0 LoD v6.86a","source":"Strength hero.html","image":"https://i.imgur.com/U70kupH.jpg"},{"id":"31","name":"#31 Sven","category":"Strength Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"31 Sven Sven DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/pRZVPEt.jpg"},{"id":"34","name":"#34 Occult SpiritBreaker","category":"Strength Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"34 Occult SpiritBreaker SpiritBreaker DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/Wv5OzYx.jpg"},{"id":"36","name":"#36 Needle King","category":"Strength Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"36 Needle King Sand King DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/kd3RLTG.jpg"},{"id":"39","name":"#39 Dragon Slayer","category":"Strength Heroes","price":6.0,"price1":null,"price3":null,"rule":"Fixed price","search":"39 Dragon Slayer Dragon Knight DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/C82Maur.jpg"},{"id":"40","name":"#40 Emerald Centaur","category":"Strength Heroes","price":6.0,"price1":null,"price3":null,"rule":"Fixed price","search":"40 Emerald Centaur Centaur DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/ACNPpCZ.jpg"},{"id":"45","name":"#45 Vulcanus","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"45 Vulcanus Tiny DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/607QwtG.jpg"},{"id":"46","name":"#46 Magma King","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"46 Magma King Sand King DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/WOOyQZz.jpg"},{"id":"47","name":"#47 Holy Omniknight","category":"Strength Heroes","price":5.0,"price1":null,"price3":null,"rule":"Fixed price","search":"47 Holy Omniknight Omniknight DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/HBikG5Y.jpg"},{"id":"49","name":"#49 Burning Admiral","category":"Strength Heroes","price":10.0,"price1":null,"price3":null,"rule":"Fixed price","search":"49 Burning Admiral Kunkka DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/wH6kHKk.jpg"},{"id":"54","name":"#54 Tribepunisher","category":"Strength Heroes","price":11.0,"price1":null,"price3":null,"rule":"Fixed price","search":"54 Tribepunisher Huskar DotA v6.88x8 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/4tR6o5K.jpg"},{"id":"61","name":"#61 Phoenix of the Light","category":"Strength Heroes","price":6.0,"price1":null,"price3":null,"rule":"Fixed price","search":"61 Phoenix of the Light Phoenix DotA v6.89a0 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/0fphi5s.jpg"},{"id":"92","name":"#92 Icyenix","category":"Strength Heroes","price":9.0,"price1":null,"price3":null,"rule":"Fixed price","search":"92 Icyenix Phoenix DotA v7.00e0 LoD 6.89s","source":"Strength hero.html","image":"https://i.imgur.com/A9WRmoI.jpg"},{"id":"","name":"Earth Spirit","category":"Strength Heroes","price":8.0,"price1":null,"price3":null,"rule":"Fixed price","search":"Earth Spirit EarthPanda DotA v7.00e0 LoD - 7.00","source":"Strength hero.html","image":"https://i.imgur.com/7uZTHOm.jpg"},{"id":"43","name":"#43 Lavashaker","category":"Strength Heroes","price":7.0,"price1":null,"price3":null,"rule":"Fixed price","search":"43 Lavashaker Earthshaker DotA v6.88x4 LoD v6.86g","source":"Strength hero.html","image":"https://i.imgur.com/cW8BeK3.jpg"}]</script>
+<script id="skin-price-calculator-script">
+(function(){
+  const dataEl=document.getElementById('skin-calc-data');
+  const root=document.getElementById('skin-price-calculator');
+  if(!dataEl||!root)return;
+  const products=JSON.parse(dataEl.textContent||'[]');
+  const tierPrices={
+    '1':{'1':12,'3':24},
+    '2':{'1':20,'3':40},
+    '3':{'1':30,'3':60}
+  };
+  const tierNames={'1':'Level 1 — Amethyst','2':'Level 2 — Silver','3':'Level 3 — Gold'};
+  const query=document.getElementById('skin-calc-query');
+  const results=document.getElementById('skin-calc-results');
+  const cartEl=document.getElementById('skin-calc-cart');
+  const totalEl=document.getElementById('skin-calc-total');
+  const countEl=document.getElementById('skin-calc-count');
+  const warningEl=document.getElementById('skin-calc-warning');
+  const statusEl=document.getElementById('skin-calc-status');
+  let cart=[]; let serial=1;
+  const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/^\s*#/,'').replace(/[^a-z0-9]+/g,' ').trim();
+  const isTiered=p=>String(p.id)==='110'||/colored shining/i.test(p.name);
+  const money=n=>'$'+Number(n||0).toFixed(2);
+  function priceOf(item){const p=item.product;if(isTiered(p))return tierPrices[item.level][item.duration];return Number(p.price)||0;}
+  function matchesToken(token){
+    const t=norm(token); if(!t)return [];
+    const idQuery=/^\d+$/.test(t);
+    let found=products.filter(p=>{
+      const pid=norm(p.id); const name=norm(p.name); const search=norm(p.search); const cat=norm(p.category);
+      if(idQuery)return pid===t || name.split(' ').includes(t) && /^\d+$/.test(t);
+      return name.includes(t)||search.includes(t)||cat.includes(t);
+    });
+    found.sort((a,b)=>{
+      const aExact=norm(a.id)===t||norm(a.name)===t?0:1; const bExact=norm(b.id)===t||norm(b.name)===t?0:1;
+      return aExact-bExact || a.name.localeCompare(b.name);
+    });
+    return found;
+  }
+  function search(){
+    const raw=query.value.trim();
+    if(!raw){results.innerHTML='<div class="skin-calc-empty">Enter a skin ID or name to find products.</div>';return;}
+    const tokens=raw.split(/[\n,;，；]+/).map(x=>x.trim()).filter(Boolean);
+    const all=[]; const unmatched=[];
+    tokens.forEach(token=>{const found=matchesToken(token); if(!found.length)unmatched.push(token); else found.slice(0,8).forEach(p=>{if(!all.some(x=>x.p===p))all.push({p,token});});});
+    if(!all.length){results.innerHTML='<div class="skin-calc-empty">No matching skin found. Check the ID or try the full product name. / No se encontró la skin.</div>';return;}
+    results.innerHTML=all.slice(0,24).map(({p},i)=>{
+      const tier=isTiered(p); const price=tier?'From $12.00':p.price!=null?money(p.price):'Price unavailable';
+      return '<div class="skin-calc-result"><div class="skin-calc-result-copy"><div class="skin-calc-name">'+escapeHtml(p.name||'Unnamed product')+'</div><div class="skin-calc-meta">'+escapeHtml(p.category||'Skin')+(p.id?' · ID #'+escapeHtml(p.id):' · Name search')+(tier?' · Choose level and duration':'')+'</div></div><div class="skin-calc-price">'+price+'</div><button type="button" class="skin-calc-btn" data-add-index="'+i+'">Add</button></div>';
+    }).join('')+(unmatched.length?'<div class="skin-calc-warning">Not found: '+unmatched.map(escapeHtml).join(', ')+'</div>':'');
+    results.querySelectorAll('[data-add-index]').forEach(btn=>btn.addEventListener('click',()=>{const item=all[Number(btn.dataset.addIndex)];if(item)addProduct(item.p);}));
+  }
+  function addProduct(p){
+    if(p.price==null&&!isTiered(p)){warningEl.hidden=false;warningEl.textContent='No price is listed for '+p.name+'. Please confirm the price with the seller.';return;}
+    cart.push({key:serial++,product:p,qty:1,level:'1',duration:'1'});warningEl.hidden=true;statusEl.textContent='';renderCart();
+  }
+  function renderCart(){
+    if(!cart.length){cartEl.innerHTML='<div class="skin-calc-empty">No skins selected yet.</div>';}
+    else cartEl.innerHTML=cart.map(item=>{
+      const p=item.product; const tier=isTiered(p); const price=priceOf(item)*item.qty;
+      return '<div class="skin-calc-line" data-cart-key="'+item.key+'"><div class="skin-calc-line-top"><div class="skin-calc-line-copy"><div class="skin-calc-line-name">'+escapeHtml(p.name)+'</div><div class="skin-calc-line-category">'+escapeHtml(p.category||'Skin')+(p.id?' · #'+escapeHtml(p.id):' · Search by name')+'</div></div><div class="skin-calc-line-total">'+money(price)+'</div></div><div class="skin-calc-line-controls">'+(tier?'<label>Level <select data-field="level"><option value="1" '+(item.level==='1'?'selected':'')+'>Level 1 — Amethyst</option><option value="2" '+(item.level==='2'?'selected':'')+'>Level 2 — Silver</option><option value="3" '+(item.level==='3'?'selected':'')+'>Level 3 — Gold</option></select></label><label>Duration <select data-field="duration"><option value="1" '+(item.duration==='1'?'selected':'')+'>1 month</option><option value="3" '+(item.duration==='3'?'selected':'')+'>3 months</option></select></label>':'<span class="skin-calc-meta">Unit price: '+money(Number(p.price)||0)+'</span>')+'<button type="button" class="skin-calc-remove" data-remove="'+item.key+'">Remove</button></div></div>';
+    }).join('');
+    cartEl.querySelectorAll('[data-cart-key]').forEach(line=>{
+      const key=Number(line.dataset.cartKey); const item=cart.find(x=>x.key===key);if(!item)return;
+      line.querySelectorAll('[data-field]').forEach(control=>control.addEventListener('change',()=>{
+        const field=control.dataset.field;
+        item[field]=control.value;
+        renderCart();
+      }));
+      const remove=line.querySelector('[data-remove]');if(remove)remove.addEventListener('click',()=>{cart=cart.filter(x=>x.key!==key);renderCart();});
+    });
+    const total=cart.reduce((sum,item)=>sum+priceOf(item)*item.qty,0);
+    totalEl.textContent=money(total);countEl.textContent=cart.reduce((sum,item)=>sum+item.qty,0)+' item(s)';
+  }
+  function summary(){
+    if(!cart.length)return 'RGC Skin Shop — Order Estimate\nNo items selected.';
+    const lines=['RGC Skin Shop — Order Estimate',''];
+    cart.forEach(item=>{const p=item.product;lines.push(p.name+(p.id?' (#'+p.id+')':'')+' — '+(isTiered(p)?tierNames[item.level]+', '+item.duration+' month(s) — ':'')+money(priceOf(item)*item.qty));});
+    lines.push('','Estimated total: '+totalEl.textContent,'','Please contact the seller to confirm availability and final price before payment.');return lines.join('\n');
+  }
+  function escapeHtml(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  document.getElementById('skin-calc-search').addEventListener('click',search);
+  query.addEventListener('input',()=>{if(!query.value.trim()){results.innerHTML='';}});
+  query.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();search();}});
+  document.getElementById('skin-calc-clear').addEventListener('click',()=>{cart=[];warningEl.hidden=true;statusEl.textContent='';renderCart();});
+  document.getElementById('skin-calc-copy').addEventListener('click',async()=>{const text=summary();try{await navigator.clipboard.writeText(text);statusEl.textContent='Order summary copied.';}catch(e){const area=document.createElement('textarea');area.value=text;document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();statusEl.textContent=ok?'Order summary copied.':'Copy is not available in this browser.';}});
+  document.getElementById('skin-calc-download').addEventListener('click',()=>{const blob=new Blob([summary()],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='RGC-Skin-Order-Estimate.txt';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);statusEl.textContent='Order summary downloaded.';});
+  renderCart();
+})();
 </script>
 </body>
 </html>
