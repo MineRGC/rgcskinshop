@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RGC Dota Official Skins — Ranked Gaming Client</title>
+  <script>
+    /* Show the cinematic intro once per browser tab session. */
+    (function () {
+      try {
+        if (sessionStorage.getItem('rgcHomeIntroSeen') === '1') {
+          document.documentElement.classList.add('rgc-welcome-seen');
+        } else {
+          sessionStorage.setItem('rgcHomeIntroSeen', '1');
+        }
+      } catch (e) {
+        /* If storage is blocked, keep the normal intro behavior. */
+      }
+    })();
+  </script>
+  <style>
+    html.rgc-welcome-seen #rgc-welcome-screen {
+      display: none !important;
+    }
+  </style>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -2552,6 +2571,11 @@ function openHeroSkins(event) {
 (function () {
   var screen = document.getElementById('rgc-welcome-screen');
   if (!screen) return;
+  if (document.documentElement.classList.contains('rgc-welcome-seen')) {
+    if (screen.parentNode) screen.parentNode.removeChild(screen);
+    document.body.classList.remove('welcome-open');
+    return;
+  }
   var field = screen.querySelector('.welcome-particle-field');
   if (field) {
     var colors = ['#66c7ff', '#f4d16f', '#ffffff', '#ff526b'];
