@@ -1205,6 +1205,17 @@ footer{color:#74869b!important;text-align:center;padding:20px!important;font-siz
 .offers-title-panel:before{display:none!important;}
 </style>
 
+
+<style id="rgc-navigation-regular-font-fix">
+/* Keep navigation labels regular-weight across desktop and mobile menus. */
+.rgc-navbar .rgc-nav-links a,
+.rgc-navbar .rgc-nav-drop-button,
+.rgc-navbar .rgc-nav-submenu a,
+#rgc-v2-home .rgc-nav-links a,
+#rgc-v2-home .rgc-nav-drop-button,
+#rgc-v2-home .rgc-nav-submenu a,
+#rgc-dropdown-nav .rgc-dd-menu a { font-weight: 400 !important; }
+</style>
 </head>
 <body>
 <div id="rgc-dropdown-nav">
@@ -1359,6 +1370,49 @@ function openRandomPromo(event) {
 // The Hero Skins button itself triggers the random new-tab navigation.
 
 </script>
+
+<script>
+/* Hide the browser's bottom-left URL preview while preserving link navigation. */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href]').forEach(function (link) {
+    var destination = link.getAttribute('href');
+    if (!destination) return;
+
+    link.dataset.navigationTarget = destination;
+    link.removeAttribute('href');
+    link.setAttribute('role', 'link');
+    link.setAttribute('tabindex', '0');
+    link.style.cursor = 'pointer';
+
+    function navigate(event) {
+      if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.type === 'keydown') event.preventDefault();
+
+      var target = link.getAttribute('target');
+      var url = link.dataset.navigationTarget;
+
+      if (link.hasAttribute('download')) {
+        var downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = link.getAttribute('download') || '';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        downloadLink.remove();
+      } else if (target === '_blank') {
+        window.open(url, '_blank', 'noopener');
+      } else if (url.charAt(0) === '#') {
+        window.location.hash = url.slice(1);
+      } else {
+        window.location.assign(url);
+      }
+    }
+
+    link.addEventListener('click', navigate);
+    link.addEventListener('keydown', navigate);
+  });
+});
+</script>
+
 </body>
 </html>
 <style id="vip-cost-alignment-and-views-skins-bottom">
