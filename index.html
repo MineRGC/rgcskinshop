@@ -58,6 +58,28 @@
 .community-whatsapp svg{width:20px;height:20px;display:block}
 .community-join{margin-left:0!important}
 
+
+/* RGC homepage intro loader */
+#rgc-home-loader{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,rgba(181,132,43,.16),transparent 38%),linear-gradient(135deg,#080a0d 0%,#10151b 52%,#07090c 100%);opacity:1;visibility:visible;transition:opacity .7s ease,visibility .7s ease}
+#rgc-home-loader:before,#rgc-home-loader:after{content:"";position:absolute;width:min(72vw,620px);aspect-ratio:1;border:1px solid rgba(217,173,76,.13);transform:rotate(45deg);pointer-events:none}
+#rgc-home-loader:after{width:min(54vw,460px);border-color:rgba(217,173,76,.09);transform:rotate(45deg) scale(1.08)}
+#rgc-home-loader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.rgc-loader-content{position:relative;z-index:1;width:min(88%,420px);text-align:center;padding:30px 18px}
+.rgc-loader-emblem{position:relative;width:112px;height:112px;margin:0 auto 26px;display:grid;place-items:center}
+.rgc-loader-emblem:before,.rgc-loader-emblem:after{content:"";position:absolute;inset:0;border:1px solid rgba(217,173,76,.5);transform:rotate(45deg);animation:rgcLoaderSpin 9s linear infinite}
+.rgc-loader-emblem:after{inset:9px;border-color:rgba(244,217,141,.22);transform:rotate(0deg);animation:rgcLoaderSpinReverse 12s linear infinite}
+.rgc-loader-emblem img{width:68px;height:68px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(217,173,76,.28));animation:rgcLoaderPulse 1.8s ease-in-out infinite}
+.rgc-loader-kicker{color:#d9ad4c;font-size:10px;font-weight:800;letter-spacing:.34em;text-transform:uppercase;margin-bottom:8px}
+.rgc-loader-title{font:900 clamp(38px,8vw,54px)/.95 'Barlow Condensed',sans-serif;letter-spacing:.09em;color:#f4f2ec;text-transform:uppercase}
+.rgc-loader-title span{color:#f4d98d}
+.rgc-loader-subtitle{color:#89939e;font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:12px}
+.rgc-loader-track{height:2px;background:rgba(255,255,255,.12);margin:31px auto 12px;max-width:300px;overflow:hidden;position:relative}
+#rgc-loader-bar{height:100%;width:0;background:linear-gradient(90deg,#9c7129,#f4d98d);box-shadow:0 0 12px rgba(244,217,141,.55);transition:width .22s ease}
+.rgc-loader-meta{max-width:300px;margin:auto;display:flex;justify-content:space-between;align-items:center;color:#7f8993;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+#rgc-loader-percent{font:700 15px 'Barlow Condensed',sans-serif;color:#f4d98d;letter-spacing:.08em}
+@keyframes rgcLoaderSpin{to{transform:rotate(405deg)}}@keyframes rgcLoaderSpinReverse{to{transform:rotate(-360deg)}}@keyframes rgcLoaderPulse{50%{transform:scale(1.07);filter:drop-shadow(0 0 25px rgba(217,173,76,.5))}}
+@media(prefers-reduced-motion:reduce){#rgc-home-loader,.rgc-loader-emblem:before,.rgc-loader-emblem:after,.rgc-loader-emblem img{animation:none!important;transition:none!important}}
+
 </style>
 <style>
 /* Shared footer — identical visual style across every page */
@@ -188,6 +210,18 @@
 </style>
 </head>
 <body>
+
+<div id="rgc-home-loader" role="status" aria-live="polite" aria-label="Loading RGC Skin Shop">
+  <div class="rgc-loader-content">
+    <div class="rgc-loader-emblem"><img src="https://i.imgur.com/ZQcoV5B.png" alt="RGC"/></div>
+    <div class="rgc-loader-kicker">Ranked Gaming Client</div>
+    <div class="rgc-loader-title">RGC <span>SKIN SHOP</span></div>
+    <div class="rgc-loader-subtitle">Preparing your collection</div>
+    <div class="rgc-loader-track"><div id="rgc-loader-bar"></div></div>
+    <div class="rgc-loader-meta"><span>Loading experience</span><span id="rgc-loader-percent">0%</span></div>
+  </div>
+</div>
+
 <div class="community"><div class="wrap community-inner"><div class="community-copy"><b>◉ RGC COMMUNITY</b><span>Join our WhatsApp group and stay connected with players.</span></div><a aria-label="Join RGC WhatsApp group" class="community-whatsapp" href="https://chat.whatsapp.com/ELbQaQXvXFt3Fxe7I6wLr4" rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16.02 3.2A12.7 12.7 0 0 0 5.1 22.38L3.4 28.6l6.38-1.67A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1c-2 0-3.96-.54-5.66-1.57l-.4-.24-3.78.99 1.01-3.68-.26-.42a10.43 10.43 0 1 1 9.09 4.92Zm5.72-7.82c-.31-.16-1.83-.9-2.12-1-.28-.1-.49-.16-.7.16-.2.31-.8 1- .98 1.2-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.47-1.52-.91-.81-1.53-1.82-1.71-2.13-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.2.05-.39-.03-.54-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.57s1.1 2.98 1.26 3.19c.15.2 2.16 3.3 5.23 4.62.73.32 1.3.51 1.75.65.74.23 1.41.2 1.94.12.59-.09 1.83-.75 2.09-1.48.26-.73.26-1.36.18-1.49-.08-.13-.28-.2-.59-.36Z" fill="currentColor"></path></svg></a><a class="community-join" href="https://chat.whatsapp.com/ELbQaQXvXFt3Fxe7I6wLr4" rel="noopener" target="_blank">JOIN GROUP ↗</a></div></div>
 <header class="nav"><div class="wrap nav-inner"><a class="brand" href="index.html"><img alt="RGC logo" src="https://i.imgur.com/ZQcoV5B.png"/><div><strong>RGC SKIN SHOP</strong><small>DOTA 1 COLLECTION</small></div></a><button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" id="menuToggle">☰</button><nav class="nav-links" id="navLinks"><a    class="active" aria-current="page" href="index.html">Home</a><a   href="Global%20Rank.html">Rank</a><a   href="Strength%20hero.html">Strength</a><a   href="Agility%20Hero.html">Agility</a><a   href="Intelligence%20Hero.html">Intelligence</a><a   href="Courier.html">Courier</a><a   href="Announcer.html">Announcer</a><a   href="Item%20Special%20Effects.html">Effects</a><a   href="Special%20offers.html">Offers</a><a   href="About%20Pay.html">Payment</a></nav><a class="nav-cta" href="About%20Pay.html">Contact Mine ↗</a></div></header>
 <main>
@@ -252,7 +286,45 @@ if(reviewFrame){
 <a href="https://rankedgaming.com/" rel="noopener" target="_blank">Ranked Gaming</a>
 </div>
 </div>
-</footer><script id="hide-bottom-left-link-preview">
+</footer>
+<script id="rgc-home-loader-script">
+(function(){
+  var loader=document.getElementById('rgc-home-loader');
+  var bar=document.getElementById('rgc-loader-bar');
+  var label=document.getElementById('rgc-loader-percent');
+  if(!loader||!bar||!label)return;
+
+  // ========== 关键：检测是否为首次访问 ==========
+  var isFirstVisit = !sessionStorage.getItem('rgc_visited');
+  
+  // 不是首次访问 → 直接隐藏加载动画，不播放
+  if (!isFirstVisit) {
+    loader.classList.add('is-done');
+    document.body.classList.remove('rgc-loading');
+    setTimeout(function(){loader.remove();}, 100);
+    return;
+  }
+
+  // 首次访问 → 正常播放动画，并记录已访问标记
+  sessionStorage.setItem('rgc_visited', 'true');
+
+  var progress=0,loaded=(document.readyState==='complete'),started=Date.now(),finished=false;
+  function paint(value){progress=Math.min(100,value);bar.style.width=progress+'%';label.textContent=Math.round(progress)+'%';}
+  var ticker=setInterval(function(){
+    if(finished)return;
+    if(progress<88) paint(progress+(progress<45?4:progress<72?2:1));
+    if(loaded&&Date.now()-started>=1900){
+      finished=true;clearInterval(ticker);paint(100);
+      setTimeout(function(){loader.classList.add('is-done');document.body.classList.remove('rgc-loading');setTimeout(function(){loader.remove();},750);},260);
+    }
+  },75);
+  if(!loaded){window.addEventListener('load',function(){loaded=true;},{once:true});}
+  setTimeout(function(){if(!loaded){loaded=true;}},8000);
+})();
+</script>
+
+
+<script id="hide-bottom-left-link-preview">
 /* Hide the browser's bottom-left URL preview while preserving link navigation. */
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('a[href]').forEach(function (link) {
