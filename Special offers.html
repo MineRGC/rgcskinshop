@@ -1,1363 +1,564 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGC Special Offers</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>
+   Special Offers — RGC Skin Shop
+  </title>
+<meta content="Explore exclusive VIP benefits and promotional offers at RGC Skin Shop." name="description"/>
+<link href="https://i.imgur.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-:root{
-  --rgc-blue:#0094ff;
-  --rgc-red:#e63946;
-  --rgc-gold:#ffc107;
-  --bg:#1b2025;
-  --panel:#12171b;
-  --text:#f5f5f5;
-  --dim:#b8bec5;
-}
-
-html,body{min-height:100%;}
-body{
-  background:
-    radial-gradient(circle at 50% 20%, rgba(0,148,255,.035), transparent 28%),
-    radial-gradient(circle at 50% 65%, rgba(230,57,70,.025), transparent 35%),
-    var(--bg);
-  color:var(--text);
-  font-family:Georgia,"Times New Roman",serif;
-  line-height:1.55;
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-
-
-/* ===== Main ===== */
-.page{
-  width:min(100%, 860px);
-  margin:0 auto;
-  padding:14px 18px 40px;
-}
-.banner-wrap{
-  position:relative;
-  margin:0 auto 28px;
-  width:min(100%, 700px);
-  overflow:hidden;
-  box-shadow:0 0 24px rgba(0,0,0,.24);
-}
-.banner-wrap img{width:100%;display:block}
-.banner-wrap::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.20) 48%,rgba(255,255,255,.07) 53%,transparent 70%);
-  transform:translateX(-120%);
-  animation:bannerSweep 6s ease-in-out infinite;
-  pointer-events:none;
-}
-@keyframes bannerSweep{
-  0%,35%{transform:translateX(-120%);opacity:0}
-  45%{opacity:1}
-  65%,100%{transform:translateX(120%);opacity:0}
-}
-
-/* ===== Special Offer Banner: Electric Storm / Thunder Lightning ===== */
-.special-offer-banner{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-}
-
-.special-offer-banner > img{
-  position:relative;
-  z-index:2;
-}
-
-/* Full-frame storm flash: the whole image briefly lights up like a real lightning strike */
-.special-offer-banner .storm-flash{
-  position:absolute;
-  inset:0;
-  z-index:8;
-  pointer-events:none;
-  background:rgba(255,255,255,0);
-  mix-blend-mode:screen;
-  animation:stormFlash 5.8s infinite;
-}
-
-/* Branching lightning is drawn as real jagged SVG paths rather than geometric beams */
-.special-offer-banner .storm-lightning{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  z-index:10;
-  pointer-events:none;
-  overflow:visible;
-  mix-blend-mode:screen;
-}
-
-.storm-lightning .bolt-glow{
-  fill:none;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  stroke-width:7;
-  opacity:0;
-  filter:blur(7px);
-}
-
-.storm-lightning .bolt-core{
-  fill:none;
-  stroke:#fff;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  stroke-width:2.2;
-  opacity:0;
-  filter:drop-shadow(0 0 4px rgba(255,255,255,.95));
-}
-
-.storm-lightning .bolt-blue{stroke:#00a8ff;}
-.storm-lightning .bolt-gold{stroke:#ffd54a;}
-.storm-lightning .bolt-red{stroke:#ff5264;}
-
-/* Main strike: quick double flash, then branching aftershock */
-.storm-lightning .strike-a{
-  stroke-dasharray:420;
-  stroke-dashoffset:420;
-  animation:boltStrikeA 5.8s linear infinite;
-}
-.storm-lightning .strike-b{
-  stroke-dasharray:360;
-  stroke-dashoffset:360;
-  animation:boltStrikeB 5.8s linear infinite;
-}
-.storm-lightning .strike-c{
-  stroke-dasharray:300;
-  stroke-dashoffset:300;
-  animation:boltStrikeC 5.8s linear infinite;
-}
-.storm-lightning .branch{
-  stroke-dasharray:180;
-  stroke-dashoffset:180;
-  animation:boltBranch 5.8s linear infinite;
-}
-
-@keyframes boltStrikeA{
-  0%,70%{opacity:0;stroke-dashoffset:420}
-  72%{opacity:.9;stroke-dashoffset:250}
-  73%{opacity:1;stroke-dashoffset:0}
-  74%{opacity:.08}
-  75%{opacity:.95}
-  76%{opacity:.12}
-  78%{opacity:.7}
-  80%,100%{opacity:0;stroke-dashoffset:0}
-}
-
-@keyframes boltStrikeB{
-  0%,72%{opacity:0;stroke-dashoffset:360}
-  73%{opacity:.75;stroke-dashoffset:0}
-  74%{opacity:.08}
-  75%{opacity:.85}
-  77%{opacity:.18}
-  79%{opacity:.55}
-  82%,100%{opacity:0;stroke-dashoffset:0}
-}
-
-@keyframes boltStrikeC{
-  0%,74%{opacity:0;stroke-dashoffset:300}
-  75%{opacity:.8;stroke-dashoffset:0}
-  76%{opacity:.05}
-  78%{opacity:.72}
-  80%{opacity:.12}
-  84%,100%{opacity:0;stroke-dashoffset:0}
-}
-
-@keyframes boltBranch{
-  0%,74%{opacity:0;stroke-dashoffset:180}
-  76%{opacity:.85;stroke-dashoffset:0}
-  77%{opacity:.08}
-  79%{opacity:.6}
-  83%,100%{opacity:0;stroke-dashoffset:0}
-}
-
-@keyframes stormFlash{
-  0%,70%,100%{opacity:0;background:rgba(255,255,255,0)}
-  72%{opacity:.16;background:rgba(255,255,255,.12)}
-  73%{opacity:.72;background:rgba(255,255,255,.42)}
-  74%{opacity:.08;background:rgba(255,255,255,.05)}
-  75%{opacity:.45;background:rgba(255,255,255,.24)}
-  77%{opacity:.12;background:rgba(255,255,255,.07)}
-  80%{opacity:0;background:rgba(255,255,255,0)}
-}
-
-/* A subtle colored electrical afterglow remains for a moment after the white strike */
-.special-offer-banner .storm-afterglow{
-  position:absolute;
-  inset:-15%;
-  z-index:7;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 24% 32%,rgba(0,148,255,.24),transparent 24%),
-    radial-gradient(circle at 57% 42%,rgba(255,193,7,.20),transparent 25%),
-    radial-gradient(circle at 82% 58%,rgba(230,57,70,.20),transparent 24%);
-  mix-blend-mode:screen;
-  opacity:0;
-  animation:stormAfterglow 5.8s ease-in-out infinite;
-}
-
-@keyframes stormAfterglow{
-  0%,69%,100%{opacity:0;transform:scale(.94)}
-  73%{opacity:.18;transform:scale(1)}
-  76%{opacity:.30;transform:scale(1.02)}
-  82%{opacity:.08;transform:scale(1.05)}
-  90%{opacity:0;transform:scale(1.08)}
-}
-
-@media(max-width:540px){
-  .storm-lightning .bolt-core{stroke-width:1.8}
-  .storm-lightning .bolt-glow{stroke-width:6}
-}
-
-/* ===== Offer Rows ===== */
-.offer{
-  position:relative;
-  display:grid;
-  grid-template-columns:350px 1fr;
-  gap:24px;
-  padding:0 0 18px;
-  margin-bottom:15px;
-  border-bottom:1px solid rgba(255,255,255,.68);
-}
-.offer::before{
-  content:"";
-  position:absolute;
-  left:-12px; right:-12px; top:-8px; bottom:4px;
-  border-radius:10px;
-  background:linear-gradient(90deg,rgba(0,148,255,.035),transparent 38%,rgba(230,57,70,.035));
-  opacity:0;
-  transition:.35s ease;
-  pointer-events:none;
-}
-.offer:hover::before{opacity:1}
-
-.offer-image{
-  position:relative;
-  overflow:hidden;
-  border-radius:2px;
-  background:#090b0e;
-  box-shadow:0 8px 18px rgba(0,0,0,.28);
-  transition:transform .4s ease,box-shadow .4s ease;
-}
-.offer-image img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-.offer-image::before{
-  content:"";
-  position:absolute;
-  top:-15%;
-  left:-75%;
-  width:42%;
-  height:130%;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.05),
-    rgba(255,255,255,.72),
-    rgba(255,255,255,.10),
-    transparent
-  );
-  transform:skewX(-18deg);
-  filter:blur(2px);
-  opacity:0;
-  z-index:3;
-  pointer-events:none;
-  animation:offerWhiteSweep 5.4s ease-in-out infinite;
-}
-.offer:nth-child(2) .offer-image::before{animation-delay:1.1s}
-.offer:nth-child(3) .offer-image::before{animation-delay:2.2s}
-@keyframes offerWhiteSweep{
-  0%,18%{left:-75%;opacity:0}
-  30%{opacity:.12}
-  43%{opacity:.88}
-  58%{opacity:.35}
-  78%,100%{left:145%;opacity:0}
-}
-.offer:hover .offer-image{
-  transform:translateX(5px) scale(1.015);
-  box-shadow:0 10px 26px rgba(0,148,255,.10),0 0 18px rgba(255,193,7,.07);
-}
-
-.offer-info{
-  padding-top:8px;
-  min-width:0;
-}
-.offer-title{
-  display:inline-block;
-  font-size:20px;
-  font-weight:bold;
-  font-style:italic;
-  text-decoration:underline;
-  margin-bottom:11px;
-  color:#fff;
-  text-shadow:0 0 7px rgba(255,255,255,.10);
-}
-.offer-desc{
-  font-size:14px;
-  color:#f1f1f1;
-  margin-bottom:9px;
-}
-.offer-line{
-  font-size:14px;
-  margin-bottom:7px;
-  color:#fff;
-}
-.offer-line strong{color:#fff}
-.offer-line .red{color:#ff3347}
-.offer-desc .gold-price{color:#ffc107;font-weight:700;text-shadow:0 0 7px rgba(255,193,7,.35)}
-.offer-note{
-  margin-top:28px;
-  padding-left:13px;
-  position:relative;
-  font-size:12px;
-  color:#fff400;
-}
-.offer-note::before{
-  content:"•";
-  position:absolute;
-  left:2px;
-  color:#fff400;
-}
-
-.offer:nth-of-type(2) .offer-image{box-shadow:0 8px 18px rgba(0,0,0,.28),0 0 16px rgba(0,148,255,.035)}
-
-/* ===== Small energy line between sections ===== */
-.energy-line{
-  height:1px;
-  width:100%;
-  margin:-3px 0 14px;
-  background:linear-gradient(90deg,transparent,rgba(0,148,255,.25),rgba(255,193,7,.75),rgba(230,57,70,.30),transparent);
-  position:relative;
-  overflow:hidden;
-}
-.energy-line::after{
-  content:"";
-  position:absolute;
-  top:0;left:-25%;
-  width:25%;height:1px;
-  background:#fff;
-  box-shadow:0 0 7px #fff,0 0 14px rgba(255,193,7,.9);
-  animation:energyMove 3.8s linear infinite;
-}
-@keyframes energyMove{
-  from{left:-25%}
-  to{left:125%}
-}
-
-/* ===== Footer ===== */
-footer{
-  width:min(100%, 860px);
-  margin:0 auto;
-  padding:3px 18px 28px;
-  text-align:center;
-  color:#858b91;
-  font-size:10px;
-}
-footer::before{
-  content:"";
-  display:block;
-  width:100%;
-  height:1px;
-  margin-bottom:14px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
-}
-
-/* ===== Responsive ===== */
-@media(max-width:720px){
-  .page{padding-left:14px;padding-right:14px;}
-  .offer{grid-template-columns:280px 1fr;gap:18px;}
-}
-
-@media(max-width:540px){
-  .nav a:nth-child(n+6){display:none}
-  .offer{grid-template-columns:1fr;gap:11px}
-  .offer-image{max-width:100%}
-  .offer-info{padding:0 4px 3px}
-  .offer-title{font-size:18px}
-  .offer-desc,.offer-line{font-size:14px}
-  .offer-note{font-size:12px}
-}
-  .nav a:nth-child(n+4){display:none}
-  .search{display:none}
-}
-
-
-
-/* ===== Transparent Frosted Glass Frames ===== */
-.banner-wrap,
-.offer-image,
-.offer-info,
-.offer-title {
-  position: relative;
-  isolation: isolate;
-}
-
-/* Main title banner glass frame */
-.banner-wrap {
-  padding: 4px;
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.12),
-    0 8px 24px rgba(0,0,0,.24);
-  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
-}
-.banner-wrap:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255,193,7,.55);
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.32),
-    0 0 22px rgba(255,193,7,.10),
-    inset 0 1px 0 rgba(255,255,255,.20);
-}
-
-/* Offer image glass frame */
-.offer-image {
-  padding: 4px;
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.12),
-    0 8px 20px rgba(0,0,0,.30);
-  transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
-}
-.offer-image:hover {
-  transform: translateX(6px) translateY(-5px) scale(1.018);
-  border-color: rgba(0,148,255,.65);
-  box-shadow:
-    0 14px 30px rgba(0,0,0,.34),
-    0 0 24px rgba(0,148,255,.12),
-    0 0 14px rgba(255,193,7,.08),
-    inset 0 1px 0 rgba(255,255,255,.20);
-}
-.offer-image img {
-  border-radius: 5px;
-}
-
-/* Text/content glass frame */
-.offer-info {
-  padding: 14px 15px 13px;
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 12px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.012)),
-    rgba(10,14,18,.18);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.10),
-    inset 0 0 18px rgba(255,255,255,.018),
-    0 8px 22px rgba(0,0,0,.20);
-  transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease, background .4s ease;
-}
-.offer-info:hover {
-  transform: translateX(4px) translateY(-5px);
-  border-color: rgba(255,193,7,.58);
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.018)),
-    rgba(10,14,18,.22);
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.30),
-    0 0 22px rgba(255,193,7,.09),
-    0 0 14px rgba(0,148,255,.06),
-    inset 0 1px 0 rgba(255,255,255,.17);
-}
-
-/* Individual title glass frame */
-.offer-title {
-  padding: 5px 10px 6px;
-  margin: -1px 0 12px;
-  border: 1px solid rgba(255,255,255,.20);
-  border-radius: 7px;
-  background: linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.015));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.14),
-    0 4px 12px rgba(0,0,0,.14);
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
-}
-.offer-title:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255,193,7,.65);
-  background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.025));
-  box-shadow:
-    0 7px 16px rgba(0,0,0,.22),
-    0 0 15px rgba(255,193,7,.10),
-    inset 0 1px 0 rgba(255,255,255,.20);
-}
-
-/* Soft moving glass highlight on every frame */
-.banner-wrap::before,
-.offer-image::after,
-.offer-info::before,
-.offer-title::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  left: -90%;
-  width: 32%;
-  height: 140%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.04),
-    rgba(255,255,255,.32),
-    rgba(255,255,255,.06),
-    transparent
-  );
-  transform: skewX(-18deg);
-  filter: blur(3px);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 20;
-  animation: glassFrameSweep 6.5s ease-in-out infinite;
-}
-.offer-image::after { animation-delay: .7s; }
-.offer-info::before { animation-delay: 1.4s; }
-.offer-title::before { animation-delay: 2.1s; }
-
-@keyframes glassFrameSweep {
-  0%, 18% { left: -90%; opacity: 0; }
-  32% { opacity: .12; }
-  46% { opacity: .55; }
-  60% { opacity: .18; }
-  80%, 100% { left: 145%; opacity: 0; }
-}
-
-/* Keep the original image sweep above the new glass frame */
-.offer-image::before { z-index: 21; }
-
-@media(max-width:540px) {
-  .offer-info { padding: 13px 12px 12px; }
-  .offer-title { display: block; width: fit-content; max-width: 100%; }
-}
-
-
-
-/* ===== Unified Promotional Glass Frame =====
-   Image + content are one promotion, not separate cards. */
-.offer {
-  position: relative;
-  padding: 8px;
-  margin-bottom: 18px;
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 14px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.012)),
-    rgba(8,12,16,.20);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.12),
-    inset 0 0 24px rgba(255,255,255,.018),
-    0 8px 24px rgba(0,0,0,.24);
-  transition: transform .45s ease, border-color .45s ease, box-shadow .45s ease, background .45s ease;
-  overflow: hidden;
-}
-
-.offer:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255,193,7,.62);
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.018)),
-    rgba(8,12,16,.25);
-  box-shadow:
-    0 15px 34px rgba(0,0,0,.34),
-    0 0 26px rgba(255,193,7,.10),
-    0 0 18px rgba(0,148,255,.07),
-    inset 0 1px 0 rgba(255,255,255,.20);
-}
-
-/* unified blue-gold-red energy edge */
-.offer::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  padding: 1px;
-  background: linear-gradient(110deg,
-    rgba(0,148,255,.0),
-    rgba(0,148,255,.42),
-    rgba(255,193,7,.72),
-    rgba(230,57,70,.42),
-    rgba(0,148,255,.0)
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: .30;
-  pointer-events: none;
-  animation: unifiedOfferBorder 5s linear infinite;
-}
-.offer:nth-of-type(2)::after { animation-delay: 1.6s; }
-.offer:nth-of-type(3)::after { animation-delay: 3.2s; }
-
-@keyframes unifiedOfferBorder {
-  0%,100% { opacity: .18; transform: translateX(-2%); }
-  50% { opacity: .62; transform: translateX(2%); }
-}
-
-/* image and content belong visually to the same frame */
-.offer-image,
-.offer-info {
-  border: 0 !important;
-  border-radius: 8px;
-  box-shadow: none !important;
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  transform: none !important;
-}
-
-.offer-image {
-  padding: 0;
-  overflow: hidden;
-}
-
-.offer-image:hover {
-  transform: none !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.offer-info {
-  padding: 12px 14px 10px;
-}
-
-.offer-info:hover {
-  transform: none !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  background: transparent !important;
-}
-
-/* title is part of the content, not another promotion */
-.offer-title {
-  padding: 0;
-  margin: 0 0 11px;
-  border: 0 !important;
-  border-radius: 0;
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
-  transform: none !important;
-}
-.offer-title:hover {
-  transform: none !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  background: transparent !important;
-}
-
-/* keep a subtle inner glass sheen across the whole promotion */
-.offer > .offer-image::after {
-  content: '';
-  position: absolute;
-  top: -20%;
-  left: -90%;
-  width: 28%;
-  height: 140%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), rgba(255,255,255,.62), rgba(255,255,255,.08), transparent);
-  transform: skewX(-18deg);
-  filter: blur(3px);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 4;
-  animation: unifiedOfferSweep 5.4s ease-in-out infinite;
-}
-.offer:nth-of-type(2) > .offer-image::after { animation-delay: 1.2s; }
-.offer:nth-of-type(3) > .offer-image::after { animation-delay: 2.4s; }
-
-@keyframes unifiedOfferSweep {
-  0%,18% { left: -90%; opacity: 0; }
-  30% { opacity: .12; }
-  44% { opacity: .82; }
-  58% { opacity: .28; }
-  78%,100% { left: 145%; opacity: 0; }
-}
-
-@media(max-width:540px) {
-  .offer { padding: 7px; }
-  .offer-info { padding: 11px 10px 8px; }
-  .offer-note { margin-top: 24px; }
-}
-
-
-.offer-image.promo-random-link {
-  display:block;
-  cursor:pointer;
-  color:inherit;
-}
-.offer-image.promo-random-link:focus-visible {
-  outline:2px solid rgba(255,193,7,.9);
-  outline-offset:3px;
-}
-
-/* ===== Hero Skins Hover Label =====
-   No href is used here, so the browser will not expose javascript:void(0)
-   or a destination URL in the bottom-left status bar. */
-.offer-image.promo-random-link{
-  position:relative;
-  cursor:pointer;
-}
-.hero-skins-tooltip{
-  position:absolute;
-  left:50%;
-  bottom:18px;
-  transform:translate(-50%, 8px);
-  padding:7px 16px;
-  border:1px solid rgba(255,193,7,.65);
-  border-radius:7px;
-  background:rgba(8,12,16,.78);
-  color:#fff;
-  cursor:pointer;
-  font-family:Georgia,"Times New Roman",serif;
-  appearance:none;
-  -webkit-appearance:none;
-  font-size:14px;
-  font-weight:bold;
-  letter-spacing:.5px;
-  white-space:nowrap;
-  text-shadow:0 0 7px rgba(255,255,255,.25);
-  box-shadow:
-    0 5px 18px rgba(0,0,0,.35),
-    0 0 16px rgba(255,193,7,.12),
-    inset 0 1px 0 rgba(255,255,255,.14);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  opacity:0;
-  visibility:hidden;
-  pointer-events:auto;
-  z-index:50;
-  transition:opacity .25s ease, transform .25s ease, visibility .25s ease;
-}
-.hero-skins-tooltip::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:-5px;
-  width:9px;
-  height:9px;
-  background:rgba(8,12,16,.78);
-  border-left:1px solid rgba(255,193,7,.65);
-  border-top:1px solid rgba(255,193,7,.65);
-  transform:translateX(-50%) rotate(45deg);
-}
-.offer-image.promo-random-link:hover .hero-skins-tooltip,
-.offer-image.promo-random-link:focus-visible .hero-skins-tooltip{
-  opacity:1;
-  visibility:visible;
-  transform:translate(-50%,0);
-}
-.offer-image.promo-random-link:focus-visible{
-  outline:2px solid rgba(255,193,7,.9);
-  outline-offset:3px;
-}
-.hero-skins-tooltip{
-  font:inherit;
-  text-align:center;
-}
-.hero-skins-tooltip:hover{
-  border-color:rgba(255,193,7,.95);
-  background:rgba(12,16,22,.92);
-  box-shadow:
-    0 6px 20px rgba(0,0,0,.42),
-    0 0 20px rgba(255,193,7,.22),
-    inset 0 1px 0 rgba(255,255,255,.18);
-}
-.hero-skins-tooltip:focus-visible{
-  outline:2px solid rgba(255,193,7,.95);
-  outline-offset:3px;
-}
-/* ===== Hero Skins Button Click Effect ===== */
-.hero-skins-tooltip{
-  transition:
-    opacity .25s ease,
-    transform .25s ease,
-    visibility .25s ease,
-    background .2s ease,
-    box-shadow .2s ease,
-    border-color .2s ease;
-}
-
-/* ===== Hero Skins Hover Glow ===== */
-.hero-skins-tooltip:hover,
-.hero-skins-tooltip:focus-visible{
-  transform:translate(-50%,0) scale(1.04);
-  border-color:#fff1a8;
-  background:rgba(255,193,7,.22);
-  box-shadow:
-    0 4px 14px rgba(0,0,0,.38),
-    0 0 18px rgba(255,193,7,.55),
-    0 0 34px rgba(255,193,7,.35),
-    0 0 48px rgba(255,255,255,.14),
-    inset 0 0 14px rgba(255,193,7,.22);
-  color:#fff;
-  text-shadow:
-    0 0 5px rgba(255,255,255,.9),
-    0 0 12px rgba(255,193,7,.75);
-}
-
-.hero-skins-tooltip::after{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border-radius:10px;
-  border:1px solid rgba(255,193,7,.25);
-  pointer-events:none;
-  opacity:0;
-  transition:opacity .2s ease, inset .2s ease, box-shadow .2s ease;
-}
-
-.hero-skins-tooltip:hover::after,
-.hero-skins-tooltip:focus-visible::after{
-  inset:-7px;
-  opacity:1;
-  border-color:rgba(255,193,7,.7);
-  box-shadow:
-    0 0 14px rgba(255,193,7,.55),
-    0 0 26px rgba(255,193,7,.25);
-}
-
-
-
-/* ===== VIP Offer ===== */
-.vip-offer-image img{
-  width:86%;
-  margin:0 auto;
-  height:auto;
-  display:block;
-  border-radius:8px;
-}
-.vip-offer-info{
-  padding:12px 14px 10px;
-}
-.vip-section{
-  margin:0 0 14px;
-}
-.vip-section:last-child{
-  margin-bottom:0;
-}
-.vip-heading{
-  display:inline-block;
-  margin:0 0 7px;
-  color:#fff;
-  font-size:18px;
-  font-weight:bold;
-  font-style:italic;
-  text-shadow:0 0 8px rgba(255,193,7,.18);
-}
-.vip-list{
-  margin:0 0 0 18px;
-  padding:0;
-  color:#f1f1f1;
-  font-size:13px;
-}
-.vip-list li{
-  margin:0 0 5px;
-}
-.vip-color-logos{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-left:2px;
-  vertical-align:middle;
-  transform:translateY(-1px);
-}
-.vip-color-logos img{
-  width:28px;
-  height:28px;
-  object-fit:contain;
-  display:inline-block;
-  vertical-align:middle;
-  border-radius:4px;
-  filter:drop-shadow(0 0 4px rgba(255,255,255,.18));
-}
-.vip-color-logos img:hover{
-  transform:scale(1.12);
-  filter:drop-shadow(0 0 7px rgba(255,255,255,.38));
-}
-.vip-cost{
-  color:#ffc107;
-  font-weight:bold;
-}
-.vip-cost strong{
-  color:#fff;
-}
-.vip-consult{
-  color:#ffc107;
-  font-weight:bold;
-}
-@media(max-width:540px){
-  .vip-offer-info{padding:11px 10px 8px;}
-  .vip-heading{font-size:17px;}
-  .vip-list{font-size:13px;}
-}
-/* ===== Separate VIP / Super VIP Frames ===== */
-.vip-single{
-  margin-bottom:18px;
-}
-.vip-single:last-of-type{
-  margin-bottom:18px;
-}
-.vip-single .vip-offer-image{
-  align-self:center;
-}
-
-
-/* ===== VIP boxes aligned with the three offers below ===== */
-.vip-single{
-  grid-template-columns:350px 1fr;
-  gap:24px;
-  padding:8px;
-  margin-bottom:18px;
-}
-
-.vip-single .vip-offer-image{
-  width:100%;
-  align-self:center;
-}
-
-.vip-single .vip-offer-info{
-  min-width:0;
-  padding:12px 14px 10px;
-}
-
-@media(max-width:720px){
-  .vip-single{
-    grid-template-columns:280px 1fr;
-    gap:18px;
-  }
-}
-
-@media(max-width:540px){
-  .vip-single{
-    grid-template-columns:1fr;
-    gap:11px;
-  }
-  .vip-single .vip-offer-image{
-    max-width:100%;
-  }
-}
-
-
-.vip-golden-word{
-  color:#ffd54a;
-  font-weight:700;
-  text-shadow:0 0 6px rgba(255,193,7,.55);
-}
-.vip-custom-word{
-  font-weight:700;
-  background:linear-gradient(90deg,#ff4d5a,#ffc107,#00a8ff,#a855f7,#ff4d5a);
-  background-size:220% 100%;
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:vipCustomColorShift 3.2s linear infinite;
-}
-@keyframes vipCustomColorShift{
-  0%{background-position:0% 50%;}
-  100%{background-position:220% 50%;}
-}
-
-/* Gold highlight for selected offer values */
-.gold-highlight{
-  color:#ffc107;
-  text-shadow:0 0 5px rgba(255,193,7,.35);
-  font-weight:700;
-}
-
-/* Inner-page compact logo + hamburger navigation */
-#rgc-dropdown-nav .rgc-dd-trigger{min-width:0!important;width:auto!important;min-height:62px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:13px!important;padding:9px 15px 9px 10px!important;border-radius:14px!important;}
-#rgc-dropdown-nav .rgc-dd-brand,#rgc-dropdown-nav .rgc-dd-chevron{display:none!important;}
-#rgc-dropdown-nav .rgc-dd-logo{width:46px!important;height:46px!important;flex:0 0 46px!important;object-fit:contain!important;}
-#rgc-dropdown-nav .rgc-dd-hamburger{display:flex!important;flex-direction:column!important;justify-content:center!important;gap:5px!important;width:28px!important;height:28px!important;}
-#rgc-dropdown-nav .rgc-dd-hamburger span{display:block!important;width:25px!important;height:3px!important;border-radius:3px!important;background:linear-gradient(90deg,#f8df87,#d4af37)!important;box-shadow:0 0 5px rgba(212,175,55,.22)!important;}
-#rgc-dropdown-nav .rgc-dd-menu{top:calc(100% + 8px)!important;left:0!important;}
-@media(max-width:600px){#rgc-dropdown-nav{position:relative!important;margin:10px 0 18px 10px!important;}#rgc-dropdown-nav .rgc-dd-trigger{min-height:54px!important;gap:10px!important;padding:6px 12px 6px 7px!important;}#rgc-dropdown-nav .rgc-dd-logo{width:40px!important;height:40px!important;flex-basis:40px!important;}#rgc-dropdown-nav .rgc-dd-hamburger{width:25px!important;height:25px!important;gap:4px!important;}#rgc-dropdown-nav .rgc-dd-hamburger span{width:23px!important;height:3px!important;}#rgc-dropdown-nav .rgc-dd-menu{width:min(280px,calc(100vw - 24px))!important;}}
+   :root{--bg:#080a0d;--panel:#10151b;--panel2:#151c23;--line:rgba(221,178,79,.22);--gold:#d9ad4c;--gold2:#f4d98d;--white:#f4f2ec;--muted:#9aa3ad;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif;line-height:1.55}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 80% 8%,rgba(179,128,39,.12),transparent 34%),radial-gradient(ellipse at 5% 48%,rgba(54,85,115,.09),transparent 30%)}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.eyebrow{color:var(--gold2);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}.section-head h2{font:800 clamp(30px,4vw,46px)/.98 'Barlow Condensed',sans-serif;letter-spacing:.015em;text-transform:uppercase;margin:8px 0 0}.section-head p{max-width:430px;color:var(--muted);font-size:13px;margin:0}
+/* community strip */
+.community{background:#15120b;border-bottom:1px solid rgba(217,173,76,.2)}.community-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:46px;font-size:12px}.community-copy{display:flex;gap:12px;align-items:center}.community-copy b{color:var(--gold2);letter-spacing:.1em}.community a{color:var(--gold2);font-weight:800;letter-spacing:.08em;font-size:11px}
+/* navigation */
+.nav{position:sticky;top:0;z-index:50;background:rgba(8,10,13,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}.nav-inner{height:76px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.brand img{width:44px;height:44px;object-fit:contain}.brand strong{font:800 22px 'Barlow Condensed',sans-serif;letter-spacing:.08em}.brand small{display:block;color:var(--gold);font-size:9px;letter-spacing:.22em;margin-top:-2px}.nav-links{display:flex;align-items:center;gap:20px;margin-left:auto}.nav-links a{color:#c3c8ce;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:.2s}.nav-links a:hover{color:var(--gold2)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 17px;border-radius:3px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17130a;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold2);transition:transform .2s,filter .2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.menu-toggle{display:none;background:transparent;color:white;border:1px solid var(--line);font-size:22px;padding:5px 11px}
+/* editorial hero */
+.hero{padding:50px 0 58px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.055)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:44px;min-height:430px}.hero-copy{position:relative;z-index:2}.hero-kicker{display:flex;align-items:center;gap:12px;color:var(--gold2);font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}.hero-kicker:before{content:"";height:1px;width:34px;background:var(--gold)}.hero h1{font:900 clamp(54px,8vw,100px)/.82 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:-.025em;margin:22px 0}.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(244,217,141,.8)}.hero-desc{max-width:480px;color:#aab2bc;font-size:14px;line-height:1.85}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn.secondary{background:transparent;color:var(--white);border-color:rgba(255,255,255,.2)}.hero-stats{display:flex;gap:28px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);max-width:490px}.stat strong{display:block;font:800 25px 'Barlow Condensed',sans-serif;color:var(--gold2)}.stat span{font-size:9px;color:var(--muted);letter-spacing:.13em;text-transform:uppercase}.hero-art{position:relative;min-height:410px;display:flex;align-items:center;justify-content:center}.hero-art:before{content:"";position:absolute;width:78%;aspect-ratio:1;border:1px solid rgba(217,173,76,.22);transform:rotate(45deg);background:linear-gradient(140deg,rgba(217,173,76,.08),transparent 65%)}.hero-art:after{content:"RGC";position:absolute;right:2%;bottom:3%;font:900 110px/.8 'Barlow Condensed',sans-serif;color:rgba(217,173,76,.055);letter-spacing:.1em}.hero-art img{position:relative;z-index:1;width:min(92%,490px);max-height:400px;object-fit:contain;filter:drop-shadow(0 25px 38px rgba(0,0,0,.6))}.art-label{position:absolute;z-index:2;left:4%;bottom:10%;padding:12px 15px;background:rgba(10,13,16,.84);border-left:2px solid var(--gold);font-size:10px;letter-spacing:.12em;text-transform:uppercase}.art-label b{display:block;color:var(--gold2);font-size:14px;margin-top:3px}
+/* quick rails */
+.quick-rail{margin-top:-1px;background:#0c1014;border-bottom:1px solid rgba(255,255,255,.06)}.rail-inner{display:grid;grid-template-columns:repeat(4,1fr)}.rail-item{padding:20px 22px;border-right:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:14px}.rail-item:last-child{border:0}.rail-icon{color:var(--gold2);font-size:20px}.rail-item b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.rail-item span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+/* catalog */
+.catalog{padding:92px 0}.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.category{position:relative;min-height:230px;overflow:hidden;background:linear-gradient(140deg,#171e26,#0e1217 70%);border:1px solid rgba(255,255,255,.09);display:flex;align-items:flex-end;padding:22px;transition:.25s}.category:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,7,9,.98),rgba(5,7,9,.1) 75%);z-index:1}.category:after{content:"";position:absolute;inset:0;border:1px solid transparent;transition:.25s}.category:hover{transform:translateY(-5px);border-color:rgba(217,173,76,.55);box-shadow:0 18px 40px rgba(0,0,0,.3)}.category:hover:after{border-color:rgba(217,173,76,.3)}.category img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center 36%;padding:5px 8px 0;opacity:.83;transition:transform .35s,opacity .35s}.category:hover img{transform:scale(1.05);opacity:1}.category-content{position:relative;z-index:2}.category .number{font-size:10px;color:var(--gold2);letter-spacing:.18em}.category h3{font:800 30px/.95 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:7px 0}.category p{font-size:11px;color:#b0b7bf;margin:0}.category .arrow{position:absolute;right:20px;bottom:24px;z-index:2;color:var(--gold2);font-size:22px}.category.global{grid-column:span 3;min-height:220px;display:grid;grid-template-columns:1fr auto;align-items:center;padding:35px 42px;background:radial-gradient(ellipse at 78% 50%,rgba(205,157,55,.17),transparent 40%),linear-gradient(110deg,#171b20,#0d1115);border-color:rgba(217,173,76,.36)}.category.global img{width:36%;height:100%;left:auto;right:9%;object-position:center;opacity:.35;filter:sepia(.6)}.category.global:before{background:linear-gradient(90deg,rgba(5,7,9,.2),rgba(5,7,9,.7))}.global .category-content{max-width:550px}.global .category h3{font-size:42px}.global .badge{display:inline-block;color:#17130a;background:var(--gold2);padding:5px 9px;font-size:9px;font-weight:900;letter-spacing:.15em;margin-bottom:10px}.global .category p{font-size:13px;max-width:400px}.global .arrow{right:38px;bottom:50%;font-size:30px}
+/* VIP feature */
+.vip-section{padding:78px 0 86px;background:linear-gradient(180deg,#11151a,#090b0e);border-top:1px solid rgba(217,173,76,.15);border-bottom:1px solid rgba(217,173,76,.15);position:relative;overflow:hidden}.vip-section:before{content:"HALL OF FAME";position:absolute;left:50%;top:22px;transform:translateX(-50%);white-space:nowrap;font:900 clamp(60px,11vw,145px)/1 'Barlow Condensed',sans-serif;letter-spacing:.06em;color:rgba(255,255,255,.018)}.vip-intro{text-align:center;position:relative}.vip-intro .eyebrow{display:block}.vip-intro h2{font:900 clamp(38px,6vw,64px)/.95 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:12px 0}.vip-intro p{color:var(--muted);font-size:13px;max-width:600px;margin:0 auto}.vip-podium{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:920px;margin:42px auto 0;align-items:end;position:relative}.vip-card{background:linear-gradient(160deg,#1a2027,#0c1014);border:1px solid rgba(255,255,255,.09);padding:25px 20px 23px;text-align:center;position:relative;min-height:210px}.vip-card.first{min-height:248px;border-color:rgba(244,217,141,.55);background:linear-gradient(160deg,rgba(120,88,28,.25),#0c1014 75%)}.vip-medal{font-size:30px;margin-bottom:10px}.vip-card h3{font:800 25px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:0 0 4px}.vip-card .tier{font-size:9px;color:var(--gold2);letter-spacing:.18em;text-transform:uppercase}.vip-card .amount{font-size:11px;color:#a8b0b9;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}.vip-card .amount strong{color:var(--white);font-size:15px}.vip-card .rank{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--gold2);color:#141009;padding:5px 12px;font-size:10px;font-weight:900;letter-spacing:.12em}.vip-note{text-align:center;font-size:10px;color:#737d87;margin-top:22px}
+/* values */
+.values{padding:88px 0}.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.value-card{padding:27px;background:#11161c;border:1px solid rgba(255,255,255,.07);min-height:190px}.value-card .icon{font-size:24px;color:var(--gold2)}.value-card h3{font:700 24px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:16px 0 7px}.value-card p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+/* testimonials */
+.reviews{padding:78px 0;background:#0d1115;border-top:1px solid rgba(255,255,255,.06)}.review-frame{position:relative;overflow:hidden;border:1px solid rgba(217,173,76,.2);background:#090c0f;padding:14px}.review-track{display:flex;transition:transform .4s ease}.review-slide{min-width:100%;display:flex;justify-content:center}.review-slide img{max-height:520px;width:auto;max-width:100%;object-fit:contain}.review-controls{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:18px}.review-controls button{width:38px;height:38px;border:1px solid var(--line);background:#151a20;color:var(--gold2);font-size:22px;cursor:pointer}.dots{display:flex;gap:7px}.dots button{width:6px;height:6px;border:0;border-radius:50%;background:#4c535a;padding:0;cursor:pointer}.dots button.active{background:var(--gold2);width:19px;border-radius:6px}
+/* video + socials */
+.media-section{padding:82px 0}.video-card{display:grid;grid-template-columns:1.1fr .9fr;background:#11161b;border:1px solid rgba(255,255,255,.08)}.video-thumb{position:relative;min-height:280px;overflow:hidden}.video-thumb img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .3s}.video-thumb:hover img{transform:scale(1.04)}.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;display:grid;place-items:center;background:rgba(217,173,76,.92);color:#16120a;font-size:24px;box-shadow:0 0 0 12px rgba(217,173,76,.13)}.video-info{padding:36px;align-self:center}.video-info h3{font:800 34px/.98 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:10px 0}.video-info p{font-size:12px;color:var(--muted);line-height:1.8}.socials{display:flex;justify-content:center;gap:14px;margin-top:32px}.socials a{width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.09);background:#11161b;transition:.2s}.socials a:hover{border-color:var(--gold);transform:translateY(-3px)}.socials img{width:26px;height:26px;object-fit:contain}
+/* footer */
+.footer{border-top:1px solid var(--line);padding:30px 0;background:#07090b}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{font:800 19px 'Barlow Condensed',sans-serif;letter-spacing:.1em}.footer-brand span{color:var(--gold2)}.footer p{font-size:10px;color:#77818b;margin:5px 0 0}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{font-size:10px;color:#aeb5bd}.footer-links a:hover{color:var(--gold2)}
+@media(max-width:1050px){.nav-links{gap:12px}.nav-links a{font-size:10px}.nav-inner{gap:15px}.hero-grid{gap:20px}.hero-art{min-height:350px}.hero-art img{max-height:340px}}
+@media(max-width:800px){.nav-inner{height:66px}.menu-toggle{display:block;margin-left:auto}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:0;right:0;top:66px;background:#0b0e12;border-bottom:1px solid var(--line);padding:18px 22px;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}.hero{padding:38px 0}.hero-grid{grid-template-columns:1fr}.hero-copy{max-width:650px}.hero-art{min-height:280px;grid-row:1}.hero-art img{max-height:290px;width:80%}.hero-art:after{font-size:80px}.hero h1{font-size:clamp(56px,13vw,86px)}.rail-inner{grid-template-columns:repeat(2,1fr)}.rail-item:nth-child(2){border-right:0}.rail-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.07)}.catalog{padding:65px 0}.catalog-grid{grid-template-columns:repeat(2,1fr)}.category.global{grid-column:span 2}.vip-podium{gap:10px}.vip-card{padding:24px 10px 18px}.vip-card h3{font-size:21px}.value-grid{grid-template-columns:1fr}.video-card{grid-template-columns:1fr}.video-thumb{min-height:240px}.section-head{align-items:start;flex-direction:column}.footer-inner{flex-direction:column;text-align:center}}
+@media(max-width:500px){.wrap{width:calc(100% - 28px)}.community-inner{min-height:42px}.community-copy{font-size:10px;gap:7px}.community-copy span:last-child{display:none}.brand img{width:38px;height:38px}.brand strong{font-size:19px}.hero-art{min-height:220px}.hero-art img{max-height:230px}.hero-stats{gap:18px}.stat strong{font-size:22px}.hero-desc{font-size:12px}.catalog-grid{gap:9px}.category{min-height:180px;padding:14px}.category h3{font-size:25px}.category p{font-size:9px}.category .arrow{right:12px;bottom:16px}.category.global{min-height:190px;padding:22px}.global .category h3{font-size:33px}.global .category p{font-size:11px}.global .arrow{right:18px;bottom:25px}.vip-podium{grid-template-columns:1fr;max-width:320px;align-items:stretch}.vip-card,.vip-card.first{min-height:0;padding:24px 15px 18px}.vip-card.first{order:-1}.vip-card .amount{margin-top:8px}.vip-intro p{font-size:11px}.video-info{padding:25px}.video-info h3{font-size:29px}.video-thumb{min-height:190px}.footer-links{justify-content:center}}
+
+/* Refined 10-place VIP leaderboard and compact feedback gallery */
+.vip-section{padding:64px 0 68px}
+.vip-leaderboard{grid-template-columns:repeat(6,minmax(0,1fr));max-width:1080px;gap:13px;align-items:stretch;margin-top:38px}
+.vip-leaderboard .vip-card{grid-column:span 2;min-height:188px;padding:23px 15px 17px}
+.vip-leaderboard .vip-card.first{grid-column:3 / span 2;grid-row:1;min-height:228px;transform:translateY(-10px)}
+.vip-leaderboard .vip-card:nth-child(1){grid-column:1 / span 2;grid-row:1;min-height:205px}
+.vip-leaderboard .vip-card:nth-child(3){grid-column:5 / span 2;grid-row:1;min-height:205px}
+.vip-leaderboard .vip-card:nth-child(n+4){grid-column:span 1;min-height:150px;padding:19px 10px 14px}
+.vip-leaderboard .vip-card:nth-child(n+4) .vip-medal{font-size:20px;margin-bottom:5px}
+.vip-leaderboard .vip-card:nth-child(n+4) h3{font-size:17px}
+.vip-leaderboard .vip-card:nth-child(n+4) .amount{font-size:9px;margin-top:8px;padding-top:8px}
+.vip-leaderboard .vip-card:nth-child(n+4) .amount strong{font-size:12px}
+.reviews{padding:52px 0 56px}
+.review-frame{max-width:900px;margin:0 auto;padding:9px}
+.review-slide img{max-height:360px;max-width:100%;width:auto}
+.review-controls{margin-top:12px}
+@media(max-width:760px){.vip-leaderboard{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.vip-leaderboard .vip-card,.vip-leaderboard .vip-card.first,.vip-leaderboard .vip-card:nth-child(1),.vip-leaderboard .vip-card:nth-child(3),.vip-leaderboard .vip-card:nth-child(n+4){grid-column:span 1;grid-row:auto;min-height:145px;transform:none}.vip-leaderboard .vip-card.first{grid-column:1/-1;order:-1}.review-slide img{max-height:280px}}
+.community-whatsapp{display:inline-flex!important;align-items:center;justify-content:center;width:32px;height:32px;margin-left:auto;margin-right:10px;color:#25d366!important;border:1px solid rgba(37,211,102,.4);border-radius:50%;background:rgba(37,211,102,.08);text-decoration:none!important}
+.community-whatsapp svg{width:20px;height:20px;display:block}
+.community-join{margin-left:0!important}
+  </style>
+<style>
+   /* Strength products — redesigned to match the Index editorial theme */
+.strength-main{padding:66px 0 90px;min-height:calc(100vh - 122px)}
+.strength-heading{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid rgba(217,173,76,.22);position:relative}
+.strength-heading:after{content:"STRENGTH";position:absolute;right:0;top:-24px;font:900 clamp(62px,11vw,132px)/1 'Barlow Condensed',sans-serif;letter-spacing:.05em;color:rgba(255,255,255,.025);pointer-events:none}
+.strength-heading .eyebrow{display:flex;align-items:center;gap:10px}
+.strength-heading .eyebrow:before{content:"";width:30px;height:1px;background:var(--gold)}
+.strength-heading h1{font:900 clamp(44px,6vw,72px)/.9 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:12px 0 8px}
+.strength-heading h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px rgba(244,217,141,.85)}
+.strength-heading p{margin:0;color:var(--muted);font-size:13px;letter-spacing:.04em}
+.strength-mark{width:82px;height:82px;object-fit:contain;opacity:.9;filter:drop-shadow(0 10px 18px rgba(0,0,0,.4));position:relative;z-index:1}
+.strength-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}
+.strength-count{font:700 16px 'Barlow Condensed',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
+.strength-count small{font:600 10px Inter,sans-serif;color:var(--muted);letter-spacing:.12em;margin-left:8px}
+.strength-search{width:min(360px,100%);position:relative}
+.strength-search input{width:100%;height:44px;background:#10151b;border:1px solid rgba(255,255,255,.12);border-radius:2px;padding:0 15px 0 42px;color:var(--white);font:500 12px Inter,sans-serif;outline:none;transition:.2s}
+.strength-search input:focus{border-color:rgba(217,173,76,.65);box-shadow:0 0 0 3px rgba(217,173,76,.08)}
+.strength-search:before{content:"⌕";position:absolute;left:15px;top:5px;color:var(--gold2);font-size:24px;z-index:1}
+.products-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.product-card{min-width:0;background:linear-gradient(160deg,#151c23,#0c1014 78%);border:1px solid rgba(255,255,255,.085);position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.product-card:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:.25s;z-index:2}
+.product-card:hover{transform:translateY(-5px);border-color:rgba(217,173,76,.48);box-shadow:0 18px 38px rgba(0,0,0,.32)}
+.product-card:hover:before{opacity:1}
+.product-visual{height:218px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,rgba(217,173,76,.12),transparent 58%),linear-gradient(145deg,#1a222b,#0b0f13)}
+.product-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,10,13,.72));pointer-events:none}
+.product-visual img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .35s;position:relative;z-index:1}
+.product-card:hover .product-visual img{transform:scale(1.06)}
+.product-id{position:absolute;top:12px;left:12px;z-index:3;background:rgba(8,10,13,.82);border:1px solid rgba(217,173,76,.35);color:var(--gold2);padding:4px 8px;font:700 10px Inter,sans-serif;letter-spacing:.08em}
+.visual-index{position:absolute;right:12px;top:15px;z-index:3;color:rgba(244,217,141,.65);font:700 9px Inter,sans-serif;letter-spacing:.15em}
+.visual-fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;color:#77818b;font:700 11px Inter,sans-serif;letter-spacing:.2em}
+.image-missing .visual-fallback{display:flex}
+.product-info{padding:17px 17px 15px}
+.product-kicker{font-size:9px;color:var(--gold2);font-weight:800;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.product-kicker span{color:#6d747c;padding:0 3px}
+.product-info h3{font:800 23px/1.05 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:9px 0 15px;min-height:46px;letter-spacing:.01em}
+.product-details{border-top:1px solid rgba(255,255,255,.07);padding-top:11px;min-height:76px}
+.product-details p{display:flex;flex-direction:column;gap:3px;margin:0 0 7px}
+.product-details p span{font-size:8px;color:#79838d;text-transform:uppercase;letter-spacing:.15em;font-weight:800}
+.product-details p b{font-size:11px;color:#d7dbe0;font-weight:600;line-height:1.45}
+.product-details .version-detail b{color:#9ea8b2;font-size:10px}
+.product-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:12px;margin-top:9px;border-top:1px solid rgba(217,173,76,.16)}
+.product-price{font:800 26px/.9 'Barlow Condensed',sans-serif;color:var(--gold2);white-space:nowrap}
+.product-price small{font:700 8px Inter,sans-serif;color:#87919b;letter-spacing:.12em;margin-left:5px}
+.product-tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.product-tags span{font-size:8px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 6px;border:1px solid rgba(255,255,255,.13);color:#aeb7c0}
+.access-note{font-size:10px;color:var(--gold2);padding:7px 9px;margin:7px 0 0;background:rgba(217,173,76,.07);border-left:2px solid var(--gold);line-height:1.5}
+.no-products{display:none;text-align:center;padding:55px 20px;border:1px dashed rgba(217,173,76,.25);color:var(--muted);font-size:13px;letter-spacing:.05em}
+.no-products.show{display:block}
+@media(max-width:1050px){.products-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.strength-main{padding:42px 0 65px}.strength-heading{grid-template-columns:1fr auto;gap:10px}.strength-mark{width:58px;height:58px}.strength-toolbar{align-items:stretch;flex-direction:column}.strength-search{width:100%}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-visual{height:175px}.product-info{padding:13px 12px}.product-info h3{font-size:20px;min-height:42px}.product-footer{align-items:flex-start;flex-direction:column}.product-tags{justify-content:flex-start}}
+@media(max-width:430px){.products-grid{grid-template-columns:1fr}.product-card{display:grid;grid-template-columns:42% 58%}.product-visual{height:100%;min-height:210px}.product-info{padding:14px 12px}.product-info h3{font-size:19px}.product-details{min-height:70px}.product-footer{flex-direction:row;align-items:center}.product-price{font-size:23px}}
+  </style>
+<style id="special-offers-strength-style">
+   /* Special Offers — Strength Heroes visual system */
+.offers-heading:after{content:"SPECIAL OFFERS"!important}
+.offers-mark{width:92px;height:92px;opacity:.92}
+.offers-toolbar{margin-top:0}
+.offers-count-note{display:block}
+.offers-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.offer-card{display:flex;flex-direction:column;min-height:100%}
+.offer-visual{height:220px;display:flex;align-items:center;justify-content:center}
+.offer-visual img{object-fit:contain;padding:16px}
+.offer-visual .offer-badge{position:absolute;z-index:4;left:12px;top:12px;padding:5px 9px;background:rgba(7,10,13,.88);border:1px solid rgba(217,173,76,.48);color:var(--gold2);font:800 9px Inter,Arial,sans-serif;letter-spacing:.13em}
+.offer-visual .visual-index{right:12px;top:auto;bottom:12px}
+.offer-card .product-info{display:flex;flex-direction:column;flex:1;padding:18px 18px 17px}
+.offer-card .product-kicker{margin-bottom:8px}
+.offer-card-title{font:800 27px/1.05 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.025em;color:var(--gold2);margin:0 0 15px}
+.offer-card .offer-desc,.offer-card .offer-line,.offer-card .offer-note{font-size:12px;line-height:1.7;color:#c7cdd3;margin:0 0 10px}
+.offer-card .offer-desc{font-size:13px}
+.offer-card .offer-line strong{color:#f4d98d}
+.offer-card .gold-price,.offer-card .gold-highlight{color:var(--gold2);font-weight:800}
+.offer-card .red{color:#ff6975;font-weight:800}
+.offer-card .offer-note{margin-top:auto;padding-top:12px;border-top:1px solid rgba(217,173,76,.15);color:#8f9aa5;font-size:10px}
+.offer-card .vip-list{list-style:none;padding:0;margin:0 0 14px}
+.offer-card .vip-list li{position:relative;padding:8px 0 8px 18px;border-bottom:1px solid rgba(255,255,255,.065);font-size:12px;line-height:1.55;color:#cbd2da}
+.offer-card .vip-list li:before{content:"✦";position:absolute;left:0;top:9px;color:var(--gold);font-size:10px}
+.offer-card .vip-list .vip-cost{margin-top:6px;padding-top:12px;border-bottom:0;color:var(--gold2);font-weight:800}
+.offer-card .vip-list .vip-cost:before{content:"◆";color:var(--gold2)}
+.offer-card .vip-color-logos{display:inline-flex;vertical-align:middle;align-items:center;margin-left:5px}
+.offer-card .vip-color-logos img{width:25px;height:25px;object-fit:contain;display:inline-block}
+.offer-card .vip-golden-word{color:#f4d98d;font-weight:800}
+.offer-card .vip-custom-word{font-weight:800;background:linear-gradient(90deg,#ff4d5a,#ffc107,#00a8ff,#a855f7,#ff4d5a);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:vipCustomColorShift 3.2s linear infinite}
+.offer-skins-button{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:auto;padding:10px 16px;border:1px solid rgba(217,173,76,.55);background:linear-gradient(135deg,rgba(217,173,76,.16),rgba(217,173,76,.045));color:var(--gold2);font:800 10px Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
+.offer-skins-button:hover{transform:translateY(-2px);border-color:var(--gold2);background:rgba(217,173,76,.2);box-shadow:0 0 18px rgba(217,173,76,.15)}
+.vip-card{border-color:rgba(217,173,76,.34)}
+.vip-card:before{opacity:.7}
+.vip-card .offer-visual{background:radial-gradient(ellipse at 50% 42%,rgba(217,173,76,.20),transparent 60%),linear-gradient(145deg,#1a222b,#0b0f13)}
+.super-vip-card{border-color:rgba(0,148,255,.42)}
+.super-vip-card:before{background:linear-gradient(90deg,transparent,#43b7ff,transparent);opacity:.7}
+.super-vip-card .offer-visual{background:radial-gradient(ellipse at 50% 42%,rgba(0,148,255,.18),transparent 60%),linear-gradient(145deg,#172431,#0b0f13)}
+.super-vip-card .offer-card-title{color:#8ed4ff}
+.super-vip-card .vip-list li:before{color:#43b7ff}
+@media(max-width:1050px){.offers-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.offers-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.offer-visual{height:175px}.offer-card .product-info{padding:13px 12px}.offer-card-title{font-size:23px}.offer-card .offer-desc,.offer-card .offer-line,.offer-card .vip-list li{font-size:11px}.offer-skins-button{font-size:9px;padding:9px 11px}}
+@media(max-width:480px){.offers-grid{grid-template-columns:1fr}.offer-visual{height:205px}.offers-mark{width:60px;height:60px}.offer-card .product-info{padding:16px}}
+  </style>
+<link href="https://i.imgur.com/ZQcoV5B.png" rel="icon" type="image/png"/>
+<style>
+   .offers-footer{padding:24px 0;text-align:center;background:#07090b;border-top:1px solid rgba(217,173,76,.18);color:#77818b}
+.offers-footer p{margin:0;font-size:10px;letter-spacing:.05em}
+.nav-links a[aria-current="page"]{color:var(--gold2)}
+  </style>
+<style>
+/* Shared footer — identical visual style across every page */
+.home-style-footer{border-top:1px solid var(--line,rgba(255,255,255,.1));padding:30px 0;background:#07090b;color:#fff;width:100%;box-sizing:border-box}
+.home-style-footer-inner{width:min(1200px,calc(100% - 44px));margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.home-style-footer-brand{font:800 19px 'Barlow Condensed',sans-serif;letter-spacing:.1em;color:#fff}
+.home-style-footer-brand span{color:var(--gold2,#d4af37)}
+.home-style-footer p{font-size:10px;color:#77818b;margin:5px 0 0;line-height:1.6}
+.home-style-footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.home-style-footer-links a{font-size:10px;color:#aeb5bd;text-decoration:none;transition:color .2s}
+.home-style-footer-links a:hover{color:var(--gold2,#d4af37)}
+@media(max-width:800px){.home-style-footer-inner{flex-direction:column;text-align:center}}
+@media(max-width:500px){.home-style-footer-inner{width:calc(100% - 28px)}.home-style-footer-links{justify-content:center;gap:14px}}
 </style>
-<style id="rgc-dropdown-nav-style">
-#rgc-dropdown-nav, #rgc-dropdown-nav * { box-sizing:border-box; }
-#rgc-dropdown-nav { position:fixed; top:24px; left:44px; margin:0; z-index:99999; width:max-content; max-width:calc(100vw - 28px); font-family:Arial,Helvetica,sans-serif; color:#f4f6fb; }
-#rgc-dropdown-nav .rgc-dd-trigger { display:flex; align-items:center; gap:13px; padding:9px 15px 9px 9px; min-height:66px; border:1px solid rgba(212,175,55,.45); border-radius:12px; background:rgba(4,9,17,.96); color:inherit; cursor:pointer; text-align:left; box-shadow:0 8px 26px rgba(0,0,0,.26); }
-#rgc-dropdown-nav .rgc-dd-trigger:hover, #rgc-dropdown-nav.rgc-open .rgc-dd-trigger { border-color:#d4af37; background:#0a111d; }
-#rgc-dropdown-nav .rgc-dd-logo { width:48px; height:48px; object-fit:contain; flex:0 0 48px; }
-#rgc-dropdown-nav .rgc-dd-brand { display:flex; flex-direction:column; gap:4px; white-space:nowrap; }
-#rgc-dropdown-nav .rgc-dd-brand strong { font-size:19px; letter-spacing:1px; line-height:1.1; color:#f4d66d; }
-#rgc-dropdown-nav .rgc-dd-brand small { font-size:11px; letter-spacing:2.1px; color:#b8c2d3; }
-#rgc-dropdown-nav .rgc-dd-chevron { margin-left:8px; color:#d4af37; font-size:15px; transition:transform .18s ease; }
-#rgc-dropdown-nav.rgc-open .rgc-dd-chevron { transform:rotate(180deg); }
-#rgc-dropdown-nav .rgc-dd-menu { display:none; position:absolute; top:calc(100% + 7px); left:0; width:270px; max-width:calc(100vw - 36px); padding:8px; border:1px solid rgba(212,175,55,.45); border-radius:13px; background:rgba(4,9,17,.985); box-shadow:0 18px 40px rgba(0,0,0,.52); backdrop-filter:blur(12px); }
-#rgc-dropdown-nav.rgc-open .rgc-dd-menu, #rgc-dropdown-nav:focus-within .rgc-dd-menu { display:block; }
-#rgc-dropdown-nav .rgc-dd-menu a, #rgc-dropdown-nav .rgc-dd-subtitle { display:flex; align-items:center; gap:10px; min-height:40px; padding:9px 11px; border-radius:8px; text-decoration:none; color:#e8edf7; font-size:14px; font-weight:650; }
-#rgc-dropdown-nav .rgc-dd-menu a:hover, #rgc-dropdown-nav .rgc-dd-menu a:focus-visible { outline:none; background:rgba(212,175,55,.14); color:#f4d66d; }
-#rgc-dropdown-nav .rgc-dd-subtitle { min-height:29px; padding-top:7px; padding-bottom:4px; color:#d4af37; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; }
-#rgc-dropdown-nav .rgc-dd-divider { height:1px; margin:6px 5px; background:rgba(212,175,55,.22); }
-@media(max-width:600px){ #rgc-dropdown-nav{top:10px;left:10px;margin:0;} #rgc-dropdown-nav .rgc-dd-trigger{min-height:58px;gap:10px;padding:7px 10px 7px 7px;} #rgc-dropdown-nav .rgc-dd-logo{width:42px;height:42px;flex-basis:42px;} #rgc-dropdown-nav .rgc-dd-brand strong{font-size:16px;} #rgc-dropdown-nav .rgc-dd-brand small{font-size:9px;letter-spacing:1.6px;} #rgc-dropdown-nav .rgc-dd-menu{width:260px;} }
-</style>
-
-<style id="global-rank-inspired-special-offers-theme">
-/* Special Offers: responsive layout and visual language matched to Global Rank */
-:root{
-  --rgc-bg-main:#05080d;
-  --rgc-bg-secondary:#07111d;
-  --rgc-card:rgba(8,14,23,.92);
-  --rgc-card-hover:rgba(10,19,31,.98);
-  --rgc-gold:#d4af37;
-  --rgc-gold-light:#f4d97b;
-  --rgc-blue:#0094ff;
-  --rgc-blue-light:#43b7ff;
-  --rgc-red:#e63946;
-  --rgc-text:#eef4fa;
-  --rgc-muted:#aebdcd;
+<style id="rgc-nav-active-unified">
+/* Consistent current-page indicator across every shop page */
+.nav-links a{position:relative;text-decoration:none!important;transition:color .2s ease}
+.nav-links a.active,
+.nav-links a[aria-current="page"]{
+  color:var(--gold2,#f2c14e)!important;
 }
-html{scroll-behavior:smooth; background:var(--rgc-bg-main);}
-body{
-  min-height:100vh;
-  padding:42px 20px 70px;
-  color:var(--rgc-text);
-  font-family:"Segoe UI",Arial,sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
-  background:
-    radial-gradient(circle at 18% 4%,rgba(0,148,255,.10),transparent 30%),
-    radial-gradient(circle at 82% 12%,rgba(0,92,170,.075),transparent 30%),
-    radial-gradient(circle at 50% 100%,rgba(230,57,70,.025),transparent 32%),
-    linear-gradient(180deg,#05080d 0%,#07111d 48%,#05080d 100%);
+.nav-links a.active::after,
+.nav-links a[aria-current="page"]::after{
+  content:"";position:absolute;left:0;right:0;bottom:-9px;height:2px;
+  background:var(--gold2,#f2c14e);box-shadow:0 0 8px rgba(242,193,78,.35);
 }
-.page{
-  width:min(100%,1400px);
-  margin:0 auto;
-  padding:0 clamp(0px,1vw,12px) 36px;
-}
-.banner-wrap{
-  width:min(100%,1000px);
-  margin:0 auto 30px;
-  border:1px solid rgba(0,148,255,.24);
-  border-radius:12px;
-  background:linear-gradient(135deg,rgba(8,14,23,.96),rgba(7,17,29,.9));
-  box-shadow:0 12px 34px rgba(0,0,0,.42),0 0 22px rgba(0,148,255,.06),inset 0 1px 0 rgba(255,255,255,.08);
-}
-.banner-wrap:hover{
-  transform:translateY(-2px);
-  border-color:rgba(0,148,255,.42);
-  box-shadow:0 14px 36px rgba(0,0,0,.46),0 0 24px rgba(0,148,255,.10),inset 0 1px 0 rgba(255,255,255,.10);
-}
-/* Keep the animated offer banner, but make its frame match the blue-black theme. */
-.special-offer-banner{border-color:rgba(0,148,255,.26);}
-.offer{
-  grid-template-columns:minmax(260px,350px) minmax(0,1fr);
-  gap:clamp(18px,2vw,28px);
-  padding:12px;
-  margin:0 auto 20px;
-  border:1px solid rgba(0,148,255,.20);
-  border-radius:16px;
-  border-bottom:1px solid rgba(0,148,255,.20);
-  background:linear-gradient(135deg,rgba(8,14,23,.94),rgba(7,17,29,.88));
-  box-shadow:0 10px 28px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.045);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease,background .25s ease;
-}
-.offer::before{
-  left:0;right:0;top:0;bottom:0;border-radius:15px;
-  background:linear-gradient(110deg,rgba(0,148,255,.07),transparent 46%,rgba(212,175,55,.035));
-}
-.offer:hover{
-  border-color:rgba(0,148,255,.45);
-  background:linear-gradient(135deg,rgba(10,19,31,.98),rgba(7,17,29,.96));
-  box-shadow:0 14px 32px rgba(0,0,0,.40),0 0 22px rgba(0,148,255,.07),inset 0 1px 0 rgba(255,255,255,.07);
-  transform:translateY(-2px);
-}
-.offer-image{
-  border:1px solid rgba(0,148,255,.22);
-  border-radius:12px;
-  background:rgba(5,8,13,.88);
-  box-shadow:0 8px 22px rgba(0,0,0,.36);
-}
-.offer-image:hover{
-  border-color:rgba(212,175,55,.52);
-  box-shadow:0 10px 26px rgba(0,0,0,.42),0 0 18px rgba(0,148,255,.09);
-}
-.offer-info{padding:10px 12px 8px;}
-.offer-title{
-  color:var(--rgc-gold-light);
-  font-family:"Segoe UI",Arial,sans-serif;
-  font-size:clamp(18px,1.5vw,22px);
-  font-style:normal;
-  text-decoration:none;
-  letter-spacing:.2px;
-  text-shadow:0 0 10px rgba(212,175,55,.18);
-}
-.offer-desc,.offer-line,.vip-list{color:var(--rgc-text);}
-.offer-line strong{color:var(--rgc-gold-light);}
-.offer-note{color:var(--rgc-muted);}
-.vip-heading{
-  color:var(--rgc-gold-light);
-  font-family:"Segoe UI",Arial,sans-serif;
-  font-style:normal;
-  font-size:clamp(19px,1.6vw,24px);
-  text-shadow:0 0 12px rgba(212,175,55,.22);
-}
-.vip-list{font-size:clamp(13px,.95vw,15px);}
-.vip-golden-word,.gold-highlight{color:var(--rgc-gold-light);}
-.energy-line{background:linear-gradient(90deg,transparent,rgba(0,148,255,.4),rgba(212,175,55,.75),rgba(0,148,255,.4),transparent);}
-footer{width:min(100%,1400px);color:var(--rgc-muted);}
 @media(max-width:900px){
-  body{padding:30px 16px 50px;}
-  .page{padding-left:0;padding-right:0;}
-  .offer,.vip-single{grid-template-columns:minmax(220px,34%) minmax(0,1fr);gap:18px;padding:10px;}
+  .nav-links a.active::after,
+  .nav-links a[aria-current="page"]::after{bottom:-4px}
 }
-@media(max-width:620px){
-  body{padding:86px 12px 36px;}
-  .page{width:100%;padding:0 0 24px;}
-  .banner-wrap{width:100%;margin-bottom:20px;border-radius:9px;}
-  .offer,.vip-single{grid-template-columns:minmax(0,1fr);gap:12px;padding:9px;margin-bottom:15px;border-radius:12px;}
-  .offer-image{width:100%;max-width:100%;}
-  .offer-info,.vip-single .vip-offer-info{padding:10px 9px 8px;}
-  .offer-title{font-size:18px;}
-  .offer-desc,.offer-line{font-size:14px;}
-  .vip-heading{font-size:19px;}
-  .vip-list{font-size:14px;margin-left:20px;}
+/* Match the shared brand wordmark size and typography */
+.nav-inner .brand strong{
+  font-family:'Barlow Condensed',sans-serif!important;
+  font-size:22px!important;font-weight:800!important;
+  letter-spacing:.08em!important;line-height:normal!important;
 }
-@media(prefers-reduced-motion:reduce){
-  .banner-wrap::after,.storm-flash,.storm-lightning,.offer-image::before{animation:none!important;}
-  .offer,.offer-image,.banner-wrap{transition:none!important;}
-}
-</style>
-
-
-<style id="rgc-global-rank-offers-redesign">
-:root{--bg:#05080d;--panel:#080e17;--text:#eef4ff;--dim:#a9b8cb;--rgc-blue:#0094ff;--rgc-gold:#d4af37;--rgc-red:#e63946}
-html{background:#05080d;min-height:100%;}
-body{min-height:100vh;color:#eef4ff;background:radial-gradient(ellipse at 50% -10%,rgba(0,148,255,.16),transparent 48%),radial-gradient(ellipse at 90% 25%,rgba(212,175,55,.055),transparent 32%),#05080d!important;font-family:Inter,Segoe UI,Arial,sans-serif}
-.page{width:min(1240px,calc(100% - 36px));margin:28px auto 70px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
-.offers-title-panel{grid-column:1/-1;text-align:center;position:relative;overflow:hidden;padding:34px 20px 28px;margin:0 0 4px;border:1px solid rgba(0,148,255,.45);border-radius:18px;background:linear-gradient(135deg,rgba(8,17,29,.96),rgba(5,10,18,.96));box-shadow:0 0 28px rgba(0,148,255,.10),inset 0 0 26px rgba(0,148,255,.035)}
-.offers-title-panel:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 15%,rgba(67,183,255,.07) 50%,transparent 80%)}
-.offers-eyebrow{font-size:11px;letter-spacing:.28em;font-weight:800;color:#43b7ff;text-transform:uppercase;margin-bottom:10px}
-.offers-title-panel h1{position:relative;color:#f4d97b;font-size:clamp(30px,4vw,48px);line-height:1.1;font-weight:900;letter-spacing:.035em;text-shadow:0 0 18px rgba(212,175,55,.2);margin:0 0 12px}
-.offers-title-panel p{position:relative;color:#a9b8cb;font-size:15px;line-height:1.6;margin:0}
-.offers-title-rule{height:2px;width:110px;margin:20px auto 0;background:linear-gradient(90deg,transparent,#0094ff, #d4af37,transparent)}
-.offers-title-rule span{display:block;width:28px;height:2px;margin:auto;background:#f4d97b;box-shadow:0 0 12px #d4af37}
-.offer{min-width:0;display:flex!important;flex-direction:column!important;align-self:stretch;overflow:hidden;border:1px solid rgba(0,148,255,.48)!important;border-radius:16px!important;background:linear-gradient(180deg,rgba(9,17,28,.98),rgba(5,9,16,.98))!important;box-shadow:0 8px 26px rgba(0,0,0,.34),inset 0 0 20px rgba(0,148,255,.025);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
-.offer:hover{transform:translateY(-5px);border-color:rgba(67,183,255,.9)!important;box-shadow:0 12px 32px rgba(0,148,255,.12),0 8px 24px rgba(0,0,0,.4)}
-.offer-image,.offer-image.vip-offer-image{position:relative!important;width:100%!important;height:auto!important;aspect-ratio:4/3;min-height:0!important;flex:0 0 auto!important;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px;background:radial-gradient(ellipse at center,rgba(0,148,255,.13),transparent 68%),#070d16!important;border:0!important;border-bottom:1px solid rgba(0,148,255,.28)!important;border-radius:0!important}
-.offer-image img{display:block!important;width:100%!important;height:100%!important;max-width:100%;object-fit:contain!important;object-position:center;filter:drop-shadow(0 6px 14px rgba(0,0,0,.32));border-radius:8px}
-.offer-info,.offer-info.vip-offer-info{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;padding:22px 21px 24px!important;min-width:0;background:transparent!important}
-.offer-title,.vip-heading{font-size:22px!important;line-height:1.25!important;color:#f4d97b!important;font-weight:850!important;margin:0 0 15px!important;text-shadow:0 0 12px rgba(212,175,55,.12)}
-.offer-desc,.offer-line,.offer-note,.vip-list{font-size:14px!important;line-height:1.7!important;color:#c4d0df!important}
-.offer-desc{margin:0 0 14px!important}.offer-line{margin:0 0 8px!important}.offer-note{margin-top:auto!important;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);color:#8798ad!important;font-size:12px!important}
-.gold-price,.gold-highlight,.vip-golden-word{color:#f4d97b!important;font-weight:800!important}.red{color:#ff6975!important}
-.vip-section{display:flex;flex-direction:column;flex:1}.vip-list{list-style:none!important;padding:0!important;margin:0!important}.vip-list li{position:relative;padding:9px 0 9px 18px;border-bottom:1px solid rgba(255,255,255,.065)}.vip-list li:before{content:"✦";position:absolute;left:0;top:10px;color:#43b7ff;font-size:11px}.vip-list .vip-cost{margin-top:5px;padding:13px 0 0;border-bottom:0;color:#f4d97b}.vip-color-logos img{width:34px!important;height:24px!important;object-fit:contain!important;vertical-align:middle;margin-left:5px}
-.hero-skins-tooltip{position:absolute!important;z-index:2;right:12px;top:12px;padding:7px 10px!important;border:1px solid rgba(212,175,55,.6)!important;border-radius:8px!important;background:rgba(4,9,16,.88)!important;color:#f4d97b!important;font-size:11px!important;cursor:pointer}
-.energy-line{grid-column:1/-1;height:1px;background:linear-gradient(90deg,transparent,rgba(0,148,255,.6),rgba(212,175,55,.45),transparent);margin-top:4px}
-footer{color:#74869b!important;text-align:center;padding:20px!important;font-size:12px}
-@media(max-width:900px){.page{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;width:calc(100% - 28px);margin-top:24px!important}.offers-title-panel{padding:28px 16px 24px}}
-@media(max-width:580px){.page{grid-template-columns:minmax(0,1fr);width:calc(100% - 24px);gap:18px;margin:20px auto 48px!important}.offers-title-panel{padding:25px 14px 22px;border-radius:14px}.offers-title-panel h1{font-size:32px}.offers-title-panel p{font-size:13px}.offer{border-radius:14px!important}.offer-image,.offer-image.vip-offer-image{aspect-ratio:5/3;padding:14px}.offer-info,.offer-info.vip-offer-info{padding:19px 18px 21px!important}.offer-title,.vip-heading{font-size:21px!important}}
-@media(prefers-reduced-motion:reduce){.offer{transition:none}.offer:hover{transform:none}}
-</style>
-
-<link rel="icon" type="image/png" href="https://i.imgur.com/ZQcoV5B.png">
-
-<style id="hero-skins-buttons-always-visible-below-cards">
-/* Always-visible Hero Skins buttons placed below each card image. */
-.offer-image.promo-random-link{cursor:default!important}
-.hero-skins-tooltip{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;display:block!important;align-self:center!important;width:max-content!important;max-width:calc(100% - 28px)!important;margin:14px auto 0!important;padding:9px 22px!important;transform:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;z-index:2!important;font-size:13px!important;letter-spacing:.04em!important;border:1px solid rgba(212,175,55,.72)!important;border-radius:8px!important;background:linear-gradient(135deg,rgba(22,29,39,.98),rgba(7,12,20,.98))!important;color:#f4d97b!important;box-shadow:0 4px 16px rgba(0,0,0,.28),0 0 12px rgba(212,175,55,.09)!important;transition:background .2s ease,box-shadow .2s ease,border-color .2s ease!important}
-.hero-skins-tooltip::before,.hero-skins-tooltip::after{display:none!important;content:none!important}
-.hero-skins-tooltip:hover,.hero-skins-tooltip:focus-visible{transform:translateY(-1px)!important;border-color:#fff1a8!important;background:rgba(212,175,55,.18)!important;box-shadow:0 5px 18px rgba(0,0,0,.35),0 0 18px rgba(255,193,7,.3)!important;color:#fff!important}
-.offer-image.promo-random-link:hover .hero-skins-tooltip,.offer-image.promo-random-link:focus-visible .hero-skins-tooltip{opacity:1!important;visibility:visible!important;transform:none!important}
-</style>
-
-<style>
-
-/* Global Rank-style title logo and header glow for Special Offers */
-.rgc-title-logo{display:flex;justify-content:center;align-items:center;margin:0 auto 12px;position:relative;z-index:1}
-.rgc-title-logo img{width:min(112px,24vw);height:auto;max-height:88px;object-fit:contain;display:block;filter:drop-shadow(0 0 6px rgba(255,215,90,.55)) drop-shadow(0 0 18px rgba(255,215,90,.28));animation:rgcLogoPulse 2.6s ease-in-out infinite;transition:transform .3s ease,filter .3s ease}
-.rgc-title-logo img:hover{transform:scale(1.05);filter:drop-shadow(0 0 8px rgba(255,215,90,.85)) drop-shadow(0 0 24px rgba(255,215,90,.55))}
-@keyframes rgcLogoPulse{0%,100%{filter:drop-shadow(0 0 5px rgba(255,215,90,.45)) drop-shadow(0 0 14px rgba(255,215,90,.22))}50%{filter:drop-shadow(0 0 9px rgba(255,215,90,.78)) drop-shadow(0 0 22px rgba(255,215,90,.42))}}
-.offers-title-panel:after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(420px,80%);height:1px;background:linear-gradient(90deg,transparent,rgba(0,148,255,.65),transparent);box-shadow:0 0 12px rgba(0,148,255,.35);pointer-events:none}
-.offers-title-panel:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(0,148,255,.12),transparent 68%),linear-gradient(110deg,transparent 15%,rgba(67,183,255,.07) 50%,transparent 80%)}
-.offers-title-panel h1,.offers-title-panel p,.offers-title-panel .offers-eyebrow,.offers-title-panel .offers-title-rule{position:relative;z-index:1}
-@media(max-width:580px){.rgc-title-logo img{width:min(100px,27vw);max-height:78px}}
-
-</style>
-
-<style id="remove-special-offers-title-border">
-/* Keep the logo and title effects, but remove the enclosing title frame */
-.offers-title-panel{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important;padding:30px 20px 28px!important;}
-.offers-title-panel:before{display:none!important;}
-</style>
-
-
-<style id="rgc-navigation-regular-font-fix">
-/* Keep navigation labels regular-weight across desktop and mobile menus. */
-.rgc-navbar .rgc-nav-links a,
-.rgc-navbar .rgc-nav-drop-button,
-.rgc-navbar .rgc-nav-submenu a,
-#rgc-v2-home .rgc-nav-links a,
-#rgc-v2-home .rgc-nav-drop-button,
-#rgc-v2-home .rgc-nav-submenu a,
-#rgc-dropdown-nav .rgc-dd-menu a { font-weight: 400 !important; }
 </style>
 </head>
 <body>
-<div id="rgc-dropdown-nav">
-  <button class="rgc-dd-trigger" type="button" aria-expanded="false" aria-controls="rgc-dd-menu">
-    <img class="rgc-dd-logo" src="https://i.imgur.com/ZQcoV5B.png" alt="RGC Logo">
-    <span class="rgc-dd-hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
-    <span class="rgc-dd-brand"><strong>RGC SKIN SHOP</strong><small>DOTA 1 COLLECTION</small></span>
-    <span class="rgc-dd-chevron" aria-hidden="true">▾</span>
-  </button>
-  <nav class="rgc-dd-menu" id="rgc-dd-menu" aria-label="Site navigation">
-    <a href="index.html">⌂ <span>Home</span></a>
-    <div class="rgc-dd-divider"></div>
-    <div class="rgc-dd-subtitle">Skin Shop</div>
-    <a href="Strength%20hero.html">✦ <span>Strength Heroes</span></a>
-    <a href="Agility%20hero.html">✦ <span>Agility Heroes</span></a>
-    <a href="Intelligence%20hero.html">✦ <span>Intelligence Heroes</span></a>
-    <a href="Courier.html">✦ <span>Courier</span></a>
-    <a href="Announcer.html">✦ <span>Announcer</span></a>
-    <a href="Item%20Special%20Effects.html">✦ <span>Item Special Effects</span></a>
-    <div class="rgc-dd-divider"></div>
-    <a href="Global%20Rank.html">♛ <span>Global Rank</span></a>
-    <a href="Special%20offers.html">★ <span>Special Offers</span></a>
-    <a href="About%20Pay.html">✉ <span>Contact / About Pay</span></a>
-  </nav>
+<div class="community">
+<div class="wrap community-inner">
+<div class="community-copy">
+<b>
+      ◉ RGC COMMUNITY
+     </b>
+<span>
+      Join our WhatsApp group and stay connected with players.
+     </span>
 </div>
-<script id="rgc-dropdown-nav-script">
-(function(){
- const root=document.getElementById('rgc-dropdown-nav'); if(!root) return;
- const btn=root.querySelector('.rgc-dd-trigger');
- function setOpen(open){root.classList.toggle('rgc-open',open);btn.setAttribute('aria-expanded',String(open));}
- btn.addEventListener('click',function(e){e.stopPropagation();setOpen(!root.classList.contains('rgc-open'));});
- document.addEventListener('click',function(e){if(!root.contains(e.target))setOpen(false);});
- document.addEventListener('keydown',function(e){if(e.key==='Escape'){setOpen(false);btn.focus();}});
- root.addEventListener('mouseenter',function(){if(window.matchMedia('(hover:hover)').matches)setOpen(true);});
- root.addEventListener('mouseleave',function(){if(window.matchMedia('(hover:hover)').matches)setOpen(false);});
-})();
-</script>
+<a aria-label="Join RGC WhatsApp group" class="community-whatsapp" href="https://chat.whatsapp.com/ELbQaQXvXFt3Fxe7I6wLr4" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 32 32">
+<path d="M16.02 3.2A12.7 12.7 0 0 0 5.1 22.38L3.4 28.6l6.38-1.67A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1c-2 0-3.96-.54-5.66-1.57l-.4-.24-3.78.99 1.01-3.68-.26-.42a10.43 10.43 0 1 1 9.09 4.92Zm5.72-7.82c-.31-.16-1.83-.9-2.12-1-.28-.1-.49-.16-.7.16-.2.31-.8 1- .98 1.2-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.47-1.52-.91-.81-1.53-1.82-1.71-2.13-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.2.05-.39-.03-.54-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.57s1.1 2.98 1.26 3.19c.15.2 2.16 3.3 5.23 4.62.73.32 1.3.51 1.75.65.74.23 1.41.2 1.94.12.59-.09 1.83-.75 2.09-1.48.26-.73.26-1.36.18-1.49-.08-.13-.28-.2-.59-.36Z" fill="currentColor">
+</path>
+</svg>
+</a>
+<a class="community-join" href="https://chat.whatsapp.com/ELbQaQXvXFt3Fxe7I6wLr4" rel="noopener" target="_blank">
+     JOIN GROUP ↗
+    </a>
+</div>
+</div>
+<header class="nav">
+<div class="wrap nav-inner">
+<a class="brand" href="index.html">
+<img alt="RGC logo" src="https://i.imgur.com/ZQcoV5B.png"/>
+<div>
+<strong>
+       RGC SKIN SHOP
+      </strong>
+<small>
+       DOTA 1 COLLECTION
+      </small>
+</div>
+</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" id="menuToggle">
+     ☰
+    </button>
+<nav class="nav-links" id="navLinks">
+<a   href="index.html">
+      Home
+     </a><a   href="Global%20Rank.html">
+      Rank
+     </a>
 
-<main class="page">
-  <header class="offers-title-panel">
-  <div class="rgc-title-logo"><img src="https://i.imgur.com/ZQcoV5B.png" alt="Ranked Gaming Client Logo"></div>
-  <div class="offers-eyebrow">RGC SKIN SHOP · EXCLUSIVE DEALS</div>
-  <h1>Special Offers</h1>
-  <p>Unlock exclusive perks, bonus skins, and limited-time savings.</p>
-  <div class="offers-title-rule"><span></span></div>
+<a   href="Strength%20hero.html">
+      Strength
+     </a>
+<a   href="Agility%20Hero.html">
+      Agility
+     </a>
+<a   href="Intelligence%20Hero.html">
+      Intelligence
+     </a>
+<a   href="Courier.html">
+      Courier
+     </a>
+<a   href="Announcer.html">
+      Announcer
+     </a>
+<a   href="Item%20Special%20Effects.html">
+      Effects
+     </a>
+
+<a    class="active" aria-current="page" href="Special%20offers.html">
+      Offers
+     </a>
+
+<a   href="About%20Pay.html">
+      Payment
+     </a>
+</nav>
+<a class="nav-cta" href="About%20Pay.html">
+     Contact Mine ↗
+    </a>
+</div>
 </header>
-<!-- VIP -->
-  <article class="offer vip-offer vip-single">
-    <div class="offer-image vip-offer-image promo-random-link" aria-label="Hero Skins">
-      <img src="https://i.imgur.com/yXaxr8T.png" alt="VIP Offer">
-    </div>
-    <div class="offer-info vip-offer-info">
-      <div class="vip-section">
-        <h2 class="vip-heading">VIP</h2>
-        <ul class="vip-list">
-          <li>Chat messages color become <span class="vip-golden-word">golden</span>.</li>
-          <li>Circle of power is slightly modified <span class="vip-color-logos" aria-label="Purple and Blue power colors"><img src="https://i.imgur.com/9RhUl5l.png" alt="Purple and Blue" loading="lazy"></span></li>
-          <li>Golden announce on the game start.</li>
-          <li class="vip-cost"><strong>Cost: $100</strong> &nbsp;All donation count total</li>
-        </ul>
-      </div>
-      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
-    </div>
-  </article>
-
-  <!-- Super VIP -->
-  <article class="offer vip-offer vip-single">
-    <div class="offer-image vip-offer-image promo-random-link" aria-label="Hero Skins">
-      <img src="https://i.imgur.com/yXaxr8T.png" alt="Super VIP Offer">
-    </div>
-    <div class="offer-info vip-offer-info">
-      <div class="vip-section">
-        <h2 class="vip-heading">Super VIP</h2>
-        <ul class="vip-list">
-          <li>Chat messages color become <span class="vip-custom-word">Custom</span>.</li>
-          <li>Circle of power is slightly modified <span class="vip-color-logos" aria-label="Golden power color"><img src="https://i.imgur.com/LQWiuWn.png" alt="Golden" loading="lazy"></span></li>
-          <li>Custom color name announce on the game start.</li>
-          <li>90% chance a hero selected during the ban phase will actually be banned.</li>
-          <li class="vip-cost"><strong>Cost:</strong> Own half of the total of skins, consult for specific details.</li>
-        </ul>
-      </div>
-      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
-    </div>
-  </article>
-
-  <article class="offer">
-    <div class="offer-image promo-random-link" aria-label="Hero Skins">
-      <img src="https://i.imgur.com/VWet7tx.png" alt="Offer">
-    </div>
-    <div class="offer-info">
-      <h2 class="offer-title">Classic Offers</h2>
-      <p class="offer-desc">Purchase 5 skins with a total value of <span class="gold-price">$40</span> to receive <span class="gold-highlight">1</span> free skin.</p>
-      <p class="offer-line"><strong>Duration :</strong> All - Time</p>
-      <p class="offer-note">This offer cannot be combined with other promotions.</p>
-      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
-    </div>
-  </article>
-
-  <article class="offer">
-    <div class="offer-image promo-random-link" aria-label="Hero Skins">
-      <img src="https://i.imgur.com/fNvIe4m.jpg" alt="Offer">
-    </div>
-    <div class="offer-info">
-      <h2 class="offer-title">Promotional Offers</h2>
-      <p class="offer-desc">For single purchases exceeding <span class="gold-price">$50</span>, enjoy a <span class="gold-highlight">5%</span> discount on the total price of your next purchase.</p>
-      <p class="offer-line"><strong>Purchase exclusively through :</strong> <span class="red">Mine</span></p>
-      <p class="offer-line"><strong>Duration :</strong> All - Time</p>
-      <p class="offer-note">This offer cannot be combined with other promotions.</p>
-      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
-    </div>
-  </article>
-
-  <article class="offer">
-    <div class="offer-image promo-random-link" aria-label="Hero Skins">
-      <img src="https://i.imgur.com/Ch8Ivhd.jpg" alt="Offer">
-    </div>
-    <div class="offer-info">
-      <h2 class="offer-title">Promotional Offers 2</h2>
-      <p class="offer-desc">For single purchases exceeding <span class="gold-price">$80</span>, enjoy a <span class="gold-highlight">10%</span> discount on the total price of your next purchase.</p>
-      <p class="offer-line"><strong>Purchase exclusively through :</strong> <span class="red">Mine</span></p>
-      <p class="offer-line"><strong>Duration :</strong> All - Time</p>
-      <p class="offer-note">This offer cannot be combined with other promotions.</p>
-      <button type="button" class="hero-skins-tooltip" aria-label="View Skins" onclick="openRandomPromo(event)">Views Skins</button>
-    </div>
-  </article>
-
-  <div class="energy-line"></div>
+<main class="strength-main offers-main" id="catalog">
+<div class="wrap">
+<header class="strength-heading offers-heading">
+<div>
+<span class="eyebrow">
+       RGC SKIN SHOP / EXCLUSIVE DEALS
+      </span>
+<h1>
+       SPECIAL
+       <em>
+        OFFERS.
+       </em>
+</h1>
+<p>
+       Unlock exclusive perks, bonus skins, and limited-time savings.
+      </p>
+</div>
+<img alt="RGC Skin Shop" class="strength-mark offers-mark" src="https://i.imgur.com/ZQcoV5B.png"/>
+</header>
+<div class="strength-toolbar offers-toolbar">
+<div class="strength-count">
+      05 OFFERS
+      <small>
+       VIP BENEFITS &amp; PROMOTIONAL DEALS
+      </small>
+</div>
+</div>
+<div class="products-grid offers-grid" id="offersGrid">
+<article class="product-card offer-card vip-card">
+<div class="product-visual offer-visual">
+<img alt="VIP Offer" loading="lazy" onerror="this.closest('.offer-visual').classList.add('image-missing');this.style.display='none'" src="https://i.imgur.com/yXaxr8T.png"/>
+<span class="offer-badge">
+        VIP BENEFIT
+       </span>
+<span class="visual-index">
+        RGC / EXCLUSIVE
+       </span>
+<div class="visual-fallback">
+        OFFER IMAGE UNAVAILABLE
+       </div>
+</div>
+<div class="product-info offer-info">
+<div class="product-kicker">
+        VIP MEMBERSHIP
+       </div>
+<h3 class="offer-card-title">
+        VIP
+       </h3>
+<ul class="vip-list offer-benefits">
+<li>
+         Chat messages color become
+         <span class="vip-golden-word">
+          golden
+         </span>
+         .
+        </li>
+<li>
+         Circle of power is slightly modified
+         <span aria-label="Purple and Blue power colors" class="vip-color-logos">
+<img alt="Purple and Blue" loading="lazy" src="https://i.imgur.com/9RhUl5l.png"/>
+</span>
+</li>
+<li>
+         Golden announce on the game start.
+        </li>
+<li class="vip-cost">
+<strong>
+          Cost: $100
+         </strong>
+          All donation count total
+        </li>
+</ul>
+<button aria-label="View Skins" class="offer-skins-button" onclick="openRandomPromo(event)" type="button">
+        Views Skins
+       </button>
+</div>
+</article>
+<article class="product-card offer-card vip-card super-vip-card">
+<div class="product-visual offer-visual">
+<img alt="Super VIP Offer" loading="lazy" onerror="this.closest('.offer-visual').classList.add('image-missing');this.style.display='none'" src="https://i.imgur.com/yXaxr8T.png"/>
+<span class="offer-badge">
+        PREMIUM BENEFIT
+       </span>
+<span class="visual-index">
+        RGC / EXCLUSIVE
+       </span>
+<div class="visual-fallback">
+        OFFER IMAGE UNAVAILABLE
+       </div>
+</div>
+<div class="product-info offer-info">
+<div class="product-kicker">
+        VIP MEMBERSHIP
+       </div>
+<h3 class="offer-card-title">
+        Super VIP
+       </h3>
+<ul class="vip-list offer-benefits">
+<li>
+         Chat messages color become
+         <span class="vip-custom-word">
+          Custom
+         </span>
+         .
+        </li>
+<li>
+         Circle of power is slightly modified
+         <span aria-label="Golden power color" class="vip-color-logos">
+<img alt="Golden" loading="lazy" src="https://i.imgur.com/LQWiuWn.png"/>
+</span>
+</li>
+<li>
+         Custom color name announce on the game start.
+        </li>
+<li>
+         90% chance a hero selected during the ban phase will actually be banned.
+        </li>
+<li class="vip-cost">
+<strong>
+          Cost:
+         </strong>
+         Own half of the total of skins, consult for specific details.
+        </li>
+</ul>
+<button aria-label="View Skins" class="offer-skins-button" onclick="openRandomPromo(event)" type="button">
+        Views Skins
+       </button>
+</div>
+</article>
+<article class="product-card offer-card">
+<div class="product-visual offer-visual">
+<img alt="Offer" loading="lazy" onerror="this.closest('.offer-visual').classList.add('image-missing');this.style.display='none'" src="https://i.imgur.com/VWet7tx.png"/>
+<span class="offer-badge">
+        SPECIAL DEAL
+       </span>
+<span class="visual-index">
+        RGC / EXCLUSIVE
+       </span>
+<div class="visual-fallback">
+        OFFER IMAGE UNAVAILABLE
+       </div>
+</div>
+<div class="product-info offer-info">
+<div class="product-kicker">
+        RGC PROMOTION
+       </div>
+<h3 class="offer-card-title">
+        Classic Offers
+       </h3>
+<p class="offer-desc">
+        Purchase 5 skins with a total value of
+        <span class="gold-price">
+         $40
+        </span>
+        to receive
+        <span class="gold-highlight">
+         1
+        </span>
+        free skin.
+       </p>
+<p class="offer-line">
+<strong>
+         Duration :
+        </strong>
+        All - Time
+       </p>
+<p class="offer-note">
+        This offer cannot be combined with other promotions.
+       </p>
+<button aria-label="View Skins" class="offer-skins-button" onclick="openRandomPromo(event)" type="button">
+        Views Skins
+       </button>
+</div>
+</article>
+<article class="product-card offer-card">
+<div class="product-visual offer-visual">
+<img alt="Offer" loading="lazy" onerror="this.closest('.offer-visual').classList.add('image-missing');this.style.display='none'" src="https://i.imgur.com/fNvIe4m.jpg"/>
+<span class="offer-badge">
+        SPECIAL DEAL
+       </span>
+<span class="visual-index">
+        RGC / EXCLUSIVE
+       </span>
+<div class="visual-fallback">
+        OFFER IMAGE UNAVAILABLE
+       </div>
+</div>
+<div class="product-info offer-info">
+<div class="product-kicker">
+        RGC PROMOTION
+       </div>
+<h3 class="offer-card-title">
+        Promotional Offers
+       </h3>
+<p class="offer-desc">
+        For single purchases exceeding
+        <span class="gold-price">
+         $50
+        </span>
+        , enjoy a
+        <span class="gold-highlight">
+         5%
+        </span>
+        discount on the total price of your next purchase.
+       </p>
+<p class="offer-line">
+<strong>
+         Purchase exclusively through :
+        </strong>
+<span class="red">
+         Mine
+        </span>
+</p>
+<p class="offer-note">
+        This offer cannot be combined with other promotions.
+       </p>
+<button aria-label="View Skins" class="offer-skins-button" onclick="openRandomPromo(event)" type="button">
+        Views Skins
+       </button>
+</div>
+</article>
+<article class="product-card offer-card">
+<div class="product-visual offer-visual">
+<img alt="Offer" loading="lazy" onerror="this.closest('.offer-visual').classList.add('image-missing');this.style.display='none'" src="https://i.imgur.com/Ch8Ivhd.jpg"/>
+<span class="offer-badge">
+        SPECIAL DEAL
+       </span>
+<span class="visual-index">
+        RGC / EXCLUSIVE
+       </span>
+<div class="visual-fallback">
+        OFFER IMAGE UNAVAILABLE
+       </div>
+</div>
+<div class="product-info offer-info">
+<div class="product-kicker">
+        RGC PROMOTION
+       </div>
+<h3 class="offer-card-title">
+        Promotional Offers 2
+       </h3>
+<p class="offer-desc">
+        For single purchases exceeding
+        <span class="gold-price">
+         $80
+        </span>
+        , enjoy a
+        <span class="gold-highlight">
+         10%
+        </span>
+        discount on the total price of your next purchase.
+       </p>
+<p class="offer-line">
+<strong>
+         Purchase exclusively through :
+        </strong>
+<span class="red">
+         Mine
+        </span>
+</p>
+<p class="offer-note">
+        This offer cannot be combined with other promotions.
+       </p>
+<button aria-label="View Skins" class="offer-skins-button" onclick="openRandomPromo(event)" type="button">
+        Views Skins
+       </button>
+</div>
+</article>
+</div>
+</div>
 </main>
 
-<footer>
-  RGC Dota Official Skins Shop — Ranked Gaming Client<br>
-  © 2026 All Rights Reserved.
-</footer>
-
 <script>
-function openRandomPromo(event) {
+   function openRandomPromo(event) {
   if (event) event.preventDefault();
 
   const promoLinks = [
     "https://minergc.github.io/rgcskinshop/Strength%20hero.html",
-    "https://minergc.github.io/rgcskinshop/Agility%20hero.html",
-    "https://minergc.github.io/rgcskinshop/Intelligence%20hero.html"
+    "https://minergc.github.io/rgcskinshop/Agility%20Hero.html",
+    "https://minergc.github.io/rgcskinshop/Intelligence%20Hero.html"
   ];
 
   const randomIndex = Math.floor(Math.random() * promoLinks.length);
@@ -1368,10 +569,34 @@ function openRandomPromo(event) {
 }
 
 // The Hero Skins button itself triggers the random new-tab navigation.
-
-</script>
-
+  </script>
 <script>
+   (function(){
+ const toggle=document.querySelector('.menu-toggle');
+ const links=document.getElementById('navLinks');
+ if(toggle&&links){toggle.addEventListener('click',()=>links.classList.toggle('open'));}
+ const input=document.getElementById('productSearch');
+ const cards=[...document.querySelectorAll('.product-card')];
+ const count=document.getElementById('productCount');
+ const empty=document.getElementById('noProducts');
+ if(input){input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let n=0;cards.forEach(card=>{const hay=(card.dataset.search+' '+card.innerText).toLowerCase();const match=hay.includes(q);card.hidden=!match;if(match)n++;});count.textContent=n;empty.classList.toggle('show',n===0);});}
+})();
+  </script>
+<footer class="home-style-footer" role="contentinfo">
+<div class="home-style-footer-inner">
+<div>
+<div class="home-style-footer-brand">RGC <span>SKIN SHOP</span></div>
+<p>RGC Dota Official Skins Shop — Ranked Gaming Client<br/>© 2026 All Rights Reserved.</p>
+</div>
+<div class="home-style-footer-links">
+<a href="index.html">Home</a>
+<a href="index.html#catalog">Collections</a>
+<a href="Global%20Rank.html">Global Rank</a>
+<a href="About%20Pay.html">Contact Us</a>
+<a href="https://rankedgaming.com/" rel="noopener" target="_blank">Ranked Gaming</a>
+</div>
+</div>
+</footer><script id="hide-bottom-left-link-preview">
 /* Hide the browser's bottom-left URL preview while preserving link navigation. */
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('a[href]').forEach(function (link) {
@@ -1415,12 +640,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
-<style id="vip-cost-alignment-and-views-skins-bottom">
-/* Align VIP cost notes with the text column of the four-point-star list. */
-.vip-list .vip-cost{padding:13px 0 0 18px!important;position:relative!important;}
-.vip-list .vip-cost::before{left:0!important;top:14px!important;}
-/* Keep the Views Skins action at the bottom of each card's content column. */
-.offer-info,.offer-info.vip-offer-info{display:flex!important;flex-direction:column!important;}
-.offer-info .hero-skins-tooltip{position:relative!important;inset:auto!important;align-self:center!important;margin:20px auto 0!important;transform:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;}
-.offer-info .hero-skins-tooltip:hover,.offer-info .hero-skins-tooltip:focus-visible{transform:translateY(-1px)!important;}
-</style>
