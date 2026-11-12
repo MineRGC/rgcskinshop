@@ -208,6 +208,120 @@
   letter-spacing:.08em!important;line-height:normal!important;
 }
 </style>
+
+<script id="rgc-spa-router" defer>
+(function () {
+  const PAGE_ROOT = new URL('.', window.location.href);
+  // Keep navigation history internally while leaving the visible URL unchanged.
+  history.replaceState(
+    { rgcPage: window.location.pathname, rgcHash: '' },
+    '',
+    window.location.pathname + window.location.search
+  );
+  // Mark the initial page's styles so they can be replaced on navigation.
+  document.head.querySelectorAll('style').forEach(style => {
+    style.setAttribute('data-page-style', 'true');
+  });
+
+  function isLocalPage(url) {
+    return url.origin === window.location.origin &&
+      url.pathname.startsWith(PAGE_ROOT.pathname) &&
+      /\.html?$/i.test(url.pathname);
+  }
+
+  async function showPage(url) {
+    const response = await fetch(url.pathname + url.search, { cache: 'no-cache' });
+    if (!response.ok) throw new Error('Page load failed: ' + response.status);
+
+    const html = await response.text();
+    const nextDoc = new DOMParser().parseFromString(html, 'text/html');
+
+    document.title = nextDoc.title || 'RGC Skin Shop';
+
+    const oldDescription = document.head.querySelector('meta[name="description"]');
+    const newDescription = nextDoc.head.querySelector('meta[name="description"]');
+    if (oldDescription) oldDescription.remove();
+    if (newDescription) document.head.appendChild(newDescription.cloneNode(true));
+
+    // Replace page-specific CSS while keeping the site's shared font and icon links.
+    document.head.querySelectorAll('style[data-page-style="true"]').forEach(node => node.remove());
+    nextDoc.head.querySelectorAll('style').forEach(style => {
+      const copy = style.cloneNode(true);
+      copy.setAttribute('data-page-style', 'true');
+      document.head.appendChild(copy);
+    });
+
+    // Swap the visible page without changing the browser address.
+    document.body.className = nextDoc.body.className || '';
+    document.body.innerHTML = nextDoc.body.innerHTML;
+
+    // Re-run this page's inline scripts (but not the router or JSON data blocks).
+    nextDoc.body.querySelectorAll('script').forEach(oldScript => {
+      const type = (oldScript.getAttribute('type') || '').toLowerCase();
+      if (oldScript.id === 'rgc-spa-router' ||
+          (type && type !== 'text/javascript' && type !== 'application/javascript' && type !== 'module')) {
+        const dataCopy = oldScript.cloneNode(true);
+        document.body.appendChild(dataCopy);
+        return;
+      }
+      const script = document.createElement('script');
+      for (const attr of oldScript.attributes) script.setAttribute(attr.name, attr.value);
+      script.textContent = oldScript.textContent;
+      document.body.appendChild(script);
+    });
+
+    // Keep the address at the shop root; use the fragment only for in-page anchors.
+    const hash = url.hash;
+    window.scrollTo(0, 0);
+    if (hash) {
+      requestAnimationFrame(() => {
+        const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+        if (target) target.scrollIntoView();
+      });
+    }
+  }
+
+  document.addEventListener('click', async function (event) {
+    const link = event.target.closest('a[href]');
+    if (!link || event.defaultPrevented || event.button !== 0 ||
+        event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+        link.target === '_blank' || link.hasAttribute('download')) return;
+
+    const url = new URL(link.href, window.location.href);
+    if (!isLocalPage(url)) return;
+
+    event.preventDefault();
+    history.pushState(
+      { rgcPage: url.pathname, rgcHash: url.hash },
+      '',
+      window.location.pathname + window.location.search
+    );
+    try {
+      document.documentElement.style.cursor = 'progress';
+      await showPage(url);
+    } catch (error) {
+      console.error('RGC Skin Shop navigation error:', error);
+    } finally {
+      document.documentElement.style.cursor = '';
+    }
+  });
+
+  window.addEventListener('popstate', async function (event) {
+    const state = event.state || {};
+    const pagePath = state.rgcPage || PAGE_ROOT.pathname;
+    const pageUrl = new URL(pagePath + (state.rgcHash || ''), window.location.origin);
+    try {
+      document.documentElement.style.cursor = 'progress';
+      await showPage(pageUrl);
+    } catch (error) {
+      console.error('RGC Skin Shop history navigation error:', error);
+    } finally {
+      document.documentElement.style.cursor = '';
+    }
+  });
+})();
+</script>
+
 </head>
 <body>
 
