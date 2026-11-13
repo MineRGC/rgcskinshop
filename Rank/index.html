@@ -752,6 +752,23 @@
 </div>
 </div><script>
 (function(){
+ // Mobile navigation: restore the same menu behavior used by the other shop pages.
+ const toggle=document.querySelector('.menu-toggle');
+ const links=document.getElementById('navLinks');
+ if(toggle&&links){
+   toggle.addEventListener('click',()=>{
+     const opened=links.classList.toggle('open');
+     toggle.setAttribute('aria-expanded',String(opened));
+     toggle.setAttribute('aria-label',opened?'Close navigation':'Open navigation');
+     toggle.textContent=opened?'×':'☰';
+   });
+   links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+     links.classList.remove('open');
+     toggle.setAttribute('aria-expanded','false');
+     toggle.setAttribute('aria-label','Open navigation');
+     toggle.textContent='☰';
+   }));
+ }
  const input=document.getElementById('productSearch');
  const cards=[...document.querySelectorAll('.rank-product-card')];
  const count=document.getElementById('productCount');
